@@ -11,36 +11,36 @@
         :root {
             --green: #1ea672;
             --green-2: #0f8a5f;
-            --green-glow: rgba(30,166,114,0.35);
+            --green-glow: rgba(30, 166, 114, 0.35);
             --red: #e5484d;
             --red-2: #c62f34;
-            --red-glow: rgba(229,72,77,0.30);
+            --red-glow: rgba(229, 72, 77, 0.30);
             --orange: #f2994a;
             --orange-2: #d9772e;
-            --orange-glow: rgba(242,153,74,0.30);
+            --orange-glow: rgba(242, 153, 74, 0.30);
             --blue: #4a90d9;
             --blue-2: #357abd;
-            --blue-glow: rgba(74,144,217,0.30);
+            --blue-glow: rgba(74, 144, 217, 0.30);
             --purple: #7c3aed;
             --purple-2: #6d28d9;
-            --purple-glow: rgba(124,58,237,0.30);
+            --purple-glow: rgba(124, 58, 237, 0.30);
             --pink: #ec4899;
             --pink-2: #db2777;
-            --pink-glow: rgba(236,72,153,0.30);
+            --pink-glow: rgba(236, 72, 153, 0.30);
             --teal: #14b8a6;
             --teal-2: #0d9488;
-            --teal-glow: rgba(20,184,166,0.30);
+            --teal-glow: rgba(20, 184, 166, 0.30);
             --bg-1: #f1f6f2;
             --bg-2: #e9f2ec;
             --bg-3: #eef8f1;
-            --glass: rgba(255,255,255,0.65);
-            --glass-brd: rgba(20,60,45,0.10);
-            --glass-hi: rgba(255,255,255,0.80);
+            --glass: rgba(255, 255, 255, 0.65);
+            --glass-brd: rgba(20, 60, 45, 0.10);
+            --glass-hi: rgba(255, 255, 255, 0.80);
             --text-1: #0e2019;
             --text-2: #3c5a4e;
             --text-3: #6b8578;
-            --shadow-soft: 0 20px 50px -24px rgba(20,60,45,0.25);
-            --shadow-card: 0 8px 32px rgba(0,0,0,0.08);
+            --shadow-soft: 0 20px 50px -24px rgba(20, 60, 45, 0.25);
+            --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.08);
             --radius-cap: 999px;
             --radius-card: 26px;
             --radius-sm: 16px;
@@ -51,33 +51,53 @@
             --bg-1: #0c1a17;
             --bg-2: #0a1512;
             --bg-3: #0e2019;
-            --glass: rgba(255,255,255,0.055);
-            --glass-brd: rgba(255,255,255,0.10);
-            --glass-hi: rgba(255,255,255,0.09);
+            --glass: rgba(255, 255, 255, 0.055);
+            --glass-brd: rgba(255, 255, 255, 0.10);
+            --glass-hi: rgba(255, 255, 255, 0.09);
             --text-1: #eef7f2;
             --text-2: #a9c2b8;
             --text-3: #7d968c;
-            --shadow-soft: 0 20px 50px -20px rgba(0,0,0,0.55);
-            --shadow-card: 0 8px 32px rgba(0,0,0,0.3);
+            --shadow-soft: 0 20px 50px -20px rgba(0, 0, 0, 0.55);
+            --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
         body {
             font-family: 'Hind Siliguri', 'Manrope', sans-serif;
             background:
-                radial-gradient(1100px 700px at 8% -10%, rgba(30,166,114,0.12), transparent 60%),
-                radial-gradient(900px 600px at 100% 0%, rgba(242,153,74,0.08), transparent 55%),
-                radial-gradient(800px 700px at 50% 120%, rgba(229,72,77,0.06), transparent 55%),
+                radial-gradient(1100px 700px at 8% -10%, rgba(30, 166, 114, 0.12), transparent 60%),
+                radial-gradient(900px 600px at 100% 0%, rgba(242, 153, 74, 0.08), transparent 55%),
+                radial-gradient(800px 700px at 50% 120%, rgba(229, 72, 77, 0.06), transparent 55%),
                 linear-gradient(180deg, var(--bg-1), var(--bg-2) 45%, var(--bg-3));
             min-height: 100vh;
             color: var(--text-1);
             transition: background .4s ease, color .3s ease;
         }
-        ::-webkit-scrollbar { width: 7px; height: 7px; }
-        ::-webkit-scrollbar-thumb { background: var(--glass-brd); border-radius: 99px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        .font-en { font-family: 'Manrope', sans-serif; }
-        .mono { font-family: 'JetBrains Mono', monospace; }
-        .app { display: flex; min-height: 100vh; }
+        ::-webkit-scrollbar {
+            width: 7px;
+            height: 7px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--glass-brd);
+            border-radius: 99px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .font-en {
+            font-family: 'Manrope', sans-serif;
+        }
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .app {
+            display: flex;
+            min-height: 100vh;
+        }
 
         /* ===== SIDEBAR ===== */
         .sidebar {
@@ -91,7 +111,7 @@
             flex-direction: column;
             gap: 12px;
             z-index: 50;
-            transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
             overflow: hidden;
             background: var(--bg-2);
             border-right: 1px solid var(--glass-brd);
@@ -106,7 +126,9 @@
             border-radius: var(--radius-sm);
             transition: background .2s;
         }
-        .sidebar .brand:hover { background: var(--glass); }
+        .sidebar .brand:hover {
+            background: var(--glass);
+        }
         .sidebar .brand-mark {
             width: 36px;
             height: 36px;
@@ -121,8 +143,19 @@
             box-shadow: 0 8px 20px -6px var(--green-glow);
             font-size: 14px;
         }
-        .sidebar .brand-title { font-weight: 800; font-size: 14px; letter-spacing: .2px; white-space: nowrap; }
-        .sidebar .brand-sub { font-size: 10px; color: var(--text-3); letter-spacing: 1px; text-transform: uppercase; white-space: nowrap; }
+        .sidebar .brand-title {
+            font-weight: 800;
+            font-size: 14px;
+            letter-spacing: .2px;
+            white-space: nowrap;
+        }
+        .sidebar .brand-sub {
+            font-size: 10px;
+            color: var(--text-3);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
         .nav {
             display: flex;
             flex-direction: column;
@@ -156,15 +189,28 @@
             user-select: none;
             -webkit-tap-highlight-color: transparent;
         }
-        .navitem:hover { background: var(--glass); color: var(--text-1); border-color: var(--glass-brd); }
+        .navitem:hover {
+            background: var(--glass);
+            color: var(--text-1);
+            border-color: var(--glass-brd);
+        }
         .navitem.active {
             background: linear-gradient(135deg, var(--green-glow), transparent 70%);
-            border-color: rgba(30,166,114,0.4);
+            border-color: rgba(30, 166, 114, 0.4);
             color: var(--text-1);
-            box-shadow: inset 0 0 0 1px rgba(30,166,114,0.15);
+            box-shadow: inset 0 0 0 1px rgba(30, 166, 114, 0.15);
         }
-        .navitem .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--text-3); flex-shrink: 0; }
-        .navitem.active .dot { background: var(--green); box-shadow: 0 0 8px var(--green); }
+        .navitem .dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--text-3);
+            flex-shrink: 0;
+        }
+        .navitem.active .dot {
+            background: var(--green);
+            box-shadow: 0 0 8px var(--green);
+        }
 
         .side-foot {
             display: flex;
@@ -175,7 +221,11 @@
             align-items: center;
             flex-shrink: 0;
         }
-        .toggle-row { display: flex; gap: 10px; justify-content: center; }
+        .toggle-row {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
         .roundtoggle {
             width: 40px;
             height: 40px;
@@ -190,16 +240,38 @@
             align-items: center;
             justify-content: center;
             transition: all .25s ease;
-            box-shadow: 0 8px 20px -10px rgba(0,0,0,0.4);
+            box-shadow: 0 8px 20px -10px rgba(0, 0, 0, 0.4);
             -webkit-tap-highlight-color: transparent;
         }
-        .roundtoggle:hover { transform: translateY(-2px); border-color: rgba(30,166,114,0.4); }
-        .roundtoggle:active { transform: scale(.92); }
-        .roundtoggle .icon { font-size: 16px; line-height: 1; }
-        .roundtoggle.lang-btn { background: linear-gradient(135deg, var(--green-glow), transparent 70%); }
-        .roundtoggle.theme-btn { background: linear-gradient(135deg, var(--orange-glow), transparent 70%); }
-        .roundtoggle-label { font-size: 9px; color: var(--text-3); text-align: center; margin-top: -2px; }
-        .toggle-col { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+        .roundtoggle:hover {
+            transform: translateY(-2px);
+            border-color: rgba(30, 166, 114, 0.4);
+        }
+        .roundtoggle:active {
+            transform: scale(.92);
+        }
+        .roundtoggle .icon {
+            font-size: 16px;
+            line-height: 1;
+        }
+        .roundtoggle.lang-btn {
+            background: linear-gradient(135deg, var(--green-glow), transparent 70%);
+        }
+        .roundtoggle.theme-btn {
+            background: linear-gradient(135deg, var(--orange-glow), transparent 70%);
+        }
+        .roundtoggle-label {
+            font-size: 9px;
+            color: var(--text-3);
+            text-align: center;
+            margin-top: -2px;
+        }
+        .toggle-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3px;
+        }
 
         .sidebar-toggle {
             position: fixed;
@@ -220,21 +292,29 @@
             justify-content: center;
             transition: all .3s ease;
             -webkit-tap-highlight-color: transparent;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
         }
-        .sidebar-toggle:hover { transform: scale(1.05); border-color: var(--green); }
-        .sidebar-toggle:active { transform: scale(.92); }
+        .sidebar-toggle:hover {
+            transform: scale(1.05);
+            border-color: var(--green);
+        }
+        .sidebar-toggle:active {
+            transform: scale(.92);
+        }
         .sidebar-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,0.4);
+            background: rgba(0, 0, 0, 0.4);
             backdrop-filter: blur(4px);
             z-index: 45;
             display: none;
             opacity: 0;
             transition: opacity .35s ease;
         }
-        .sidebar-overlay.active { display: block; opacity: 1; }
+        .sidebar-overlay.active {
+            display: block;
+            opacity: 1;
+        }
 
         /* ===== MAIN ===== */
         .main {
@@ -250,8 +330,15 @@
             margin-bottom: 16px;
             flex-wrap: wrap;
         }
-        .page-title { font-size: 24px; font-weight: 800; }
-        .page-sub { color: var(--text-3); font-size: 12.5px; margin-top: 2px; }
+        .page-title {
+            font-size: 24px;
+            font-weight: 800;
+        }
+        .page-sub {
+            color: var(--text-3);
+            font-size: 12.5px;
+            margin-top: 2px;
+        }
         .biz-switch {
             display: flex;
             align-items: center;
@@ -272,10 +359,16 @@
             cursor: pointer;
             -webkit-tap-highlight-color: transparent;
         }
-        .biz-switch select option { background: #0e2019; color: #eef7f2; }
-        html[data-theme="light"] .biz-switch select option { background: #fff; color: #0e2019; }
+        .biz-switch select option {
+            background: #0e2019;
+            color: #eef7f2;
+        }
+        html[data-theme="light"] .biz-switch select option {
+            background: #fff;
+            color: #0e2019;
+        }
 
-        /* ===== BUTTONS (Enhanced & Colorful) ===== */
+        /* ===== BUTTONS ===== */
         .btn {
             border: none;
             cursor: pointer;
@@ -292,37 +385,114 @@
             position: relative;
             overflow: hidden;
         }
-        .btn:active { transform: scale(.95); }
+        .btn:active {
+            transform: scale(.95);
+        }
         .btn::after {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent 60%);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), transparent 60%);
             pointer-events: none;
         }
-        .btn-green { background: linear-gradient(135deg, var(--green), var(--green-2)); color: #fff; box-shadow: 0 4px 15px var(--green-glow); }
-        .btn-green:hover { box-shadow: 0 6px 25px var(--green-glow); transform: translateY(-2px); }
-        .btn-red { background: linear-gradient(135deg, var(--red), var(--red-2)); color: #fff; box-shadow: 0 4px 15px var(--red-glow); }
-        .btn-red:hover { box-shadow: 0 6px 25px var(--red-glow); transform: translateY(-2px); }
-        .btn-orange { background: linear-gradient(135deg, var(--orange), var(--orange-2)); color: #fff; box-shadow: 0 4px 15px var(--orange-glow); }
-        .btn-orange:hover { box-shadow: 0 6px 25px var(--orange-glow); transform: translateY(-2px); }
-        .btn-blue { background: linear-gradient(135deg, var(--blue), var(--blue-2)); color: #fff; box-shadow: 0 4px 15px var(--blue-glow); }
-        .btn-blue:hover { box-shadow: 0 6px 25px var(--blue-glow); transform: translateY(-2px); }
-        .btn-purple { background: linear-gradient(135deg, var(--purple), var(--purple-2)); color: #fff; box-shadow: 0 4px 15px var(--purple-glow); }
-        .btn-purple:hover { box-shadow: 0 6px 25px var(--purple-glow); transform: translateY(-2px); }
-        .btn-pink { background: linear-gradient(135deg, var(--pink), var(--pink-2)); color: #fff; box-shadow: 0 4px 15px var(--pink-glow); }
-        .btn-pink:hover { box-shadow: 0 6px 25px var(--pink-glow); transform: translateY(-2px); }
-        .btn-teal { background: linear-gradient(135deg, var(--teal), var(--teal-2)); color: #fff; box-shadow: 0 4px 15px var(--teal-glow); }
-        .btn-teal:hover { box-shadow: 0 6px 25px var(--teal-glow); transform: translateY(-2px); }
-        .btn-ghost { background: var(--glass); color: var(--text-1); border: 1px solid var(--glass-brd); }
-        .btn-ghost:hover { background: var(--glass-hi); border-color: var(--text-2); transform: translateY(-2px); }
-        .btn-sm { padding: 6px 14px; font-size: 11.5px; }
-        .btn-xs { padding: 4px 10px; font-size: 10.5px; }
-        .btn-danger { background: linear-gradient(135deg, #dc3545, #b02a37); color: #fff; box-shadow: 0 4px 15px rgba(220,53,69,0.35); }
-        .btn-danger:hover { box-shadow: 0 6px 25px rgba(220,53,69,0.45); transform: translateY(-2px); }
-        .btn[disabled] { opacity: .4; cursor: not-allowed; transform: none !important; box-shadow: none !important; }
+        .btn-green {
+            background: linear-gradient(135deg, var(--green), var(--green-2));
+            color: #fff;
+            box-shadow: 0 4px 15px var(--green-glow);
+        }
+        .btn-green:hover {
+            box-shadow: 0 6px 25px var(--green-glow);
+            transform: translateY(-2px);
+        }
+        .btn-red {
+            background: linear-gradient(135deg, var(--red), var(--red-2));
+            color: #fff;
+            box-shadow: 0 4px 15px var(--red-glow);
+        }
+        .btn-red:hover {
+            box-shadow: 0 6px 25px var(--red-glow);
+            transform: translateY(-2px);
+        }
+        .btn-orange {
+            background: linear-gradient(135deg, var(--orange), var(--orange-2));
+            color: #fff;
+            box-shadow: 0 4px 15px var(--orange-glow);
+        }
+        .btn-orange:hover {
+            box-shadow: 0 6px 25px var(--orange-glow);
+            transform: translateY(-2px);
+        }
+        .btn-blue {
+            background: linear-gradient(135deg, var(--blue), var(--blue-2));
+            color: #fff;
+            box-shadow: 0 4px 15px var(--blue-glow);
+        }
+        .btn-blue:hover {
+            box-shadow: 0 6px 25px var(--blue-glow);
+            transform: translateY(-2px);
+        }
+        .btn-purple {
+            background: linear-gradient(135deg, var(--purple), var(--purple-2));
+            color: #fff;
+            box-shadow: 0 4px 15px var(--purple-glow);
+        }
+        .btn-purple:hover {
+            box-shadow: 0 6px 25px var(--purple-glow);
+            transform: translateY(-2px);
+        }
+        .btn-pink {
+            background: linear-gradient(135deg, var(--pink), var(--pink-2));
+            color: #fff;
+            box-shadow: 0 4px 15px var(--pink-glow);
+        }
+        .btn-pink:hover {
+            box-shadow: 0 6px 25px var(--pink-glow);
+            transform: translateY(-2px);
+        }
+        .btn-teal {
+            background: linear-gradient(135deg, var(--teal), var(--teal-2));
+            color: #fff;
+            box-shadow: 0 4px 15px var(--teal-glow);
+        }
+        .btn-teal:hover {
+            box-shadow: 0 6px 25px var(--teal-glow);
+            transform: translateY(-2px);
+        }
+        .btn-ghost {
+            background: var(--glass);
+            color: var(--text-1);
+            border: 1px solid var(--glass-brd);
+        }
+        .btn-ghost:hover {
+            background: var(--glass-hi);
+            border-color: var(--text-2);
+            transform: translateY(-2px);
+        }
+        .btn-sm {
+            padding: 6px 14px;
+            font-size: 11.5px;
+        }
+        .btn-xs {
+            padding: 4px 10px;
+            font-size: 10.5px;
+        }
+        .btn-danger {
+            background: linear-gradient(135deg, #dc3545, #b02a37);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(220, 53, 69, 0.35);
+        }
+        .btn-danger:hover {
+            box-shadow: 0 6px 25px rgba(220, 53, 69, 0.45);
+            transform: translateY(-2px);
+        }
+        .btn[disabled] {
+            opacity: .4;
+            cursor: not-allowed;
+            transform: none !important;
+            box-shadow: none !important;
+        }
 
-        /* ===== CARDS (Premium) ===== */
+        /* ===== CARDS ===== */
         .card {
             background: var(--glass);
             border: 1px solid var(--glass-brd);
@@ -335,7 +505,10 @@
             overflow: hidden;
             transition: transform .25s ease, box-shadow .3s ease;
         }
-        .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-soft); }
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-soft);
+        }
         .card::before {
             content: "";
             position: absolute;
@@ -346,14 +519,36 @@
             pointer-events: none;
             opacity: .5;
         }
-        .grid { display: grid; gap: 14px; }
-        .grid-4 { grid-template-columns: repeat(4, 1fr); }
-        .grid-3 { grid-template-columns: repeat(3, 1fr); }
-        .grid-2 { grid-template-columns: repeat(2, 1fr); }
-        @media(max-width:1100px) { .grid-4 { grid-template-columns: repeat(2,1fr); } .grid-3 { grid-template-columns: repeat(2,1fr); } }
-        @media(max-width:640px) { .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; } }
+        .grid {
+            display: grid;
+            gap: 14px;
+        }
+        .grid-4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        .grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .grid-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media(max-width:1100px) {
+            .grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media(max-width:640px) {
+            .grid-4,
+            .grid-3,
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
 
-        /* Premium Stat Cards */
+        /* Stat Cards */
         .stat-card {
             padding: 18px 20px;
             position: relative;
@@ -363,7 +558,10 @@
             border-radius: var(--radius-card);
             transition: all .3s ease;
         }
-        .stat-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.10); }
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.10);
+        }
         .stat-card .stat-bg-icon {
             position: absolute;
             right: -5px;
@@ -392,7 +590,7 @@
             align-items: center;
             justify-content: center;
             font-size: 14px;
-            background: rgba(255,255,255,0.06);
+            background: rgba(255, 255, 255, 0.06);
         }
         .stat-card .stat-value {
             font-size: 24px;
@@ -401,13 +599,27 @@
             position: relative;
             z-index: 1;
         }
-        .stat-card .stat-value.green { color: var(--green); }
-        .stat-card .stat-value.red { color: var(--red); }
-        .stat-card .stat-value.orange { color: var(--orange); }
-        .stat-card .stat-value.blue { color: var(--blue); }
-        .stat-card .stat-value.purple { color: var(--purple); }
-        .stat-card .stat-value.pink { color: var(--pink); }
-        .stat-card .stat-value.teal { color: var(--teal); }
+        .stat-card .stat-value.green {
+            color: var(--green);
+        }
+        .stat-card .stat-value.red {
+            color: var(--red);
+        }
+        .stat-card .stat-value.orange {
+            color: var(--orange);
+        }
+        .stat-card .stat-value.blue {
+            color: var(--blue);
+        }
+        .stat-card .stat-value.purple {
+            color: var(--purple);
+        }
+        .stat-card .stat-value.pink {
+            color: var(--pink);
+        }
+        .stat-card .stat-value.teal {
+            color: var(--teal);
+        }
         .stat-card .stat-foot {
             font-size: 10.5px;
             color: var(--text-3);
@@ -419,7 +631,7 @@
             margin-top: 8px;
             height: 4px;
             border-radius: 4px;
-            background: rgba(0,0,0,0.06);
+            background: rgba(0, 0, 0, 0.06);
             overflow: hidden;
             position: relative;
             z-index: 1;
@@ -439,10 +651,19 @@
             align-items: center;
             gap: 8px;
         }
-        .section-title .bar { width: 4px; height: 16px; border-radius: 4px; background: linear-gradient(180deg, var(--green), var(--orange)); }
+        .section-title .bar {
+            width: 4px;
+            height: 16px;
+            border-radius: 4px;
+            background: linear-gradient(180deg, var(--green), var(--orange));
+        }
 
         /* ===== TABLES ===== */
-        table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12.5px;
+        }
         th {
             text-align: left;
             padding: 8px 10px;
@@ -453,10 +674,21 @@
             letter-spacing: .5px;
             border-bottom: 1px solid var(--glass-brd);
         }
-        td { padding: 9px 10px; border-bottom: 1px solid var(--glass-brd); color: var(--text-1); }
-        tr:last-child td { border-bottom: none; }
-        tr:hover td { background: rgba(255,255,255,0.02); }
-        .table-wrap { overflow-x: auto; border-radius: var(--radius-sm); }
+        td {
+            padding: 9px 10px;
+            border-bottom: 1px solid var(--glass-brd);
+            color: var(--text-1);
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+        .table-wrap {
+            overflow-x: auto;
+            border-radius: var(--radius-sm);
+        }
 
         .badge {
             padding: 2px 10px;
@@ -467,25 +699,74 @@
             align-items: center;
             gap: 4px;
         }
-        .badge-green { background: rgba(30,166,114,0.15); color: var(--green); border: 1px solid rgba(30,166,114,0.35); }
-        .badge-red { background: rgba(229,72,77,0.15); color: var(--red); border: 1px solid rgba(229,72,77,0.35); }
-        .badge-orange { background: rgba(242,153,74,0.15); color: var(--orange); border: 1px solid rgba(242,153,74,0.35); }
-        .badge-grey { background: rgba(255,255,255,0.08); color: var(--text-2); border: 1px solid var(--glass-brd); }
-        .badge-main { background: rgba(242,153,74,0.15); color: var(--orange); border: 1px solid rgba(242,153,74,0.35); }
-        .badge-blue { background: rgba(74,144,217,0.15); color: var(--blue); border: 1px solid rgba(74,144,217,0.35); }
-        .badge-purple { background: rgba(124,58,237,0.15); color: var(--purple); border: 1px solid rgba(124,58,237,0.35); }
-        .badge-pink { background: rgba(236,72,153,0.15); color: var(--pink); border: 1px solid rgba(236,72,153,0.35); }
-        .badge-teal { background: rgba(20,184,166,0.15); color: var(--teal); border: 1px solid rgba(20,184,166,0.35); }
+        .badge-green {
+            background: rgba(30, 166, 114, 0.15);
+            color: var(--green);
+            border: 1px solid rgba(30, 166, 114, 0.35);
+        }
+        .badge-red {
+            background: rgba(229, 72, 77, 0.15);
+            color: var(--red);
+            border: 1px solid rgba(229, 72, 77, 0.35);
+        }
+        .badge-orange {
+            background: rgba(242, 153, 74, 0.15);
+            color: var(--orange);
+            border: 1px solid rgba(242, 153, 74, 0.35);
+        }
+        .badge-grey {
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--text-2);
+            border: 1px solid var(--glass-brd);
+        }
+        .badge-main {
+            background: rgba(242, 153, 74, 0.15);
+            color: var(--orange);
+            border: 1px solid rgba(242, 153, 74, 0.35);
+        }
+        .badge-blue {
+            background: rgba(74, 144, 217, 0.15);
+            color: var(--blue);
+            border: 1px solid rgba(74, 144, 217, 0.35);
+        }
+        .badge-purple {
+            background: rgba(124, 58, 237, 0.15);
+            color: var(--purple);
+            border: 1px solid rgba(124, 58, 237, 0.35);
+        }
+        .badge-pink {
+            background: rgba(236, 72, 153, 0.15);
+            color: var(--pink);
+            border: 1px solid rgba(236, 72, 153, 0.35);
+        }
+        .badge-teal {
+            background: rgba(20, 184, 166, 0.15);
+            color: var(--teal);
+            border: 1px solid rgba(20, 184, 166, 0.35);
+        }
 
         /* ===== FORMS ===== */
-        .formrow { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px,1fr)); gap: 10px; margin-bottom: 10px; }
-        label { font-size: 11.5px; font-weight: 700; color: var(--text-2); margin-bottom: 3px; display: block; }
-        input, select, textarea {
+        .formrow {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        label {
+            font-size: 11.5px;
+            font-weight: 700;
+            color: var(--text-2);
+            margin-bottom: 3px;
+            display: block;
+        }
+        input,
+        select,
+        textarea {
             width: 100%;
             padding: 9px 12px;
             border-radius: 14px;
             border: 1px solid var(--glass-brd);
-            background: rgba(255,255,255,0.04);
+            background: rgba(255, 255, 255, 0.04);
             color: var(--text-1);
             font-size: 13px;
             outline: none;
@@ -493,14 +774,36 @@
             transition: border .2s;
             -webkit-tap-highlight-color: transparent;
         }
-        input:focus, select:focus, textarea:focus { border-color: var(--green); }
-        select option { background: #0e2019; color: #eef7f2; }
-        html[data-theme="light"] select option { background: #fff; color: #0e2019; }
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: var(--green);
+        }
+        select option {
+            background: #0e2019;
+            color: #eef7f2;
+        }
+        html[data-theme="light"] select option {
+            background: #fff;
+            color: #0e2019;
+        }
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type=number] {
+            -moz-appearance: textfield;
+            appearance: textfield;
+        }
+        input[type="date"] {
+            color-scheme: light dark;
+        }
 
         .modal-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(4,10,8,0.6);
+            background: rgba(4, 10, 8, 0.6);
             backdrop-filter: blur(6px);
             z-index: 150;
             display: flex;
@@ -517,14 +820,40 @@
             width: 100%;
             max-height: 88vh;
             overflow-y: auto;
-            box-shadow: 0 40px 80px -20px rgba(0,0,0,0.6);
+            box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.6);
         }
-        .modal-title { font-size: 17px; font-weight: 800; margin-bottom: 14px; }
-        .modal-actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 16px; flex-wrap: wrap; }
+        .modal-title {
+            font-size: 17px;
+            font-weight: 800;
+            margin-bottom: 14px;
+        }
+        .modal-actions {
+            display: flex;
+            gap: 8px;
+            justify-content: flex-end;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
 
-        .empty { text-align: center; padding: 40px 16px; color: var(--text-3); }
-        .empty .emoji { font-size: 32px; margin-bottom: 8px; }
-        .empty-note { color: var(--text-2); font-size: 13.5px; padding: 48px 20px; text-align: center; background: var(--glass); backdrop-filter: blur(18px); border: 1.5px dashed var(--glass-brd); border-radius: var(--radius-card); }
+        .empty {
+            text-align: center;
+            padding: 40px 16px;
+            color: var(--text-3);
+        }
+        .empty .emoji {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+        .empty-note {
+            color: var(--text-2);
+            font-size: 13.5px;
+            padding: 48px 20px;
+            text-align: center;
+            background: var(--glass);
+            backdrop-filter: blur(18px);
+            border: 1.5px dashed var(--glass-brd);
+            border-radius: var(--radius-card);
+        }
 
         .searchbar {
             display: flex;
@@ -535,8 +864,17 @@
             padding: 6px 14px;
             border-radius: var(--radius-cap);
         }
-        .searchbar input { border: none; background: transparent; padding: 0; }
-        .filter-chips { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }
+        .searchbar input {
+            border: none;
+            background: transparent;
+            padding: 0;
+        }
+        .filter-chips {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-bottom: 14px;
+        }
         .chip {
             padding: 5px 12px;
             border-radius: var(--radius-cap);
@@ -549,10 +887,21 @@
             transition: all .2s;
             -webkit-tap-highlight-color: transparent;
         }
-        .chip.active { background: linear-gradient(135deg, var(--green), var(--green-2)); color: #fff; border-color: transparent; }
-        .chip:hover:not(.active) { background: var(--glass-hi); }
+        .chip.active {
+            background: linear-gradient(135deg, var(--green), var(--green-2));
+            color: #fff;
+            border-color: transparent;
+        }
+        .chip:hover:not(.active) {
+            background: var(--glass-hi);
+        }
 
-        .tabs { display: flex; gap: 5px; margin-bottom: 14px; flex-wrap: wrap; }
+        .tabs {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 14px;
+            flex-wrap: wrap;
+        }
         .tab {
             padding: 7px 16px;
             border-radius: var(--radius-cap);
@@ -565,8 +914,14 @@
             transition: all .2s;
             -webkit-tap-highlight-color: transparent;
         }
-        .tab.active { background: linear-gradient(135deg, var(--orange), var(--orange-2)); color: #fff; border-color: transparent; }
-        .tab:hover:not(.active) { background: var(--glass-hi); }
+        .tab.active {
+            background: linear-gradient(135deg, var(--orange), var(--orange-2));
+            color: #fff;
+            border-color: transparent;
+        }
+        .tab:hover:not(.active) {
+            background: var(--glass-hi);
+        }
 
         /* ===== INVESTOR ROW ===== */
         .investor-row {
@@ -575,20 +930,34 @@
             align-items: center;
             padding: 10px 12px;
             border-radius: 16px;
-            background: rgba(255,255,255,0.03);
+            background: rgba(255, 255, 255, 0.03);
             margin-bottom: 6px;
             border: 1px solid var(--glass-brd);
             flex-wrap: wrap;
             gap: 8px;
         }
-        .investor-row.is-main { border-left: 4px solid var(--green); background: rgba(30,166,114,0.04); }
-        .iv-name { font-weight: 700; }
-        .iv-id { font-size: 10.5px; color: var(--text-3); font-family: 'JetBrains Mono', monospace; }
-        .investor-left { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+        .investor-row.is-main {
+            border-left: 4px solid var(--green);
+            background: rgba(30, 166, 114, 0.04);
+        }
+        .iv-name {
+            font-weight: 700;
+        }
+        .iv-id {
+            font-size: 10.5px;
+            color: var(--text-3);
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .investor-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
         .loss-badge {
-            background: rgba(229,72,77,0.12);
+            background: rgba(229, 72, 77, 0.12);
             color: var(--red);
-            border: 1px solid rgba(229,72,77,0.3);
+            border: 1px solid rgba(229, 72, 77, 0.3);
             padding: 2px 8px;
             border-radius: 99px;
             font-size: 10.5px;
@@ -606,7 +975,11 @@
             overflow: hidden;
             transition: all .25s ease;
         }
-        .order-card:hover { background: var(--glass-hi); transform: translateY(-2px); box-shadow: var(--shadow-soft); }
+        .order-card:hover {
+            background: var(--glass-hi);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-soft);
+        }
         .order-top {
             display: flex;
             align-items: center;
@@ -631,13 +1004,38 @@
             background: var(--glass);
             backdrop-filter: blur(4px);
         }
-        .stamp-open { color: var(--orange); border-color: var(--orange); background: rgba(242,153,74,0.12); }
-        .stamp-profit { color: var(--green); border-color: var(--green); background: rgba(30,166,114,0.12); }
-        .stamp-loss { color: var(--red); border-color: var(--red); background: rgba(229,72,77,0.12); }
-        .order-meta { flex: 1; min-width: 170px; }
-        .order-meta .dates { font-size: 11.5px; color: var(--text-2); }
-        .order-meta .amounts { margin-top: 3px; font-size: 13px; line-height: 1.6; }
-        .order-meta .amounts b { font-family: 'JetBrains Mono', monospace; font-weight: 700; }
+        .stamp-open {
+            color: var(--orange);
+            border-color: var(--orange);
+            background: rgba(242, 153, 74, 0.12);
+        }
+        .stamp-profit {
+            color: var(--green);
+            border-color: var(--green);
+            background: rgba(30, 166, 114, 0.12);
+        }
+        .stamp-loss {
+            color: var(--red);
+            border-color: var(--red);
+            background: rgba(229, 72, 77, 0.12);
+        }
+        .order-meta {
+            flex: 1;
+            min-width: 170px;
+        }
+        .order-meta .dates {
+            font-size: 11.5px;
+            color: var(--text-2);
+        }
+        .order-meta .amounts {
+            margin-top: 3px;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        .order-meta .amounts b {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+        }
         .toggle-link {
             background: none;
             border: none;
@@ -651,27 +1049,46 @@
             transition: color .2s;
             font-family: inherit;
         }
-        .toggle-link:hover { color: var(--green-2); text-decoration: underline solid; }
-        .order-actions { display: flex; gap: 6px; flex-wrap: wrap; }
+        .toggle-link:hover {
+            color: var(--green-2);
+            text-decoration: underline solid;
+        }
+        .order-actions {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
         .split-bar {
             display: flex;
             height: 5px;
             border-radius: var(--radius-cap);
             overflow: hidden;
             margin: 0 20px 12px;
-            background: rgba(0,0,0,0.04);
+            background: rgba(0, 0, 0, 0.04);
             opacity: .8;
         }
-        .split-seg { height: 100%; transition: width .8s cubic-bezier(0.22,1,0.36,1); }
+        .split-seg {
+            height: 100%;
+            transition: width .8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
         .order-detail {
             border-top: 1px dashed var(--glass-brd);
             padding: 0 20px 18px;
             display: none;
         }
-        .order-detail.open { display: block; animation: viewEnter 0.35s ease; }
+        .order-detail.open {
+            display: block;
+            animation: viewEnter 0.35s ease;
+        }
         @keyframes viewEnter {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         .snapshot-lock {
             display: flex;
@@ -680,10 +1097,10 @@
             font-size: 10.5px;
             color: var(--orange);
             font-weight: 700;
-            background: rgba(242,153,74,0.12);
+            background: rgba(242, 153, 74, 0.12);
             padding: 3px 10px;
             border-radius: 99px;
-            border: 1px solid rgba(242,153,74,0.3);
+            border: 1px solid rgba(242, 153, 74, 0.3);
         }
         .calc-grid {
             display: grid;
@@ -701,11 +1118,22 @@
             border-bottom: 1px solid var(--glass-brd);
             font-size: 12px;
         }
-        .calc-item .label { color: var(--text-3); }
-        .calc-item .value { font-weight: 700; font-family: 'JetBrains Mono', monospace; }
-        .calc-item .value.green { color: var(--green); }
-        .calc-item .value.red { color: var(--red); }
-        .calc-item .value.orange { color: var(--orange); }
+        .calc-item .label {
+            color: var(--text-3);
+        }
+        .calc-item .value {
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .calc-item .value.green {
+            color: var(--green);
+        }
+        .calc-item .value.red {
+            color: var(--red);
+        }
+        .calc-item .value.orange {
+            color: var(--orange);
+        }
 
         /* ===== BUSINESS CARD ===== */
         .business-card {
@@ -716,7 +1144,9 @@
             margin-bottom: 12px;
             transition: all .25s ease;
         }
-        .business-card:hover { border-color: var(--green); }
+        .business-card:hover {
+            border-color: var(--green);
+        }
         .business-card .biz-header {
             display: flex;
             justify-content: space-between;
@@ -725,22 +1155,36 @@
             gap: 8px;
             margin-bottom: 10px;
         }
-        .business-card .biz-name { font-size: 16px; font-weight: 800; }
-        .business-card .biz-id { font-size: 11px; color: var(--text-3); font-family: 'JetBrains Mono', monospace; }
+        .business-card .biz-name {
+            font-size: 16px;
+            font-weight: 800;
+        }
+        .business-card .biz-id {
+            font-size: 11px;
+            color: var(--text-3);
+            font-family: 'JetBrains Mono', monospace;
+        }
         .business-card .biz-stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px,1fr));
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
             gap: 8px;
             margin-top: 8px;
         }
         .business-card .biz-stat {
             text-align: center;
             padding: 6px;
-            background: rgba(255,255,255,0.03);
+            background: rgba(255, 255, 255, 0.03);
             border-radius: 10px;
         }
-        .business-card .biz-stat .num { font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 14px; }
-        .business-card .biz-stat .lbl { font-size: 10px; color: var(--text-3); }
+        .business-card .biz-stat .num {
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+        }
+        .business-card .biz-stat .lbl {
+            font-size: 10px;
+            color: var(--text-3);
+        }
 
         /* ===== STATEMENT LETTER ===== */
         .statement-letter {
@@ -752,15 +1196,28 @@
             margin-bottom: 20px;
             border: 1px solid var(--glass-brd);
         }
-        html[data-theme="dark"] .statement-letter { background: var(--bg-2); }
+        html[data-theme="dark"] .statement-letter {
+            background: var(--bg-2);
+        }
         .statement-letter .letter-header {
             background: linear-gradient(135deg, var(--green), var(--green-2));
             padding: 20px 28px;
             color: #fff;
         }
-        .statement-letter .letter-header h2 { font-size: 20px; font-weight: 800; margin: 0; }
-        .statement-letter .letter-header .sub { font-size: 12px; opacity: 0.85; margin-top: 2px; }
-        .statement-letter .letter-body { padding: 20px 28px; color: var(--text-1); }
+        .statement-letter .letter-header h2 {
+            font-size: 20px;
+            font-weight: 800;
+            margin: 0;
+        }
+        .statement-letter .letter-header .sub {
+            font-size: 12px;
+            opacity: 0.85;
+            margin-top: 2px;
+        }
+        .statement-letter .letter-body {
+            padding: 20px 28px;
+            color: var(--text-1);
+        }
         .statement-letter .letter-footer {
             padding: 12px 28px;
             border-top: 2px solid var(--green);
@@ -769,11 +1226,17 @@
             color: #6b8578;
             background: #f8faf9;
         }
-        html[data-theme="dark"] .statement-letter .letter-footer { background: var(--bg-1); color: var(--text-3); }
-        .statement-letter .letter-footer .brand { font-weight: 700; color: var(--green); }
+        html[data-theme="dark"] .statement-letter .letter-footer {
+            background: var(--bg-1);
+            color: var(--text-3);
+        }
+        .statement-letter .letter-footer .brand {
+            font-weight: 700;
+            color: var(--green);
+        }
         .statement-letter .summary-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px,1fr));
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
             gap: 10px;
             margin: 12px 0 16px;
         }
@@ -784,13 +1247,34 @@
             text-align: center;
             border: 1px solid #e9ecef;
         }
-        html[data-theme="dark"] .statement-letter .summary-grid .item { background: var(--glass); border-color: var(--glass-brd); }
-        .statement-letter .summary-grid .item .label { font-size: 9px; color: #6b8578; text-transform: uppercase; letter-spacing: .4px; }
-        .statement-letter .summary-grid .item .value { font-size: 16px; font-weight: 800; font-family: 'JetBrains Mono', monospace; margin-top: 2px; }
-        .statement-letter .summary-grid .item .value.green { color: var(--green); }
-        .statement-letter .summary-grid .item .value.red { color: var(--red); }
-        .statement-letter .summary-grid .item .value.orange { color: var(--orange); }
-        .statement-letter .summary-grid .item .value.purple { color: var(--purple); }
+        html[data-theme="dark"] .statement-letter .summary-grid .item {
+            background: var(--glass);
+            border-color: var(--glass-brd);
+        }
+        .statement-letter .summary-grid .item .label {
+            font-size: 9px;
+            color: #6b8578;
+            text-transform: uppercase;
+            letter-spacing: .4px;
+        }
+        .statement-letter .summary-grid .item .value {
+            font-size: 16px;
+            font-weight: 800;
+            font-family: 'JetBrains Mono', monospace;
+            margin-top: 2px;
+        }
+        .statement-letter .summary-grid .item .value.green {
+            color: var(--green);
+        }
+        .statement-letter .summary-grid .item .value.red {
+            color: var(--red);
+        }
+        .statement-letter .summary-grid .item .value.orange {
+            color: var(--orange);
+        }
+        .statement-letter .summary-grid .item .value.purple {
+            color: var(--purple);
+        }
         .statement-letter .print-table {
             width: 100%;
             border-collapse: collapse;
@@ -808,10 +1292,21 @@
             letter-spacing: .4px;
             border-bottom: 2px solid var(--green);
         }
-        html[data-theme="dark"] .statement-letter .print-table th { background: var(--glass); color: var(--text-2); }
-        .statement-letter .print-table td { padding: 7px 12px; border-bottom: 1px solid #e9ecef; }
-        html[data-theme="dark"] .statement-letter .print-table td { border-color: var(--glass-brd); }
-        .statement-letter .print-table .total-row { font-weight: 700; border-top: 2px solid var(--green); }
+        html[data-theme="dark"] .statement-letter .print-table th {
+            background: var(--glass);
+            color: var(--text-2);
+        }
+        .statement-letter .print-table td {
+            padding: 7px 12px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        html[data-theme="dark"] .statement-letter .print-table td {
+            border-color: var(--glass-brd);
+        }
+        .statement-letter .print-table .total-row {
+            font-weight: 700;
+            border-top: 2px solid var(--green);
+        }
 
         /* ===== TOGGLE SWITCH ===== */
         .toggle-switch {
@@ -848,10 +1343,17 @@
             background: var(--green);
             border-color: var(--green);
         }
-        .toggle-switch input[type="checkbox"]:checked::after { left: 22px; background: #fff; }
-        .toggle-label { font-size: 12px; font-weight: 600; color: var(--text-2); }
+        .toggle-switch input[type="checkbox"]:checked::after {
+            left: 22px;
+            background: #fff;
+        }
+        .toggle-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-2);
+        }
 
-        /* ===== TOAST (Fixed Bottom-Center) ===== */
+        /* ===== TOAST (Redesigned - Beautiful Floating) ===== */
         .toast-container {
             position: fixed;
             bottom: 30px;
@@ -864,58 +1366,132 @@
             gap: 10px;
             pointer-events: none;
             width: auto;
-            max-width: 90%;
+            max-width: 92%;
         }
         .toast-item {
-            padding: 12px 24px;
-            border-radius: var(--radius-cap);
+            padding: 14px 28px;
+            border-radius: var(--radius-card);
             background: var(--bg-2);
             border: 1px solid var(--glass-brd);
             color: var(--text-1);
             font-weight: 600;
             font-size: 13px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.2), 0 0 20px rgba(30,166,114,0.08);
-            animation: toastSlideUp 0.4s cubic-bezier(0.34,1.56,0.64,1) forwards;
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.25), 0 0 40px rgba(30, 166, 114, 0.06);
+            animation: toastSlideUp 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
             pointer-events: auto;
             display: flex;
             align-items: center;
-            gap: 10px;
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            min-width: 160px;
-            max-width: 420px;
+            gap: 14px;
+            backdrop-filter: blur(24px) saturate(180%);
+            -webkit-backdrop-filter: blur(24px) saturate(180%);
+            min-width: 200px;
+            max-width: 480px;
             justify-content: center;
             width: auto;
             flex-shrink: 0;
+            border-left: 4px solid var(--green);
+            position: relative;
+            overflow: hidden;
         }
-        .toast-item .toast-icon { font-size: 18px; flex-shrink: 0; }
+        .toast-item::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent 60%);
+            pointer-events: none;
+            border-radius: inherit;
+        }
+        .toast-item .toast-icon {
+            font-size: 22px;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+        }
+        .toast-item .toast-msg {
+            position: relative;
+            z-index: 1;
+            line-height: 1.4;
+        }
         .toast-item .toast-close {
             background: none;
             border: none;
             color: var(--text-3);
             cursor: pointer;
-            font-size: 16px;
+            font-size: 18px;
             padding: 0 4px;
             flex-shrink: 0;
-            transition: color .2s;
+            transition: color .2s, transform .2s;
+            position: relative;
+            z-index: 1;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .toast-item .toast-close:hover { color: var(--text-1); }
-        .toast-item.success { border-color: rgba(30,166,114,0.5); }
-        .toast-item.error { border-color: rgba(229,72,77,0.5); }
-        .toast-item.warning { border-color: rgba(242,153,74,0.5); }
-        .toast-item.info { border-color: rgba(74,144,217,0.5); }
+        .toast-item .toast-close:hover {
+            color: var(--text-1);
+            background: rgba(255, 255, 255, 0.1);
+            transform: scale(1.1);
+        }
+        .toast-item.success {
+            border-color: var(--green);
+            box-shadow: 0 12px 48px rgba(30, 166, 114, 0.20), 0 0 40px rgba(30, 166, 114, 0.06);
+        }
+        .toast-item.success .toast-icon {
+            color: var(--green);
+        }
+        .toast-item.error {
+            border-color: var(--red);
+            box-shadow: 0 12px 48px rgba(229, 72, 77, 0.20), 0 0 40px rgba(229, 72, 77, 0.06);
+        }
+        .toast-item.error .toast-icon {
+            color: var(--red);
+        }
+        .toast-item.warning {
+            border-color: var(--orange);
+            box-shadow: 0 12px 48px rgba(242, 153, 74, 0.20), 0 0 40px rgba(242, 153, 74, 0.06);
+        }
+        .toast-item.warning .toast-icon {
+            color: var(--orange);
+        }
+        .toast-item.info {
+            border-color: var(--blue);
+            box-shadow: 0 12px 48px rgba(74, 144, 217, 0.20), 0 0 40px rgba(74, 144, 217, 0.06);
+        }
+        .toast-item.info .toast-icon {
+            color: var(--blue);
+        }
         @keyframes toastSlideUp {
-            0% { opacity: 0; transform: translateY(30px) scale(0.90); }
-            100% { opacity: 1; transform: translateY(0) scale(1); }
+            0% {
+                opacity: 0;
+                transform: translateY(40px) scale(0.92);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
         }
         @keyframes toastSlideDown {
-            0% { opacity: 1; transform: translateY(0) scale(1); }
-            100% { opacity: 0; transform: translateY(30px) scale(0.90); }
+            0% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(40px) scale(0.92);
+            }
         }
-        .toast-item.removing { animation: toastSlideDown 0.3s ease forwards; }
+        .toast-item.removing {
+            animation: toastSlideDown 0.35s ease forwards;
+        }
 
         /* ===== NOTIFICATION ===== */
-        .notif-wrapper { position: relative; display: inline-block; }
+        .notif-wrapper {
+            position: relative;
+            display: inline-block;
+        }
         .notification-bell {
             position: relative;
             cursor: pointer;
@@ -930,8 +1506,14 @@
             font-size: 20px;
             z-index: 10;
         }
-        .notification-bell:hover:not(.open) { transform: scale(1.05); border-color: var(--green); }
-        .notification-bell.open { transform: scale(1); border-color: var(--green); }
+        .notification-bell:hover:not(.open) {
+            transform: scale(1.05);
+            border-color: var(--green);
+        }
+        .notification-bell.open {
+            transform: scale(1);
+            border-color: var(--green);
+        }
         .notification-bell .badge-count {
             position: absolute;
             top: -4px;
@@ -957,13 +1539,15 @@
             background: var(--bg-2);
             border: 1px solid var(--glass-brd);
             border-radius: var(--radius-card);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             padding: 12px;
             display: none;
             backdrop-filter: blur(24px);
             -webkit-backdrop-filter: blur(24px);
         }
-        .notification-dropdown-fixed.open { display: block; }
+        .notification-dropdown-fixed.open {
+            display: block;
+        }
         .notification-dropdown-fixed .notif-header {
             display: flex;
             justify-content: space-between;
@@ -1008,7 +1592,9 @@
             border-radius: var(--radius-cap);
             transition: all .2s;
         }
-        .notification-dropdown-fixed .notif-header .notif-actions button:hover { background: var(--glass); }
+        .notification-dropdown-fixed .notif-header .notif-actions button:hover {
+            background: var(--glass);
+        }
         .notification-dropdown-fixed .notif-item {
             padding: 10px 12px;
             border-bottom: 1px solid var(--glass-brd);
@@ -1020,11 +1606,23 @@
             align-items: flex-start;
             gap: 10px;
         }
-        .notification-dropdown-fixed .notif-item:hover { background: var(--glass); }
-        .notification-dropdown-fixed .notif-item:last-child { border-bottom: none; }
-        .notification-dropdown-fixed .notif-item .notif-icon { font-size: 18px; flex-shrink: 0; margin-top: 2px; }
-        .notification-dropdown-fixed .notif-item .notif-content { flex: 1; }
-        .notification-dropdown-fixed .notif-item .notif-content .notif-msg { font-weight: 500; }
+        .notification-dropdown-fixed .notif-item:hover {
+            background: var(--glass);
+        }
+        .notification-dropdown-fixed .notif-item:last-child {
+            border-bottom: none;
+        }
+        .notification-dropdown-fixed .notif-item .notif-icon {
+            font-size: 18px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .notification-dropdown-fixed .notif-item .notif-content {
+            flex: 1;
+        }
+        .notification-dropdown-fixed .notif-item .notif-content .notif-msg {
+            font-weight: 500;
+        }
         .notification-dropdown-fixed .notif-item .notif-content .notif-meta {
             display: flex;
             gap: 10px;
@@ -1033,7 +1631,9 @@
             margin-top: 4px;
             flex-wrap: wrap;
         }
-        .notification-dropdown-fixed .notif-item .notif-content .notif-meta .notif-time { font-family: 'JetBrains Mono', monospace; }
+        .notification-dropdown-fixed .notif-item .notif-content .notif-meta .notif-time {
+            font-family: 'JetBrains Mono', monospace;
+        }
         .notification-dropdown-fixed .notif-item .notif-content .notif-meta .notif-badge {
             display: inline-block;
             width: 6px;
@@ -1057,7 +1657,10 @@
             border-radius: var(--radius-cap);
             transition: all .2s;
         }
-        .notification-dropdown-fixed .notif-item .notif-actions-item button:hover { background: var(--glass); color: var(--text-1); }
+        .notification-dropdown-fixed .notif-item .notif-actions-item button:hover {
+            background: var(--glass);
+            color: var(--text-1);
+        }
         .notification-dropdown-fixed .notif-empty {
             text-align: center;
             padding: 30px;
@@ -1082,6 +1685,74 @@
             background: var(--glass);
         }
 
+        /* ===== ORDER TABS ===== */
+        .order-tabs {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 14px;
+            flex-wrap: wrap;
+            border-bottom: 2px solid var(--glass-brd);
+            padding-bottom: 6px;
+        }
+        .order-tab {
+            padding: 6px 18px;
+            border-radius: var(--radius-cap) var(--radius-cap) 0 0;
+            background: var(--glass);
+            border: 1px solid transparent;
+            border-bottom: none;
+            font-weight: 700;
+            font-size: 12px;
+            cursor: pointer;
+            color: var(--text-2);
+            transition: all .25s ease;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .order-tab:hover {
+            background: var(--glass-hi);
+            color: var(--text-1);
+        }
+        .order-tab.active {
+            background: var(--green);
+            color: #fff;
+            border-color: var(--green);
+            box-shadow: 0 -2px 12px rgba(30, 166, 114, 0.2);
+        }
+        .order-tab .count {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 99px;
+            padding: 0 8px;
+            font-size: 10px;
+            margin-left: 4px;
+        }
+        .order-tab.active .count {
+            background: rgba(255, 255, 255, 0.25);
+        }
+        .order-tab .count.running {
+            background: rgba(242, 153, 74, 0.2);
+            color: var(--orange);
+        }
+        .order-tab.active .count.running {
+            background: rgba(255, 255, 255, 0.25);
+            color: #fff;
+        }
+        .order-tab .count.closed {
+            background: rgba(30, 166, 114, 0.15);
+            color: var(--green);
+        }
+        .order-tab.active .count.closed {
+            background: rgba(255, 255, 255, 0.25);
+            color: #fff;
+        }
+        .order-tab .count.cancelled {
+            background: rgba(229, 72, 77, 0.12);
+            color: var(--red);
+        }
+        .order-tab.active .count.cancelled {
+            background: rgba(255, 255, 255, 0.25);
+            color: #fff;
+        }
+
         /* ===== RESPONSIVE ===== */
         @media(max-width:900px) {
             .sidebar {
@@ -1094,88 +1765,379 @@
                 background: var(--bg-2);
                 border-right: 1px solid var(--glass-brd);
                 padding: 16px 12px;
-                box-shadow: 0 0 40px rgba(0,0,0,0.3);
+                box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
             }
-            .sidebar.open { transform: translateX(0); }
-            .sidebar-toggle { display: flex; }
-            .sidebar-overlay.active { display: block; }
-            .main { padding: 14px; padding-top: 68px; }
-            .topbar { flex-direction: column; align-items: stretch; }
-            .biz-switch { justify-content: center; }
-            .business-card .biz-stats { grid-template-columns: 1fr 1fr; }
-            .notification-dropdown-fixed { width: calc(100vw - 28px); left: 14px !important; right: 14px !important; }
-            .order-top { flex-direction: column; align-items: stretch; gap: 10px; }
-            .order-actions { width: 100%; justify-content: flex-start; }
-            .order-actions .btn { flex: 1; justify-content: center; }
-            .investor-row { flex-direction: column; align-items: stretch; gap: 8px; }
-            .investor-left { flex-wrap: wrap; }
-            .toast-container { bottom: 16px; max-width: 94%; }
-            .toast-item { max-width: 100%; padding: 10px 18px; font-size: 12px; }
+            .sidebar.open {
+                transform: translateX(0);
+            }
+            .sidebar-toggle {
+                display: flex;
+            }
+            .sidebar-overlay.active {
+                display: block;
+            }
+            .main {
+                padding: 14px;
+                padding-top: 68px;
+            }
+            .topbar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .biz-switch {
+                justify-content: center;
+            }
+            .business-card .biz-stats {
+                grid-template-columns: 1fr 1fr;
+            }
+            .notification-dropdown-fixed {
+                width: calc(100vw - 28px);
+                left: 14px !important;
+                right: 14px !important;
+            }
+            .order-top {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 10px;
+            }
+            .order-actions {
+                width: 100%;
+                justify-content: flex-start;
+            }
+            .order-actions .btn {
+                flex: 1;
+                justify-content: center;
+            }
+            .investor-row {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 8px;
+            }
+            .investor-left {
+                flex-wrap: wrap;
+            }
+            .toast-container {
+                bottom: 16px;
+                max-width: 96%;
+            }
+            .toast-item {
+                max-width: 100%;
+                padding: 12px 18px;
+                font-size: 12px;
+            }
         }
         @media(max-width:700px) {
-            .statement-letter .letter-body { padding: 14px 16px; }
-            .statement-letter .letter-header { padding: 14px 16px; }
-            .statement-letter .letter-header h2 { font-size: 17px; }
+            .statement-letter .letter-body {
+                padding: 14px 16px;
+            }
+            .statement-letter .letter-header {
+                padding: 14px 16px;
+            }
+            .statement-letter .letter-header h2 {
+                font-size: 17px;
+            }
         }
 
-        /* ===== PRINT (Clean layout - hide ALL UI controls) ===== */
+        /* ===== PRINT ===== */
         @media print {
-            /* Hide everything except the report content */
-            .sidebar, .topbar, .btn, .no-print, .sidebar-toggle, .sidebar-overlay,
-            .notification-bell, .toast-container, .biz-switch, .notification-dropdown-fixed,
-            .filter-chips, .tabs, .searchbar, .modal-overlay, .modal,
-            .nav, .side-foot, .toggle-row, .navgroup-label, .navitem,
-            .order-actions, .toggle-link, .split-bar, .page-sub, .topbar,
-            .biz-switch, .notif-wrapper, .page-title, .breadcrumb, .action-bar,
-            .formrow, .filter-bar, .statement-filter, .report-controls,
-            input[type="date"], input[type="text"], select, button:not(.no-print-btn),
-            .filter-chips, .tabs, .tab, .chip, .searchbar, .btn, .modal-actions,
-            .order-actions, .toggle-link, .split-bar, .pagination, .toolbar {
+            .sidebar,
+            .topbar,
+            .btn,
+            .no-print,
+            .sidebar-toggle,
+            .sidebar-overlay,
+            .notification-bell,
+            .toast-container,
+            .biz-switch,
+            .notification-dropdown-fixed,
+            .filter-chips,
+            .tabs,
+            .searchbar,
+            .modal-overlay,
+            .modal,
+            .nav,
+            .side-foot,
+            .toggle-row,
+            .navgroup-label,
+            .navitem,
+            .order-actions,
+            .toggle-link,
+            .split-bar,
+            .page-sub,
+            .topbar,
+            .biz-switch,
+            .notif-wrapper,
+            .page-title,
+            .breadcrumb,
+            .action-bar,
+            .formrow,
+            .filter-bar,
+            .statement-filter,
+            .report-controls,
+            input[type="date"],
+            input[type="text"],
+            select,
+            button:not(.no-print-btn),
+            .filter-chips,
+            .tabs,
+            .tab,
+            .chip,
+            .searchbar,
+            .btn,
+            .modal-actions,
+            .order-actions,
+            .toggle-link,
+            .split-bar,
+            .pagination,
+            .toolbar,
+            .order-tabs {
                 display: none !important;
             }
-            /* Show only the content */
-            body { background: #fff !important; color: #000 !important; margin: 0 !important; padding: 0.5in !important; }
-            .main { padding: 0 !important; max-width: 100% !important; display: block !important; }
-            .card { box-shadow: none !important; border: 1px solid #ddd !important; backdrop-filter: none !important; background: #fff !important; border-radius: 4px !important; }
-            .order-detail { display: block !important; max-height: none !important; opacity: 1 !important; }
-            .order-detail .inner { border-top: 1px solid #ddd !important; }
-            .business-card { border: 1px solid #ddd !important; background: #fff !important; }
-            .statement-letter { box-shadow: none !important; border: 1px solid #ddd !important; background: #fff !important; }
-            .statement-letter .letter-header { background: var(--green) !important; color: #fff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-            .statement-letter .letter-footer { background: #f8faf9 !important; }
-            .statement-letter .summary-grid .item { background: #f8faf9 !important; }
-            .statement-letter .print-table th { background: #f4f7f6 !important; color: #3c5a4e !important; }
-            .grid { display: block !important; }
-            .grid .stat-card { display: inline-block; width: 23%; margin: 4px; }
-            .page-title { font-size: 20px !important; display: block !important; }
-            .topbar { display: none !important; }
-            .statement-letter .letter-header .sub { font-size: 12px !important; }
-            #content { display: block !important; width: 100% !important; }
-            .order-card { break-inside: avoid; page-break-inside: avoid; }
-            .statement-letter { break-inside: avoid; page-break-inside: avoid; }
-            .grid .stat-card { break-inside: avoid; page-break-inside: avoid; }
-            /* Ensure print button itself is hidden */
-            .no-print { display: none !important; }
-            /* Hide any filter/search elements */
-            #stmtBody .formrow, #stmtBody .filter-chips, #stmtBody .tabs,
-            #stmtBody input, #stmtBody select, #stmtBody button {
+            body {
+                background: #fff !important;
+                color: #000 !important;
+                margin: 0 !important;
+                padding: 0.5in !important;
+            }
+            .main {
+                padding: 0 !important;
+                max-width: 100% !important;
+                display: block !important;
+            }
+            .card {
+                box-shadow: none !important;
+                border: 1px solid #ddd !important;
+                backdrop-filter: none !important;
+                background: #fff !important;
+                border-radius: 4px !important;
+            }
+            .order-detail {
+                display: block !important;
+                max-height: none !important;
+                opacity: 1 !important;
+            }
+            .order-detail .inner {
+                border-top: 1px solid #ddd !important;
+            }
+            .business-card {
+                border: 1px solid #ddd !important;
+                background: #fff !important;
+            }
+            .statement-letter {
+                box-shadow: none !important;
+                border: 1px solid #ddd !important;
+                background: #fff !important;
+            }
+            .statement-letter .letter-header {
+                background: var(--green) !important;
+                color: #fff !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .statement-letter .letter-footer {
+                background: #f8faf9 !important;
+            }
+            .statement-letter .summary-grid .item {
+                background: #f8faf9 !important;
+            }
+            .statement-letter .print-table th {
+                background: #f4f7f6 !important;
+                color: #3c5a4e !important;
+            }
+            .grid {
+                display: block !important;
+            }
+            .grid .stat-card {
+                display: inline-block;
+                width: 23%;
+                margin: 4px;
+            }
+            .page-title {
+                font-size: 20px !important;
+                display: block !important;
+            }
+            .topbar {
                 display: none !important;
             }
-            #stmtBody .statement-letter { display: block !important; }
-            #stmtBody .empty { display: none !important; }
+            .statement-letter .letter-header .sub {
+                font-size: 12px !important;
+            }
+            #content {
+                display: block !important;
+                width: 100% !important;
+            }
+            .order-card {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+            .statement-letter {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+            .grid .stat-card {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+            .no-print {
+                display: none !important;
+            }
+            #stmtBody .formrow,
+            #stmtBody .filter-chips,
+            #stmtBody .tabs,
+            #stmtBody input,
+            #stmtBody select,
+            #stmtBody button {
+                display: none !important;
+            }
+            #stmtBody .statement-letter {
+                display: block !important;
+            }
+            #stmtBody .empty {
+                display: none !important;
+            }
+            .statement-letter {
+                page-break-inside: avoid;
+            }
+            .order-card {
+                page-break-inside: avoid;
+            }
+            .stat-card {
+                page-break-inside: avoid;
+            }
+            .business-card {
+                page-break-inside: avoid;
+            }
+            .app,
+            .main {
+                display: block !important;
+                height: auto !important;
+                min-height: auto !important;
+            }
         }
 
-        .settings-section { margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--glass-brd); }
-        .settings-section:last-child { border-bottom: none; }
-        .settings-section .section-label { font-size: 13px; font-weight: 700; color: var(--text-1); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
-        .order-preview-table td, .order-preview-table th { padding: 6px 8px; font-size: 11.5px; }
-        .order-preview-table .total-row { font-weight: 700; border-top: 2px solid var(--glass-brd); }
-        .pulse-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--green); animation: pulseDot 2s ease-in-out infinite; }
-        @keyframes pulseDot { 0%,100%{opacity:.3;transform:scale(1)} 50%{opacity:1;transform:scale(1.4)} }
-        .audit-item { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--glass-brd); }
-        .audit-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); margin-top: 4px; flex-shrink: 0; }
-        .audit-time { font-size: 10.5px; color: var(--text-3); font-family: 'JetBrains Mono', monospace; }
-        .template-editor { font-family: 'JetBrains Mono', monospace; font-size: 12px; min-height: 120px; }
+        .settings-section {
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--glass-brd);
+        }
+        .settings-section:last-child {
+            border-bottom: none;
+        }
+        .settings-section .section-label {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-1);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .order-preview-table td,
+        .order-preview-table th {
+            padding: 6px 8px;
+            font-size: 11.5px;
+        }
+        .order-preview-table .total-row {
+            font-weight: 700;
+            border-top: 2px solid var(--glass-brd);
+        }
+        .pulse-dot {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--green);
+            animation: pulseDot 2s ease-in-out infinite;
+        }
+        @keyframes pulseDot {
+            0%,
+            100% {
+                opacity: .3;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.4);
+            }
+        }
+        .audit-item {
+            display: flex;
+            gap: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--glass-brd);
+        }
+        .audit-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--green);
+            margin-top: 4px;
+            flex-shrink: 0;
+        }
+        .audit-time {
+            font-size: 10.5px;
+            color: var(--text-3);
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .template-editor {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            min-height: 120px;
+        }
+        .history-timeline {
+            position: relative;
+            padding-left: 20px;
+        }
+        .history-timeline::before {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--glass-brd);
+        }
+        .history-item {
+            position: relative;
+            margin-bottom: 16px;
+            padding-left: 16px;
+        }
+        .history-item::before {
+            content: '';
+            position: absolute;
+            left: -14px;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--green);
+            border: 2px solid var(--bg-2);
+        }
+        .settings-submenu {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+        .settings-submenu .sub-tab {
+            padding: 6px 16px;
+            border-radius: var(--radius-cap);
+            background: var(--glass);
+            border: 1px solid var(--glass-brd);
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--text-2);
+            transition: all .2s;
+        }
+        .settings-submenu .sub-tab.active {
+            background: linear-gradient(135deg, var(--green), var(--green-2));
+            color: #fff;
+            border-color: transparent;
+        }
+        .settings-submenu .sub-tab:hover:not(.active) {
+            background: var(--glass-hi);
+        }
     </style>
 </head>
 <body>
@@ -1249,7 +2211,7 @@
             activeNav: 'dashboard',
             businesses: [],
             settings: {
-                dateFormat: 'YYYY-MM-DD',
+                dateFormat: 'DD/MM/YYYY',
                 maxRunningOrders: 10,
                 telegram: { enabled: false, botToken: '', chatId: '' },
                 sms: { enabled: false, apiBaseUrl: '', apiKey: '', maskingSenderId: '', nonMaskingSenderId: '',
@@ -1267,7 +2229,8 @@
             notifications: [],
             user: { name: 'Admin', role: 'super_admin' },
             notificationFilter: 'all',
-            statementFilter: { dateFrom: '', dateTo: '', orderNumber: '', investorId: '', status: '' }
+            statementFilter: { dateFrom: '', dateTo: '', orderNumber: '', investorId: '', status: '' },
+            settingsSubTab: 'general'
         };
         let refCounter = 1000;
         let _pendingDist = null;
@@ -1285,6 +2248,8 @@
         let dateFrom = '';
         let dateTo = '';
         let _notifRefreshLock = false;
+        // Order tab state
+        let orderTabFilter = 'running'; // 'running' | 'closed' | 'cancelled'
 
         function uid(prefix) { return prefix + '-' + Math.random().toString(36).slice(2, 8).toUpperCase(); }
 
@@ -1310,7 +2275,7 @@
         }
 
         // ============================================================
-        // TOAST (Fixed Bottom-Center, Floating Overlay)
+        // TOAST (Redesigned - Beautiful Floating)
         // ============================================================
         function toast(msg, type = 'success') {
             const container = document.getElementById('toastRoot');
@@ -1328,15 +2293,25 @@
             let timer = setTimeout(() => {
                 if (el.parentNode) {
                     el.classList.add('removing');
-                    setTimeout(() => { if (el.parentNode) el.remove(); }, 300);
+                    setTimeout(() => { if (el.parentNode) el.remove(); }, 350);
                 }
-            }, 4000);
+            }, 4500);
             el.querySelector('.toast-close').addEventListener('click', () => {
                 clearTimeout(timer);
                 if (el.parentNode) {
                     el.classList.add('removing');
-                    setTimeout(() => { if (el.parentNode) el.remove(); }, 300);
+                    setTimeout(() => { if (el.parentNode) el.remove(); }, 350);
                 }
+            });
+            // Hover to pause
+            el.addEventListener('mouseenter', () => clearTimeout(timer));
+            el.addEventListener('mouseleave', () => {
+                timer = setTimeout(() => {
+                    if (el.parentNode) {
+                        el.classList.add('removing');
+                        setTimeout(() => { if (el.parentNode) el.remove(); }, 350);
+                    }
+                }, 3000);
             });
         }
 
@@ -1381,7 +2356,7 @@
                     if (dRect.right > window.innerWidth) { dropdown.style.right = '10px';
                         dropdown.style.left = 'auto'; }
                     if (dRect.bottom > window.innerHeight) { dropdown.style.top = (rect.top - dRect.height - 8) +
-                        'px'; }
+                            'px'; }
                     renderNotifications();
                 } else {
                     dropdown.classList.remove('open');
@@ -1593,7 +2568,7 @@
                     STATE = Object.assign(STATE, parsed);
                     if (!STATE.notifications) STATE.notifications = [];
                     if (!STATE.settings.email) STATE.settings.email = { enabled: false, smtpHost: '', smtpPort: 587,
-                        smtpUser: '', smtpPass: '', fromEmail: '', fromName: 'Invest Ledger Pro' };
+                            smtpUser: '', smtpPass: '', fromEmail: '', fromName: 'Invest Ledger Pro' };
                     if (!STATE.settings.communication) STATE.settings.communication = {
                         templates: { sms: {}, email: {} },
                         rules: {},
@@ -1601,6 +2576,7 @@
                         logs: [],
                         retry: { maxRetries: 3, retryInterval: 60 }
                     };
+                    if (!STATE.settingsSubTab) STATE.settingsSubTab = 'general';
                     return true;
                 }
                 return false;
@@ -1608,115 +2584,8 @@
         }
 
         function seedDemo() {
-            const bizId = uid('BIZ');
-            const mainInv = {
-                id: 'INV-0001',
-                name: 'M. Rashel',
-                mobile: '01700000000',
-                email: 'rashel@example.com',
-                active: true,
-                isMain: true,
-                deposits: [{ id: uid('DEP'), amount: 500000, date: todayStr(), ref: newRef(), note: 'প্রাথমিক মূলধন',
-                    locked: false, reversed: false }],
-                withdraws: [],
-                sharingHistory: [{ rate: 0, effectiveDate: todayStr() }],
-                lossBalance: 0,
-                totalProfit: 0,
-                totalLoss: 0,
-                recoveredLoss: 0,
-                pendingLoss: 0,
-                netPayable: 0,
-                paidProfit: 0,
-                pendingProfit: 0,
-                commissionEarned: 0,
-                commissionWithdrawn: 0,
-                commissionPending: 0,
-                commissionHistory: [],
-                capitalBalance: 500000,
-                profitBalance: 0,
-                ownProfitBalance: 0,
-                commissionBalance: 0
-            };
-            const inv2 = {
-                id: 'INV-0002',
-                name: 'করিম উদ্দিন',
-                mobile: '01812345678',
-                email: 'karim@example.com',
-                active: true,
-                isMain: false,
-                deposits: [{ id: uid('DEP'), amount: 200000, date: todayStr(), ref: newRef(), note: 'প্রাথমিক ডিপোজিট',
-                    locked: false, reversed: false }],
-                withdraws: [],
-                sharingHistory: [{ rate: 40, effectiveDate: todayStr() }],
-                lossBalance: 0,
-                totalProfit: 0,
-                totalLoss: 0,
-                recoveredLoss: 0,
-                pendingLoss: 0,
-                netPayable: 0,
-                paidProfit: 0,
-                pendingProfit: 0,
-                commissionEarned: 0,
-                commissionWithdrawn: 0,
-                commissionPending: 0,
-                commissionHistory: [],
-                capitalBalance: 200000,
-                profitBalance: 0
-            };
-            const inv3 = {
-                id: 'INV-0003',
-                name: 'রফিকুল ইসলাম',
-                mobile: '01912345678',
-                email: 'rafiq@example.com',
-                active: true,
-                isMain: false,
-                deposits: [{ id: uid('DEP'), amount: 150000, date: todayStr(), ref: newRef(), note: 'প্রাথমিক ডিপোজিট',
-                    locked: false, reversed: false }],
-                withdraws: [],
-                sharingHistory: [{ rate: 40, effectiveDate: todayStr() }],
-                lossBalance: 0,
-                totalProfit: 0,
-                totalLoss: 0,
-                recoveredLoss: 0,
-                pendingLoss: 0,
-                netPayable: 0,
-                paidProfit: 0,
-                pendingProfit: 0,
-                commissionEarned: 0,
-                commissionWithdrawn: 0,
-                commissionPending: 0,
-                commissionHistory: [],
-                capitalBalance: 150000,
-                profitBalance: 0
-            };
-            STATE.businesses = [{
-                id: bizId,
-                name: 'ডেমো ট্রেডিং বিজনেস',
-                address: 'ঢাকা, বাংলাদেশ',
-                phone: '০২-৯৮৩২৪৫৬',
-                email: 'demo@trade.com',
-                website: 'www.trade.com',
-                description: 'ডেমো ট্রেডিং কোম্পানি',
-                status: 'active',
-                investors: [mainInv, inv2, inv3],
-                orders: [],
-                transactions: [
-                    { ref: mainInv.deposits[0].ref, type: 'deposit', investorId: mainInv.id, amount: 500000,
-                        date: todayStr(), note: 'প্রাথমিক মূলধন', locked: false, reversed: false },
-                    { ref: inv2.deposits[0].ref, type: 'deposit', investorId: inv2.id, amount: 200000, date: todayStr(),
-                        note: 'প্রাথমিক ডিপোজিট', locked: false, reversed: false },
-                    { ref: inv3.deposits[0].ref, type: 'deposit', investorId: inv3.id, amount: 150000, date: todayStr(),
-                        note: 'প্রাথমিক ডিপোজিট', locked: false, reversed: false }
-                ],
-                auditLog: [{ time: new Date().toISOString(), action: 'business_created',
-                    detail: 'বিজনেস তৈরি: ডেমো ট্রেডিং বিজনেস', user: 'Admin', oldValue: null, newValue: null,
-                    reason: 'সিস্টেম সেটআপ' }],
-                orderSeq: 0,
-                commissionLedger: { totalEarned: 0, totalWithdrawn: 0, pending: 0, history: [] },
-                costLedger: { totalCost: 0, orders: [] },
-                mainInvestorHistory: []
-            }];
-            STATE.activeBusinessId = bizId;
+            STATE.businesses = [];
+            STATE.activeBusinessId = null;
             STATE.notifications = [];
             saveState();
         }
@@ -1741,6 +2610,7 @@
             nav_statements: { bn: 'স্টেটমেন্ট', en: 'Statements' },
             nav_consolidated: { bn: 'সমন্বিত রিপোর্ট', en: 'Consolidated Report' },
             nav_maininvestor: { bn: 'মেইন ইনভেস্টর রিপোর্ট', en: 'Main Investor Report' },
+            nav_maininvestorhistory: { bn: 'মেইন ইনভেস্টর ইতিহাস', en: 'Main Investor History' },
             nav_commission: { bn: 'কমিশন লেজার', en: 'Commission Ledger' },
             nav_cost: { bn: 'কস্ট লেজার', en: 'Cost Ledger' },
             nav_notification_history: { bn: 'নোটিফিকেশন ইতিহাস', en: 'Notification History' },
@@ -2043,7 +2913,15 @@
             mainInvestorOwnProfit: { bn: 'মেইন ইনভেস্টরের নিজস্ব মুনাফা', en: 'Main Investor Own Profit' },
             mainInvestorCommission: { bn: 'মেইন ইনভেস্টরের কমিশন', en: 'Main Investor Commission' },
             initialInvestment: { bn: 'প্রাথমিক বিনিয়োগ', en: 'Initial Investment' },
-            totalMainProfit: { bn: 'মোট মেইন ইনভেস্টর প্রাপ্তি', en: 'Total Main Investor Earning' }
+            totalMainProfit: { bn: 'মোট মেইন ইনভেস্টর প্রাপ্তি', en: 'Total Main Investor Earning' },
+            general: { bn: 'সাধারণ', en: 'General' },
+            telegram: { bn: 'টেলিগ্রাম', en: 'Telegram' },
+            sms: { bn: 'এসএমএস', en: 'SMS' },
+            email: { bn: 'ইমেইল', en: 'Email' },
+            templates: { bn: 'টেমপ্লেট', en: 'Templates' },
+            logs: { bn: 'লগ', en: 'Logs' },
+            reset: { bn: 'রিসেট', en: 'Reset' },
+            mainInvestorHistoryTitle: { bn: 'মেইন ইনভেস্টর পরিবর্তনের ইতিহাস', en: 'Main Investor Replacement History' }
         };
 
         function tr(key) { return (T[key] && T[key][STATE.lang]) || key; }
@@ -2053,16 +2931,17 @@
         // ============================================================
         const NAV = [
             { group: 'group_overview', items: [{ id: 'dashboard', label: 'nav_dashboard' }, { id: 'bizdash',
-                    label: 'nav_bizdash' }] },
+                        label: 'nav_bizdash' }] },
             { group: 'group_business', items: [{ id: 'businesses', label: 'nav_businesses' }, { id: 'investors',
-                    label: 'nav_investors' }, { id: 'investment', label: 'nav_investment' }, { id: 'orders',
-                    label: 'nav_orders' }, { id: 'transactions', label: 'nav_transactions' }] },
+                        label: 'nav_investors' }, { id: 'investment', label: 'nav_investment' }, { id: 'orders',
+                        label: 'nav_orders' }, { id: 'transactions', label: 'nav_transactions' }] },
             { group: 'group_reports', items: [{ id: 'statements', label: 'nav_statements' }, { id: 'consolidated',
-                    label: 'nav_consolidated' }, { id: 'maininvestor', label: 'nav_maininvestor' },
-                { id: 'commission', label: 'nav_commission' }, { id: 'cost', label: 'nav_cost' },
-                { id: 'notification_history', label: 'nav_notification_history' }, { id: 'activity',
-                    label: 'nav_activity' }, { id: 'audit', label: 'nav_audit' }, { id: 'search',
-                    label: 'nav_search' }] },
+                        label: 'nav_consolidated' }, { id: 'maininvestor', label: 'nav_maininvestor' },
+                    { id: 'maininvestorhistory', label: 'nav_maininvestorhistory' },
+                    { id: 'commission', label: 'nav_commission' }, { id: 'cost', label: 'nav_cost' },
+                    { id: 'notification_history', label: 'nav_notification_history' }, { id: 'activity',
+                        label: 'nav_activity' }, { id: 'audit', label: 'nav_audit' }, { id: 'search',
+                        label: 'nav_search' }] },
             { group: 'group_admin', items: [{ id: 'settings', label: 'nav_settings' }] }
         ];
 
@@ -2124,7 +3003,7 @@
             const applicable = (inv.sharingHistory || []).filter(s => s.effectiveDate <= atDate).sort((a, b) => a
                 .effectiveDate.localeCompare(b.effectiveDate));
             return applicable.length ? applicable[applicable.length - 1].rate : (inv.sharingHistory && inv.sharingHistory
-                .length ? inv.sharingHistory[0].rate : 0);
+                    .length ? inv.sharingHistory[0].rate : 0);
         }
 
         function getInvestorLossState(inv) {
@@ -2142,6 +3021,9 @@
             };
         }
 
+        // ============================================================
+        // BIZ TOTALS — FIXED: NO DOUBLE COUNTING
+        // ============================================================
         function bizTotals(biz) {
             let totalInvestment = 0,
                 utilized = 0;
@@ -2157,17 +3039,21 @@
                 totalLoss = 0,
                 totalCommission = 0,
                 netPayable = 0;
+            // Count profit/loss from CLOSED orders only — once!
             biz.orders.filter(o => o.status === 'closed').forEach(o => {
-                if (o.result && o.result.type === 'profit') { totalProfit += o.result.amount;
-                    totalCommission += o.result.commission || 0; } else if (o.result && o.result.type === 'loss') { totalLoss +=
-                        o.result.amount; }
-                netPayable += (o.result && o.result.netPayable) || 0;
+                if (o.result && o.result.type === 'profit') {
+                    totalProfit += o.result.amount;
+                    totalCommission += o.result.commission || 0;
+                    // netPayable for profit orders = amount - commission
+                    netPayable += (o.result.amount - (o.result.commission || 0));
+                } else if (o.result && o.result.type === 'loss') {
+                    totalLoss += o.result.amount;
+                }
             });
-            biz.investors.forEach(inv => {
-                totalProfit += inv.totalProfit || 0;
-                totalLoss += inv.totalLoss || 0;
-                if (!inv.isMain) netPayable += inv.netPayable || 0;
-            });
+            // DO NOT add investor.totalProfit / totalLoss here — that would double count!
+            const pendingLoss = biz.investors.reduce((s, i) => s + Math.max(0, (i.lossBalance || 0) - (i.recoveredLoss ||
+                0)), 0);
+
             return {
                 totalInvestment: roundAmount(totalInvestment),
                 utilized: roundAmount(utilized),
@@ -2181,8 +3067,7 @@
                 cancelled: biz.orders.filter(o => o.status === 'cancelled').length,
                 activeInvestors: biz.investors.filter(i => i.active).length,
                 totalInvestors: biz.investors.length,
-                pendingLoss: roundAmount(biz.investors.reduce((s, i) => s + Math.max(0, (i.lossBalance || 0) - (i
-                    .recoveredLoss || 0)), 0))
+                pendingLoss: roundAmount(pendingLoss)
             };
         }
 
@@ -2300,7 +3185,7 @@
             renderNav();
             const wrap = document.getElementById('bizSwitchWrap');
             if (wrap) wrap.style.display = ['dashboard', 'businesses', 'consolidated', 'maininvestor', 'commission',
-                    'cost', 'notification_history'
+                    'cost', 'notification_history', 'maininvestorhistory'
                 ].includes(STATE.activeNav) ? 'none' : 'flex';
             renderBizSelect();
             applyLangStatic();
@@ -2315,6 +3200,7 @@
                 statements: renderStatements,
                 consolidated: renderConsolidated,
                 maininvestor: renderMainInvestorReport,
+                maininvestorhistory: renderMainInvestorHistory,
                 commission: renderCommissionLedger,
                 cost: renderCostLedger,
                 notification_history: renderNotificationHistory,
@@ -2334,6 +3220,7 @@
                 statements: 'nav_statements',
                 consolidated: 'nav_consolidated',
                 maininvestor: 'nav_maininvestor',
+                maininvestorhistory: 'nav_maininvestorhistory',
                 commission: 'nav_commission',
                 cost: 'nav_cost',
                 notification_history: 'nav_notification_history',
@@ -2373,7 +3260,6 @@
             saveState();
             renderAll(); }
 
-        // Enhanced statCard with premium design
         function statCard(icon, colorClass, labelKey, value, foot, progress = null) {
             let progressHtml = '';
             if (progress !== null) {
@@ -2390,7 +3276,7 @@
         }
 
         // ============================================================
-        // DASHBOARD
+        // DASHBOARD — FIXED: No double counting, correct commission
         // ============================================================
         function renderDashboard() {
             const c = document.getElementById('content');
@@ -2414,6 +3300,9 @@
                 totalProfitBalance = 0;
             let mainOwnProfit = 0,
                 mainCommission = 0;
+            // Actual commission from commission ledger
+            let actualMainCommission = 0;
+
             STATE.businesses.filter(b => b.status !== 'archived').forEach(b => {
                 const t = bizTotals(b);
                 totInv += t.totalInvestment;
@@ -2434,14 +3323,21 @@
                     totalProfitBalance += (inv.profitBalance || 0);
                     if (inv.isMain) {
                         mainOwnProfit += (inv.ownProfitBalance || 0);
-                        mainCommission += (inv.commissionBalance || 0);
+                        // Commission from the commission ledger
+                        const commBal = inv.commissionBalance || 0;
+                        mainCommission += commBal;
+                        actualMainCommission += commBal;
                     }
-                    if (!inv.isMain) { totalPaid += (inv.paidProfit || 0);
-                        totalPending += ((inv.netPayable || 0) - (inv.paidProfit || 0)); }
+                    if (!inv.isMain) {
+                        totalPaid += (inv.paidProfit || 0);
+                        totalPending += ((inv.netPayable || 0) - (inv.paidProfit || 0));
+                    }
                 });
             });
+
             const capital = totInv + totProfit - totLoss;
             const utilPercent = totInv > 0 ? (totUtil / totInv) * 100 : 0;
+
             c.innerHTML = `
                 <div class="grid grid-4">
                     ${statCard('🏢', '', 'totalBusiness', STATE.businesses.filter(b=>b.status!=='archived').length, '', null)}
@@ -2465,7 +3361,7 @@
                     ${statCard('💰', 'green', 'capitalBalance', money(totalCapital), '', null)}
                     ${statCard('💵', 'green', 'profitBalance', money(totalProfitBalance), '', null)}
                     ${statCard('👑', 'purple', 'mainInvestorOwnProfit', money(mainOwnProfit), '', null)}
-                    ${statCard('🎖️', 'orange', 'mainInvestorCommission', money(mainCommission), '', null)}
+                    ${statCard('🎖️', 'orange', 'mainInvestorCommission', money(actualMainCommission), '', null)}
                 </div>
                 <div style="height:20px"></div>
                 <div class="card">
@@ -2642,7 +3538,7 @@
         }
 
         // ============================================================
-        // BUSINESS CRUD (unchanged)
+        // BUSINESS CRUD
         // ============================================================
         function openBusinessModal(editData) {
             const isEdit = !!editData;
@@ -2994,7 +3890,7 @@
                         </table>
                     </div>
                     <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
-                        ${b.mainInvestorHistory && b.mainInvestorHistory.length ? `<button class="btn btn-ghost btn-sm" onclick="viewMainInvestorHistory('${b.id}')">📜 ${tr('mainInvestorHistory')}</button>` : ''}
+                        ${b.mainInvestorHistory && b.mainInvestorHistory.length ? `<button class="btn btn-ghost btn-sm" onclick="goTo('maininvestorhistory')">📜 ${tr('mainInvestorHistory')}</button>` : ''}
                     </div>
                 </div>
             `;
@@ -3139,24 +4035,43 @@
             win.document.close();
         }
 
-        function viewMainInvestorHistory(bizId) {
-            const b = STATE.businesses.find(x => x.id === bizId);
-            if (!b || !b.mainInvestorHistory || !b.mainInvestorHistory.length) return;
-            document.getElementById('modalRoot').innerHTML = `
-                <div class="modal-overlay" onclick="if(event.target===this) closeModal()">
-                    <div class="modal">
-                        <div class="modal-title">📜 ${tr('mainInvestorHistory')}</div>
+        // ============================================================
+        // MAIN INVESTOR HISTORY
+        // ============================================================
+        function renderMainInvestorHistory() {
+            const c = document.getElementById('content');
+            const b = currentBiz();
+            if (!b) { c.innerHTML = `<div class="card"><div class="empty">${tr('noBiz')}</div></div>`; return; }
+
+            const history = (b.mainInvestorHistory || []).slice().sort((a, b2) => b2.date.localeCompare(a.date));
+
+            let html = `
+                <div class="card" style="margin-bottom:16px;">
+                    <div class="section-title"><span class="bar" style="background:var(--purple)"></span>${tr('mainInvestorHistoryTitle')}</div>
+                    <div style="font-size:12px;color:var(--text-3);">${b.name} — ${tr('total')}: ${history.length}টি পরিবর্তন</div>
+                </div>
+            `;
+
+            if (!history.length) {
+                html += `<div class="card"><div class="empty">${tr('noAudit')}</div></div>`;
+            } else {
+                html += `
+                    <div class="card">
                         <div class="table-wrap">
                             <table style="font-size:11px;">
                                 <thead><tr><th>${tr('date')}</th><th>${tr('oldMainInvestor')}</th><th>${tr('newMainInvestor')}</th><th>${tr('note')}</th><th>${tr('user')}</th></tr></thead>
                                 <tbody>
-                                    ${b.mainInvestorHistory.map(h => `<tr><td>${h.date}</td><td>${h.oldMainName}</td><td>${h.newMainName}</td><td>${h.note||''}</td><td>${h.user||'Admin'}</td></tr>`).join('')}
+                                    ${history.map(h => `<tr><td>${h.date}</td><td>${h.oldMainName}</td><td>${h.newMainName}</td><td>${h.note||''}</td><td>${h.user||'Admin'}</td></tr>`).join('')}
                                 </tbody>
                             </table>
                         </div>
-                        <div class="modal-actions"><button class="btn btn-ghost" onclick="closeModal()">${tr('cancel')}</button></div>
+                        <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
+                            <button class="btn btn-ghost btn-sm no-print" onclick="window.print()">🖨️ ${tr('printPdf')}</button>
+                        </div>
                     </div>
-                </div>`;
+                `;
+            }
+            c.innerHTML = html;
         }
 
         // ============================================================
@@ -3376,7 +4291,6 @@
                 }
             }
 
-            // ===== ENSURE MAIN INVESTOR IS ALWAYS IN SNAPSHOT =====
             const mainInv = b.investors.find(i => i.isMain);
             if (mainInv) {
                 const existing = result.allocations.find(a => a.investorId === mainInv.id);
@@ -3471,15 +4385,25 @@
         }
 
         // ============================================================
-        // ORDERS PAGE
+        // ORDERS — FIXED: Tabs for Running / Closed / Cancelled
         // ============================================================
         function renderOrders() {
             const c = document.getElementById('content');
             const b = currentBiz();
             if (!b) { c.innerHTML = `<div class="card"><div class="empty">${tr('noBiz')}</div></div>`; return; }
+
             const runningOrders = b.orders.filter(o => o.status === 'running');
             const closedOrders = b.orders.filter(o => o.status === 'closed');
             const cancelledOrders = b.orders.filter(o => o.status === 'cancelled');
+
+            // Determine which tab to show
+            let filteredOrders = [];
+            if (orderTabFilter === 'running') filteredOrders = runningOrders;
+            else if (orderTabFilter === 'closed') filteredOrders = closedOrders;
+            else filteredOrders = cancelledOrders;
+
+            // Sort by order number descending (newest first)
+            filteredOrders = filteredOrders.slice().sort((a, b2) => b2.orderNumber.localeCompare(a.orderNumber));
 
             let html = `
                 <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:16px;">
@@ -3490,16 +4414,29 @@
                     </div>
                     <button class="btn btn-green" onclick="openCreateOrderModal()">＋ ${tr('createOrder')}</button>
                 </div>
+                <div class="order-tabs">
+                    <div class="order-tab ${orderTabFilter === 'running' ? 'active' : ''}" onclick="orderTabFilter='running'; renderOrders();">
+                        🟢 ${tr('running')} <span class="count running">${runningOrders.length}</span>
+                    </div>
+                    <div class="order-tab ${orderTabFilter === 'closed' ? 'active' : ''}" onclick="orderTabFilter='closed'; renderOrders();">
+                        🔒 ${tr('closed')} <span class="count closed">${closedOrders.length}</span>
+                    </div>
+                    <div class="order-tab ${orderTabFilter === 'cancelled' ? 'active' : ''}" onclick="orderTabFilter='cancelled'; renderOrders();">
+                        🚫 ${tr('cancelled')} <span class="count cancelled">${cancelledOrders.length}</span>
+                    </div>
+                </div>
             `;
 
-            if (b.orders.length === 0) {
-                html += `<div class="empty-note">${tr('noOrders')}</div>`;
+            if (filteredOrders.length === 0) {
+                const msg = orderTabFilter === 'running' ? tr('noOrders') :
+                    orderTabFilter === 'closed' ? tr('noOrders') :
+                    tr('noOrders');
+                html += `<div class="empty-note">${msg}</div>`;
                 c.innerHTML = html;
                 return;
             }
 
-            const sorted = [...b.orders].sort((a, b2) => a.orderNumber - b2.orderNumber);
-            sorted.forEach(order => {
+            filteredOrders.forEach(order => {
                 const isExpanded = _expandedOrderId === order.id;
                 const totalUtilized = order.snapshot?.totalUtilized || 0;
                 let stampClass = 'stamp-open';
@@ -3509,7 +4446,7 @@
                     stampClass = 'stamp-open';
                 }
                 const resultLabel = order.result ? (order.result.type === 'profit' ? tr('profit') : tr('loss')) :
-                '—';
+                    '—';
                 const resultAmount = order.result ? money(order.result.amount) : '—';
 
                 let netDisplay = '';
@@ -3560,6 +4497,9 @@
             renderOrders();
         }
 
+        // ============================================================
+        // ORDER DETAILS — FIXED: Main investor profit & commission separate
+        // ============================================================
         function renderOrderDetails(o, b) {
             let html = `<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:10px;font-size:12.5px;">
                         <div><strong>${tr('orderNumber')}:</strong> <span class="mono">${o.orderNumber}</span></div>
@@ -3580,19 +4520,28 @@
                             ${o.result ? `<button class="btn btn-ghost btn-sm" onclick="showCalculation('${o.id}')">🧮 ${tr('calculationDetails')}</button>` : ''}
                         </div>
                         <div class="table-wrap"><table style="font-size:11.5px;">
-                            <thead><tr><th>${tr('investor')}</th><th>${tr('available')}</th><th>${tr('utilized')}</th><th>${tr('sharingRate')}</th><th>${tr('unutilizedAmount')}</th>${o.result ? `<th>${o.result.type==='profit'?tr('profit'):tr('loss')}</th>` : ''}</tr></thead>
+                            <thead><tr><th>${tr('investor')}</th><th>${tr('available')}</th><th>${tr('utilized')}</th><th>${tr('sharingRate')}</th><th>${tr('unutilizedAmount')}</th>${o.result ? `<th>${o.result.type==='profit'?tr('profit'):tr('loss')}</th>` : ''}${o.result && o.result.type==='profit' ? `<th>${tr('mainInvestorOwnProfit')}</th><th>${tr('mainInvestorCommission')}</th>` : ''}</tr></thead>
                             <tbody>
                             ${(o.snapshot?.investors||[]).map(a => {
                                 const alloc = o.result ? o.result.allocations.find(x => x.investorId === a.investorId) : null;
                                 const unutilizedDisplay = a.isMain ? '—' : money(a.unutilized || 0);
+                                const isMain = a.isMain || false;
+                                const amt = alloc ? alloc.amount : 0;
+                                const mainOwnProfit = alloc ? (alloc.mainOwnProfit || 0) : 0;
+                                const mainComm = alloc ? (alloc.mainCommission || 0) : 0;
+                                const profitDisplay = isMain ? money(mainOwnProfit) : money(amt);
+                                const commDisplay = isMain ? money(mainComm) : '—';
                                 return `<tr><td>${a.name}${a.isMain ? ` <span class="badge badge-orange">${tr('mainCapital')}</span>` : ''}</td>
                                     <td class="mono">${money(a.availableBefore || a.utilized + (a.unutilized || 0))}</td>
                                     <td class="mono" style="color:var(--orange)">${money(a.utilized)}</td>
                                     <td class="mono">${a.isMain ? '—' : a.sharingRate + '%'}</td>
                                     <td class="mono" style="color:var(--text-3)">${unutilizedDisplay}</td>
-                                    ${o.result ? `<td class="mono" style="color:${o.result.type==='profit'?'var(--green)':'var(--red)'}">${alloc ? money(alloc.amount) : '—'}</td>` : ''}
+                                    ${o.result ? `<td class="mono" style="color:${o.result.type==='profit'?'var(--green)':'var(--red)'}">${profitDisplay}</td>` : ''}
+                                    ${o.result && o.result.type==='profit' ? `<td class="mono" style="color:var(--purple)">${isMain ? money(mainOwnProfit) : '—'}</td>` : ''}
+                                    ${o.result && o.result.type==='profit' ? `<td class="mono" style="color:var(--orange)">${isMain ? money(mainComm) : '—'}</td>` : ''}
                                 </tr>`;
                             }).join('')}
+                            ${o.result && o.result.type === 'profit' && o.result.commission > 0 ? `<tr style="border-top:2px solid var(--glass-brd);font-weight:700;"><td colspan="${o.result ? 5 : 4}" style="text-align:right;color:var(--orange);">${tr('commission')}:</td><td class="mono" style="color:var(--orange);" colspan="2">${money(o.result.commission)}</td></tr>` : ''}
                             </tbody>
                         </table></div>
                     </div>`;
@@ -3617,11 +4566,16 @@
                         <div class="modal-title" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px"><span>${o.orderNumber} — ${tr('viewSnapshot')}</span><span class="snapshot-lock">🔒 ${tr('snapshotLocked')}</span></div>
                         <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:12px;font-size:12px;"><div><strong>${tr('totalAvailable')}:</strong> ${money(o.snapshot.totalAvailable)}</div><div><strong>${tr('utilizedInvestment')}:</strong> ${money(o.snapshot.totalUtilized)}</div><div><strong>${tr('unutilizedAmount')}:</strong> ${money(o.snapshot.unutilized || 0)}</div><div><strong>${tr('snapshotDate')}:</strong> ${o.snapshot.snapshotDate || o.createDate}</div><div><strong>${tr('status')}:</strong> <span class="badge ${o.status==='running'?'badge-orange':o.status==='cancelled'?'badge-grey':'badge-green'}">${o.status==='running'?tr('running'):o.status==='cancelled'?tr('cancelled'):tr('closed')}</span></div></div>
                         <div class="table-wrap"><table><thead><tr><th>${tr('investor')}</th><th>${tr('available')}</th><th>${tr('utilized')}</th><th>${tr('sharingRate')}</th><th>${tr('unutilizedAmount')}</th><th>${tr('previousLoss')}</th><th>${tr('pendingLoss')}</th></tr></thead><tbody>
-                        ${o.snapshot.investors.map(a => { const unutilizedDisplay = a.isMain ? '—' : money(a.unutilized || 0); return `<tr><td>${a.name}${a.isMain ? ` <span class="badge badge-orange">${tr('mainCapital')}</span>` : ''}</td><td class="mono">${money(a.availableBefore || a.utilized + (a.unutilized || 0))}</td><td class="mono" style="color:var(--orange)">${money(a.utilized)}</td><td class="mono">${a.isMain ? '—' : a.sharingRate + '%'}</td><td class="mono" style="color:var(--text-3)">${unutilizedDisplay}</td><td class="mono" style="color:var(--red)">${money(a.previousLoss || 0)}</td><td class="mono" style="color:var(--orange)">${money(a.pendingLoss || 0)}</td></tr>`; }).join('')}
+                        ${o.snapshot.investors.map(a => { const unutilizedDisplay = a.isMain ? '—' : money(a.unutilized || 0); return `<tr><td>${a.name}${a.isMain ? ` <span class="badge badge-orange">${tr('mainCapital')}</span>` : ''}</td><td class="mono">${money(a.availableBefore || a.utilized + (a.unutilized||0))}</td><td class="mono" style="color:var(--orange)">${money(a.utilized)}</td><td class="mono">${a.isMain ? '—' : a.sharingRate + '%'}</td><td class="mono" style="color:var(--text-3)">${unutilizedDisplay}</td><td class="mono" style="color:var(--red)">${money(a.previousLoss || 0)}</td><td class="mono" style="color:var(--orange)">${money(a.pendingLoss || 0)}</td></tr>`; }).join('')}
                         </tbody></table></div>
-                        ${o.status === 'closed' && o.result ? `<div style="height:14px"></div><div class="section-title"><span class="bar"></span>${o.result.type==='profit'?tr('profit'):tr('loss')}: ${money(o.result.amount)}</div><div class="table-wrap"><table><thead><tr><th>${tr('investor')}</th><th>${o.result.type==='profit'?tr('profit'):tr('loss')}</th><th>${tr('recoveredLoss')}</th><th>${tr('netPayable')}</th></tr></thead><tbody>
-                        ${o.result.allocations.map(a => `<tr><td>${a.name}</td><td class="mono" style="color:${o.result.type==='profit'?'var(--green)':'var(--red)'}">${money(a.amount)}</td><td class="mono" style="color:var(--green)">${money(a.recovered || 0)}</td><td class="mono" style="color:var(--green)">${a.isMain ? '—' : money(a.netPayable || 0)}</td></tr>`).join('')}
-                        ${o.result.type === 'profit' ? `<tr><td style="font-weight:700">${tr('commission')}</td><td class="mono" style="font-weight:700;color:var(--orange)">${money(o.result.commission)}</td><td></td><td></td></tr>` : ''}
+                        ${o.status === 'closed' && o.result ? `<div style="height:14px"></div><div class="section-title"><span class="bar"></span>${o.result.type==='profit'?tr('profit'):tr('loss')}: ${money(o.result.amount)}</div><div class="table-wrap"><table><thead><tr><th>${tr('investor')}</th><th>${o.result.type==='profit'?tr('profit'):tr('loss')}</th><th>${tr('recoveredLoss')}</th><th>${tr('netPayable')}</th>${o.result.type==='profit'?`<th>${tr('mainInvestorOwnProfit')}</th><th>${tr('mainInvestorCommission')}</th>`:''}</tr></thead><tbody>
+                        ${o.result.allocations.map(a => {
+                            const isMain = a.isMain || false;
+                            const mainOwnProfit = a.mainOwnProfit || 0;
+                            const mainComm = a.mainCommission || 0;
+                            return `<tr><td>${a.name}</td><td class="mono" style="color:${o.result.type==='profit'?'var(--green)':'var(--red)'}">${money(a.amount)}</td><td class="mono" style="color:var(--green)">${money(a.recovered || 0)}</td><td class="mono" style="color:var(--green)">${a.isMain ? '—' : money(a.netPayable || 0)}</td>${o.result.type==='profit'?`<td class="mono" style="color:var(--purple)">${isMain ? money(mainOwnProfit) : '—'}</td><td class="mono" style="color:var(--orange)">${isMain ? money(mainComm) : '—'}</td>`:''}</tr>`;
+                        }).join('')}
+                        ${o.result.type === 'profit' ? `<tr><td style="font-weight:700">${tr('commission')}</td><td class="mono" style="font-weight:700;color:var(--orange)">${money(o.result.commission)}</td><td></td><td></td><td></td><td></td></tr>` : ''}
                         </tbody></table></div>` : ''}
                         <div class="modal-actions"><button class="btn btn-ghost" onclick="closeModal()">${tr('cancel')}</button></div>
                     </div>
@@ -3639,17 +4593,20 @@
                 const used = a.utilized || 0;
                 const totalUsed = o.snapshot.totalUtilized || 1;
                 const share = (used / totalUsed) * o.result.amount;
+                const isMain = a.isMain || false;
+                const mainOwnProfit = a.mainOwnProfit || 0;
+                const mainComm = a.mainCommission || 0;
                 return {
                     name: a.name,
-                    isMain: a.isMain || false,
+                    isMain: isMain,
                     utilized: used,
                     totalShare: share,
                     recovered: a.recovered || 0,
                     profitShare: a.profitShare || 0,
                     amount: a.amount,
                     netPayable: a.isMain ? 0 : (a.netPayable || 0),
-                    mainOwnProfit: a.mainOwnProfit || 0,
-                    mainCommission: a.mainCommission || 0
+                    mainOwnProfit: mainOwnProfit,
+                    mainCommission: mainComm
                 };
             });
             document.getElementById('modalRoot').innerHTML = `
@@ -3664,9 +4621,11 @@
                             <div style="font-weight:700;color:var(--text-3);font-size:11px;">${tr('recoveredLoss')}</div>
                             <div style="font-weight:700;color:var(--text-3);font-size:11px;">${tr('profitShare')}</div>
                             <div style="font-weight:700;color:var(--text-3);font-size:11px;">${tr('netAmount')}</div>
-                            ${calcDetails.map(a => `<div>${a.name}${a.isMain ? ' ⭐' : ''}</div><div class="mono">${money(a.utilized)}</div><div class="mono">${money(a.totalShare)}</div><div class="mono green">${money(a.recovered)}</div><div class="mono green">${money(a.profitShare)}</div><div class="mono" style="color:${o.result.type==='profit'?'var(--green)':'var(--red)'}">${money(a.amount)}</div>`).join('')}
-                            ${o.result.type === 'profit' && o.result.commission > 0 ? `<div style="font-weight:700;border-top:1px solid var(--glass-brd);padding-top:6px;">${tr('commission')}</div><div style="border-top:1px solid var(--glass-brd);padding-top:6px;"></div><div style="border-top:1px solid var(--glass-brd);padding-top:6px;"></div><div style="border-top:1px solid var(--glass-brd);padding-top:6px;"></div><div style="border-top:1px solid var(--glass-brd);padding-top:6px;"></div><div class="mono orange" style="border-top:1px solid var(--glass-brd);padding-top:6px;font-weight:700;">${money(o.result.commission)}</div>` : ''}
+                            ${o.result.type==='profit' ? `<div style="font-weight:700;color:var(--text-3);font-size:11px;">${tr('mainInvestorOwnProfit')}</div><div style="font-weight:700;color:var(--text-3);font-size:11px;">${tr('mainInvestorCommission')}</div>` : ''}
+                            ${calcDetails.map(a => `<div>${a.name}${a.isMain ? ' ⭐' : ''}</div><div class="mono">${money(a.utilized)}</div><div class="mono">${money(a.totalShare)}</div><div class="mono green">${money(a.recovered)}</div><div class="mono green">${money(a.profitShare)}</div><div class="mono" style="color:${o.result.type==='profit'?'var(--green)':'var(--red)'}">${money(a.amount)}</div>${o.result.type==='profit'?`<div class="mono purple">${money(a.mainOwnProfit)}</div><div class="mono orange">${money(a.mainCommission)}</div>`:''}`).join('')}
+                            ${o.result.type === 'profit' && o.result.commission > 0 ? `<div style="font-weight:700;border-top:1px solid var(--glass-brd);padding-top:6px;">${tr('commission')}</div><div style="border-top:1px solid var(--glass-brd);padding-top:6px;"></div><div style="border-top:1px solid var(--glass-brd);padding-top:6px;"></div><div style="border-top:1px solid var(--glass-brd);padding-top:6px;"></div><div style="border-top:1px solid var(--glass-brd);padding-top:6px;"></div><div class="mono orange" style="border-top:1px solid var(--glass-brd);padding-top:6px;font-weight:700;">${money(o.result.commission)}</div><div style="border-top:1px solid var(--glass-brd);padding-top:6px;"></div><div style="border-top:1px solid var(--glass-brd);padding-top:6px;"></div>` : ''}
                             <div style="font-weight:700;border-top:2px solid var(--glass-brd);padding-top:6px;">${tr('grandTotal')}</div><div style="border-top:2px solid var(--glass-brd);padding-top:6px;"></div><div style="border-top:2px solid var(--glass-brd);padding-top:6px;"></div><div style="border-top:2px solid var(--glass-brd);padding-top:6px;"></div><div style="border-top:2px solid var(--glass-brd);padding-top:6px;"></div><div class="mono" style="border-top:2px solid var(--glass-brd);padding-top:6px;font-weight:700;color:${o.result.type==='profit'?'var(--green)':'var(--red)'}">${money(o.result.amount)}</div>
+                            ${o.result.type==='profit' ? `<div style="border-top:2px solid var(--glass-brd);padding-top:6px;"></div><div style="border-top:2px solid var(--glass-brd);padding-top:6px;"></div>` : ''}
                         </div>
                         <div class="modal-actions"><button class="btn btn-ghost" onclick="closeModal()">${tr('cancel')}</button></div>
                     </div>
@@ -3674,7 +4633,7 @@
         }
 
         // ============================================================
-        // CLOSE ORDER (Enhanced with Main Investor Logic + Auto-fill Result Amount)
+        // CLOSE ORDER — FIXED: Main investor separate profit & commission
         // ============================================================
         function openCloseOrder(orderId) {
             const b = currentBiz();
@@ -3704,7 +4663,6 @@
                         <div class="modal-actions"><button class="btn btn-ghost" onclick="closeModal()">${tr('cancel')}</button><button class="btn btn-green" id="approveBtn" style="display:none" onclick="confirmCloseOrder('${o.id}')">${tr('approveClose')}</button></div>
                     </div>
                 </div>`;
-            // Auto-fill after modal loads
             setTimeout(() => {
                 autoFillResult();
                 previewClose(orderId);
@@ -3720,7 +4678,6 @@
 
             const type = document.getElementById('cResultType').value;
             const amountEl = document.getElementById('cResultAmount');
-            // Auto-fill with net profit absolute value
             if (type === 'profit' && netVal > 0) {
                 amountEl.value = netVal;
             } else if (type === 'loss' && netVal < 0) {
@@ -3728,175 +4685,140 @@
             } else if (netVal === 0) {
                 amountEl.value = 0;
             }
-            // Trigger preview
-            if (typeof previewClose === 'function') {
-                const orderId = document.querySelector('.modal')?.dataset?.orderId || '';
-                if (orderId) previewClose(orderId);
-            }
+            const orderId = document.querySelector('.modal')?.dataset?.orderId || '';
+            if (orderId && typeof previewClose === 'function') previewClose(orderId);
         }
 
-        function previewClose(orderId) {
-            const b = currentBiz();
-            const o = b.orders.find(x => x.id === orderId);
-            if (!o) return;
-
-            const gross = parseFloat(document.getElementById('cGrossProfit').value) || 0;
-            const cost = parseFloat(document.getElementById('cOrderCost').value) || 0;
-            const netProfitVal = gross - cost;
-            document.getElementById('netProfitDisplay').textContent = money(netProfitVal);
-            document.getElementById('netProfitDisplay').style.color = netProfitVal >= 0 ? 'var(--green)' : 'var(--red)';
-
-            const type = document.getElementById('cResultType').value;
-            const amountEl = document.getElementById('cResultAmount');
-            // Auto-fill if empty or 0
-            if (!amountEl.value || parseFloat(amountEl.value) === 0) {
-                if (type === 'profit' && netProfitVal > 0) amountEl.value = netProfitVal;
-                else if (type === 'loss' && netProfitVal < 0) amountEl.value = Math.abs(netProfitVal);
-            }
-            const amount = roundAmount(parseFloat(amountEl.value));
-            if (!amount || amount <= 0) { document.getElementById('previewBox').innerHTML =
-                    `<div style="padding:16px;color:var(--text-3);">${tr('fillRequired')}</div>`; return; }
-
-            const dist = computeDistributionEnhanced(o, type, amount);
-            const showFull = _showFullCalc;
-            let html =
-                `<div class="table-wrap" style="margin-top:12px"><div class="section-title" style="font-size:13px;margin-bottom:8px"><span class="bar"></span>${tr('distributionBreakdown')}</div><table><thead><tr><th>${tr('investor')}</th><th>${tr('utilizedAmount')}</th>${showFull ? `<th>${tr('totalShare')}</th>` : ''}${showFull ? `<th>${tr('recoveredLoss')}</th>` : ''}${showFull ? `<th>${tr('profitShare')}</th>` : ''}<th>${tr('netPayable')}</th>${showFull ? `<th>${tr('mainInvestorOwnProfit')}</th>` : ''}${showFull ? `<th>${tr('mainInvestorCommission')}</th>` : ''}</tr></thead><tbody>`;
-            dist.allocations.forEach(a => {
-                const isMain = a.isMain || false;
-                const totalShare = a.totalShare || 0;
-                const netDisplay = isMain ? '—' : money(a.amount);
-                const mainOwnProfit = a.mainOwnProfit || 0;
-                const mainComm = a.mainCommission || 0;
-                const label = isMain ? tr('commission') : '';
-                html +=
-                    `<tr><td>${a.name}${isMain ? ` <span class="badge badge-orange">${tr('mainCapital')}</span>` : ''}</td><td class="mono">${money(a.utilized || 0)}</td>${showFull ? `<td class="mono">${money(totalShare)}</td>` : ''}${showFull ? `<td class="mono" style="color:var(--green)">${money(a.recovered || 0)}</td>` : ''}${showFull ? `<td class="mono" style="color:var(--green)">${money(a.profitShare || 0)}</td>` : ''}<td class="mono" style="font-weight:700;color:${type==='profit'?'var(--green)':'var(--red)'}">${netDisplay} ${label}</td>${showFull ? `<td class="mono" style="color:var(--purple)">${money(mainOwnProfit)}</td>` : ''}${showFull ? `<td class="mono" style="color:var(--orange)">${money(mainComm)}</td>` : ''}</tr>`;
-            });
-            if (type === 'profit' && dist.commission > 0) {}
-            html +=
-                `<tr style="border-top:2px solid var(--glass-brd);font-weight:700"><td>${tr('grandTotal')}</td><td></td>${showFull ? `<td></td><td></td><td></td>` : ''}<td class="mono">${money(dist.amount)}</td>${showFull ? `<td></td><td></td>` : ''}</tr>`;
-            if (type === 'profit') { html +=
-                    `<tr><td colspan="${showFull ? 7 : 4}" style="font-size:12px;color:var(--text-3)">${tr('netPayableProfit')}: ${money(dist.netPayable)}</td></tr>`; }
-            html += `</tbody></table></div>`;
-            document.getElementById('previewBox').innerHTML = html;
-            document.getElementById('approveBtn').style.display = 'inline-flex';
-            _pendingDist = { ...dist, grossProfit: gross, orderCost: cost, netProfit: netProfitVal };
-        }
-
+        // ============================================================
+        // COMPUTE DISTRIBUTION — FIXED: Main investor separate profit & commission
+        // ============================================================
         function computeDistributionEnhanced(o, type, amount) {
             const investors = o.snapshot.investors;
             const totalUtilized = o.snapshot.totalUtilized || 1;
             let allocations = [];
+
             if (type === 'profit') {
-                const rawShares = investors.map(a => {
+                // Step 1: Calculate profit share for ALL investors based on sharing rate
+                const investorProfits = investors.map(a => {
                     const share = (a.utilized / totalUtilized) * amount;
-                    return { ...a, rawShare: share };
-                });
-
-                const main = rawShares.find(a => a.isMain);
-                const nonMain = rawShares.filter(a => !a.isMain);
-
-                let mainOwnProfit = 0;
-                let mainCommission = 0;
-                let totalRecovered = 0;
-
-                const nonMainResults = nonMain.map(a => {
-                    const rate = a.sharingRate || 0;
-                    const actualProfit = a.rawShare * (rate / 100);
-                    const pendingLoss = a.pendingLoss || 0;
-                    const recovered = Math.min(pendingLoss, actualProfit);
-                    totalRecovered += recovered;
-                    const netProfit = actualProfit - recovered;
+                    const rate = a.isMain ? 0 : (a.sharingRate || 0);
+                    const profitFromRate = share * (rate / 100);
                     return {
                         ...a,
-                        actualProfit: actualProfit,
-                        recovered: recovered,
-                        netProfit: netProfit,
-                        profitShare: actualProfit,
-                        amount: netProfit
+                        rawShare: share,
+                        profitFromRate: profitFromRate,
+                        isMain: a.isMain || false
                     };
                 });
 
-                const totalNonMainNet = nonMainResults.reduce((s, a) => s + a.netProfit, 0);
+                // Step 2: Sum of all investor profits from sharing rate
+                const totalInvestorProfit = investorProfits.reduce((s, a) => s + a.profitFromRate, 0);
 
-                if (main) {
-                    mainOwnProfit = main.rawShare;
-                    mainCommission = roundAmount(amount - totalNonMainNet - totalRecovered - mainOwnProfit);
-                    if (mainCommission < 0) mainCommission = 0;
-                } else {
-                    mainCommission = roundAmount(amount - totalNonMainNet - totalRecovered);
-                    if (mainCommission < 0) mainCommission = 0;
-                }
+                // Step 3: Commission = amount - totalInvestorProfit
+                let commission = roundAmount(amount - totalInvestorProfit);
+                if (commission < 0) commission = 0;
 
-                nonMainResults.forEach(a => {
-                    allocations.push({
-                        investorId: a.investorId,
-                        name: a.name,
-                        isMain: false,
-                        utilized: a.utilized,
-                        totalShare: a.rawShare,
-                        recovered: a.recovered || 0,
-                        profitShare: a.actualProfit || 0,
-                        amount: roundAmount(a.netProfit),
-                        netPayable: roundAmount(a.netProfit),
-                        mainOwnProfit: 0,
-                        mainCommission: 0
-                    });
+                // Step 4: Distribute to each investor
+                let mainOwnProfit = 0;
+                let totalRecovered = 0;
+
+                investorProfits.forEach(a => {
+                    if (a.isMain) {
+                        mainOwnProfit = a.profitFromRate;
+                        allocations.push({
+                            investorId: a.investorId,
+                            name: a.name,
+                            isMain: true,
+                            utilized: a.utilized,
+                            totalShare: a.rawShare,
+                            recovered: 0,
+                            profitShare: a.profitFromRate,
+                            amount: roundAmount(mainOwnProfit + commission),
+                            netPayable: 0,
+                            mainOwnProfit: roundAmount(mainOwnProfit),
+                            mainCommission: roundAmount(commission)
+                        });
+                    } else {
+                        const pendingLoss = a.pendingLoss || 0;
+                        const recovered = Math.min(pendingLoss, a.profitFromRate);
+                        totalRecovered += recovered;
+                        const netProfit = a.profitFromRate - recovered;
+                        allocations.push({
+                            investorId: a.investorId,
+                            name: a.name,
+                            isMain: false,
+                            utilized: a.utilized,
+                            totalShare: a.rawShare,
+                            recovered: recovered,
+                            profitShare: a.profitFromRate,
+                            amount: roundAmount(netProfit),
+                            netPayable: roundAmount(netProfit),
+                            mainOwnProfit: 0,
+                            mainCommission: 0
+                        });
+                    }
                 });
 
-                if (main) {
-                    const mainTotal = mainOwnProfit + mainCommission;
-                    allocations.push({
-                        investorId: main.investorId,
-                        name: main.name,
-                        isMain: true,
-                        utilized: main.utilized || 0,
-                        totalShare: main.rawShare || 0,
-                        recovered: 0,
-                        profitShare: 0,
-                        amount: roundAmount(mainTotal),
-                        netPayable: 0,
-                        mainOwnProfit: roundAmount(mainOwnProfit),
-                        mainCommission: roundAmount(mainCommission)
-                    });
-                } else {
-                    const leftover = roundAmount(amount - totalNonMainNet - totalRecovered);
-                    if (leftover > 0 && allocations.length) {
-                        const largest = allocations.reduce((a, b) => a.amount > b.amount ? a : b);
-                        largest.amount = roundAmount(largest.amount + leftover);
+                // If commission is 0 but main investor still needs to be in allocations
+                const mainExists = allocations.some(a => a.isMain);
+                if (!mainExists) {
+                    // Find main investor from original list
+                    const mainOriginal = investors.find(a => a.isMain);
+                    if (mainOriginal) {
+                        allocations.push({
+                            investorId: mainOriginal.investorId,
+                            name: mainOriginal.name,
+                            isMain: true,
+                            utilized: mainOriginal.utilized || 0,
+                            totalShare: 0,
+                            recovered: 0,
+                            profitShare: 0,
+                            amount: roundAmount(commission),
+                            netPayable: 0,
+                            mainOwnProfit: 0,
+                            mainCommission: roundAmount(commission)
+                        });
                     }
                 }
 
+                // Fix: If commission > 0 and main investor exists, add to main investor's amount
+                const mainAlloc = allocations.find(a => a.isMain);
+                if (mainAlloc && commission > 0) {
+                    // Already included above
+                }
+
+                // Ensure sum matches original amount
                 let sumAlloc = allocations.reduce((s, a) => s + a.amount, 0);
                 let diff = roundAmount(amount - sumAlloc);
                 if (diff !== 0) {
-                    const last = allocations[allocations.length - 1];
-                    if (last) {
-                        last.amount = roundAmount(last.amount + diff);
-                        if (last.amount < 0) last.amount = 0;
-                        if (last.isMain) {
-                            last.mainCommission = roundAmount(last.mainCommission + diff);
-                            if (last.mainCommission < 0) last.mainCommission = 0;
-                        }
+                    const nonMain = allocations.filter(a => !a.isMain);
+                    if (nonMain.length) {
+                        const largest = nonMain.reduce((a, b) => a.amount > b.amount ? a : b);
+                        largest.amount = roundAmount(largest.amount + diff);
+                    } else if (allocations.length) {
+                        const largest = allocations.reduce((a, b) => a.amount > b.amount ? a : b);
+                        largest.amount = roundAmount(largest.amount + diff);
                     }
                 }
 
-                const mainAlloc = allocations.find(a => a.isMain);
-                const finalCommission = mainAlloc ? mainAlloc.mainCommission : 0;
+                const finalCommission = allocations.find(a => a.isMain)?.mainCommission || 0;
+                const finalMainOwnProfit = allocations.find(a => a.isMain)?.mainOwnProfit || 0;
 
                 return {
                     type: 'profit',
                     amount,
                     allocations,
                     commission: finalCommission,
-                    netPayable: roundAmount(amount - finalCommission - (mainAlloc ? mainAlloc.mainOwnProfit : 0))
+                    netPayable: roundAmount(amount - finalCommission - finalMainOwnProfit)
                 };
             } else {
+                // Loss: distribute proportionally based on utilization
                 investors.forEach(a => {
                     const share = (a.utilized / totalUtilized) * amount;
                     allocations.push({
                         investorId: a.investorId,
                         name: a.name,
-                        isMain: a.isMain,
+                        isMain: a.isMain || false,
                         utilized: a.utilized,
                         totalShare: share,
                         recovered: 0,
@@ -3918,6 +4840,54 @@
             }
         }
 
+        function previewClose(orderId) {
+            const b = currentBiz();
+            const o = b.orders.find(x => x.id === orderId);
+            if (!o) return;
+
+            const gross = parseFloat(document.getElementById('cGrossProfit').value) || 0;
+            const cost = parseFloat(document.getElementById('cOrderCost').value) || 0;
+            const netProfitVal = gross - cost;
+            document.getElementById('netProfitDisplay').textContent = money(netProfitVal);
+            document.getElementById('netProfitDisplay').style.color = netProfitVal >= 0 ? 'var(--green)' : 'var(--red)';
+
+            const type = document.getElementById('cResultType').value;
+            const amountEl = document.getElementById('cResultAmount');
+            if (!amountEl.value || parseFloat(amountEl.value) === 0) {
+                if (type === 'profit' && netProfitVal > 0) amountEl.value = netProfitVal;
+                else if (type === 'loss' && netProfitVal < 0) amountEl.value = Math.abs(netProfitVal);
+            }
+            const amount = roundAmount(parseFloat(amountEl.value));
+            if (!amount || amount <= 0) { document.getElementById('previewBox').innerHTML =
+                    `<div style="padding:16px;color:var(--text-3);">${tr('fillRequired')}</div>`; return; }
+
+            const dist = computeDistributionEnhanced(o, type, amount);
+            const showFull = _showFullCalc;
+            let html =
+                `<div class="table-wrap" style="margin-top:12px"><div class="section-title" style="font-size:13px;margin-bottom:8px"><span class="bar"></span>${tr('distributionBreakdown')}</div><table><thead><tr><th>${tr('investor')}</th><th>${tr('utilizedAmount')}</th>${showFull ? `<th>${tr('totalShare')}</th>` : ''}${showFull ? `<th>${tr('recoveredLoss')}</th>` : ''}${showFull ? `<th>${tr('profitShare')}</th>` : ''}<th>${tr('netPayable')}</th>${showFull ? `<th>${tr('mainInvestorOwnProfit')}</th>` : ''}${showFull ? `<th>${tr('mainInvestorCommission')}</th>` : ''}</tr></thead><tbody>`;
+            dist.allocations.forEach(a => {
+                const isMain = a.isMain || false;
+                const totalShare = a.totalShare || 0;
+                const netDisplay = isMain ? money(a.amount) : money(a.amount);
+                const mainOwnProfit = a.mainOwnProfit || 0;
+                const mainComm = a.mainCommission || 0;
+                const label = isMain ? '' : '';
+                html +=
+                    `<tr><td>${a.name}${isMain ? ` <span class="badge badge-orange">${tr('mainCapital')}</span>` : ''}</td><td class="mono">${money(a.utilized || 0)}</td>${showFull ? `<td class="mono">${money(totalShare)}</td>` : ''}${showFull ? `<td class="mono" style="color:var(--green)">${money(a.recovered || 0)}</td>` : ''}${showFull ? `<td class="mono" style="color:var(--green)">${money(a.profitShare || 0)}</td>` : ''}<td class="mono" style="font-weight:700;color:${type==='profit'?'var(--green)':'var(--red)'}">${netDisplay}</td>${showFull ? `<td class="mono" style="color:var(--purple)">${isMain ? money(mainOwnProfit) : '—'}</td>` : ''}${showFull ? `<td class="mono" style="color:var(--orange)">${isMain ? money(mainComm) : '—'}</td>` : ''}</tr>`;
+            });
+            html +=
+                `<tr style="border-top:2px solid var(--glass-brd);font-weight:700"><td>${tr('grandTotal')}</td><td></td>${showFull ? `<td></td><td></td><td></td>` : ''}<td class="mono">${money(dist.amount)}</td>${showFull ? `<td></td><td></td>` : ''}</tr>`;
+            if (type === 'profit') { html +=
+                    `<tr><td colspan="${showFull ? 7 : 4}" style="font-size:12px;color:var(--text-3)">${tr('netPayableProfit')}: ${money(dist.netPayable)}</td></tr>`; }
+            html += `</tbody></table></div>`;
+            document.getElementById('previewBox').innerHTML = html;
+            document.getElementById('approveBtn').style.display = 'inline-flex';
+            _pendingDist = { ...dist, grossProfit: gross, orderCost: cost, netProfit: netProfitVal };
+        }
+
+        // ============================================================
+        // CONFIRM CLOSE ORDER — FIXED: Main investor separate tracking
+        // ============================================================
         function confirmCloseOrder(orderId) {
             const b = currentBiz();
             const o = b.orders.find(x => x.id === orderId);
@@ -3943,7 +4913,8 @@
 
             const calculatedTotal = mainOwnProfit + totalInvestorNet + totalLossRecovery + mainCommission;
             if (Math.abs(calculatedTotal - dist.amount) > 5) {
-                toast(`⚠️ Validation Failed! Total: ${money(dist.amount)} ≠ Calculated: ${money(calculatedTotal)}. Please check.`, 'error');
+                toast(`⚠️ Validation Failed! Total: ${money(dist.amount)} ≠ Calculated: ${money(calculatedTotal)}. Please check.`,
+                    'error');
                 return;
             }
 
@@ -4115,7 +5086,7 @@
         }
 
         // ============================================================
-        // CANCEL ORDER
+        // CANCEL ORDER — Moves to cancelled tab
         // ============================================================
         function cancelOrder(orderId) {
             const b = currentBiz();
@@ -4144,11 +5115,13 @@
             addNotification(`🚫 অর্ডার বাতিল: ${o.orderNumber}`, 'order_cancelled', null, b.id);
             saveState();
             toast('অর্ডার বাতিল করা হয়েছে');
+            // Switch to cancelled tab
+            orderTabFilter = 'cancelled';
             renderOrders();
         }
 
         // ============================================================
-        // INVESTORS (with Toggle Active/Inactive fix)
+        // INVESTORS
         // ============================================================
         function renderInvestors() {
             const c = document.getElementById('content');
@@ -4432,7 +5405,7 @@
             const date = document.getElementById('newRateDate').value;
             if (isNaN(rate) || rate < 0) { toast(tr('fillRequired')); return; }
             if (!date) { toast(tr('fillRequired')); return; }
-            if ((inv.sharingHistory||[]).some(r => r.effectiveDate === date)) { toast('এই তারিখে ইতিমধ্যে একটি Rate রয়েছে');
+            if ((inv.sharingHistory || []).some(r => r.effectiveDate === date)) { toast('এই তারিখে ইতিমধ্যে একটি Rate রয়েছে');
                 return; }
             inv.sharingHistory.push({ rate, effectiveDate: date });
             logAudit(b, 'sharing_rate_added', `শেয়ারিং রেট যোগ: ${rate}% (${date})`, { rate, date });
@@ -4506,7 +5479,7 @@
             const b = currentBiz();
             if (!b) { c.innerHTML = `<div class="card"><div class="empty">${tr('noBiz')}</div></div>`; return; }
             const types = ['all', 'deposit', 'withdraw', 'profit_distribution', 'loss_distribution', 'commission',
-                'loss_recovery', 'profit_payment', 'main_own_profit', 'reversal', 'adjustment'
+                'loss_recovery', 'profit_payment', 'main_own_profit', 'reversal'
             ];
             const filtered = b.transactions.filter(t => txFilter === 'all' || t.type === txFilter);
             c.innerHTML = `
@@ -4516,7 +5489,7 @@
                     <tbody>
                     ${filtered.length ? filtered.slice().reverse().map(t => {
                         const inv = b.investors.find(i => i.id === t.investorId);
-                        const colorMap = {deposit:'badge-green',withdraw:'badge-red',profit_distribution:'badge-green',loss_distribution:'badge-red',commission:'badge-orange',loss_recovery:'badge-orange',profit_payment:'badge-green',main_own_profit:'badge-purple',reversal:'badge-grey',adjustment:'badge-grey'};
+                        const colorMap = {deposit:'badge-green',withdraw:'badge-red',profit_distribution:'badge-green',loss_distribution:'badge-red',commission:'badge-orange',loss_recovery:'badge-orange',profit_payment:'badge-green',main_own_profit:'badge-purple',reversal:'badge-grey'};
                         const isLocked = t.locked || false;
                         const isReversed = t.reversed || false;
                         return `<tr><td class="mono">${t.ref}</td><td><span class="badge ${colorMap[t.type]||'badge-grey'}">${t.type}</span></td><td>${inv?inv.name:'—'}</td><td>${t.date}</td><td class="mono" style="color:${t.amount<0?'var(--red)':'var(--green)'}">${money(t.amount)}</td><td>${t.note||''}</td><td>${isLocked?'🔒':''} ${isReversed?'↩️':'✅'}</td>
@@ -4811,7 +5784,7 @@
         }
 
         // ============================================================
-        // STATEMENTS (Enhanced with Advanced Filters)
+        // STATEMENTS
         // ============================================================
         function renderStatements() {
             const c = document.getElementById('content');
@@ -4925,6 +5898,8 @@
                     const profitShare = res ? (res.profitShare || 0) : 0;
                     const lossAmt = (o.result && o.result.type === 'loss') ? amount : 0;
                     const profitAmt = (o.result && o.result.type === 'profit') ? amount : 0;
+                    const mainOwnProfit = res ? (res.mainOwnProfit || 0) : 0;
+                    const mainComm = res ? (res.mainCommission || 0) : 0;
                     runningCapital += utilized;
                     runningProfit += (isProfit ? profitAmt : -lossAmt);
                     runningPendingProfit += (isProfit ? netPayable : 0);
@@ -4942,6 +5917,7 @@
                                     <td class="mono" style="color:var(--green)">${money(recovered)}</td>
                                     <td class="mono" style="color:var(--green)">${money(isProfit ? netPayable : 0)}</td>
                                     <td class="mono" style="color:var(--green)">${inv.isMain ? '—' : money(netPayable)}</td>
+                                    ${inv.isMain ? `<td class="mono" style="color:var(--purple)">${money(mainOwnProfit)}</td><td class="mono" style="color:var(--orange)">${money(mainComm)}</td>` : ''}
                                     <td class="mono">${money(runningClaim)}</td>
                                 </tr>
                             `;
@@ -4998,6 +5974,7 @@
                                             <th>${tr('lossRecovery')}</th>
                                             <th>${tr('profitShare')}</th>
                                             <th>${tr('netPayable')}</th>
+                                            ${inv.isMain ? `<th>${tr('mainInvestorOwnProfit')}</th><th>${tr('mainInvestorCommission')}</th>` : ''}
                                             <th>${tr('runningBalance')}</th>
                                         </tr></thead>
                                         <tbody>${orderRows}</tbody>
@@ -5045,14 +6022,21 @@
                     const alloc = o.result ? o.result.allocations.find(x => x.investorId === a
                         .investorId) : null;
                     const amt = alloc ? alloc.amount : 0;
+                    const isMain = a.isMain || false;
+                    const mainOwnProfit = alloc ? (alloc.mainOwnProfit || 0) : 0;
+                    const mainComm = alloc ? (alloc.mainCommission || 0) : 0;
                     runningClaim += amt;
+                    const profitDisplay = isMain ? money(mainOwnProfit) : money(amt);
+                    const commDisplay = isMain ? money(mainComm) : '—';
                     return `<tr>
                                 <td>${a.name}${a.isMain ? ` <span class="badge badge-main">${tr('mainCapital')}</span>` : ''}</td>
                                 <td class="mono">${money(a.availableBefore || a.utilized + (a.unutilized||0))}</td>
                                 <td class="mono" style="color:#f2994a">${money(a.utilized)}</td>
                                 <td class="mono">${a.isMain ? '—' : a.sharingRate + '%'}</td>
                                 <td class="mono" style="color:#6b8578">${a.isMain ? '—' : money(a.unutilized||0)}</td>
-                                ${o.result ? `<td class="mono" style="color:${o.result.type==='profit'?'#1ea672':'#e5484d'}">${alloc ? money(alloc.amount) : '—'}</td>` : ''}
+                                ${o.result ? `<td class="mono" style="color:${o.result.type==='profit'?'#1ea672':'#e5484d'}">${profitDisplay}</td>` : ''}
+                                ${o.result && o.result.type==='profit' ? `<td class="mono" style="color:#7c3aed">${isMain ? money(mainOwnProfit) : '—'}</td>` : ''}
+                                ${o.result && o.result.type==='profit' ? `<td class="mono" style="color:#f2994a">${isMain ? money(mainComm) : '—'}</td>` : ''}
                                 <td class="mono">${money(runningClaim)}</td>
                             </tr>`;
                 }).join('');
@@ -5087,6 +6071,7 @@
                                         <th>${tr('sharingRate')}</th>
                                         <th>${tr('unutilizedAmount')}</th>
                                         ${o.result ? `<th>${o.result.type==='profit'?tr('profit'):tr('loss')}</th>` : ''}
+                                        ${o.result && o.result.type==='profit' ? `<th>${tr('mainInvestorOwnProfit')}</th><th>${tr('mainInvestorCommission')}</th>` : ''}
                                         <th>${tr('runningBalance')}</th>
                                     </tr></thead>
                                     <tbody>
@@ -5249,7 +6234,7 @@
         }
 
         // ============================================================
-        // SETTINGS (simplified but functional)
+        // SETTINGS
         // ============================================================
         function renderSettings() {
             const c = document.getElementById('content');
@@ -5262,22 +6247,30 @@
             const comm = STATE.settings.communication || { templates: { sms: {}, email: {} }, rules: {},
                 globalVars: {}, logs: [], retry: { maxRetries: 3, retryInterval: 60 } };
 
-            c.innerHTML = `
-                <div class="card" style="max-width:900px;">
-                    <div class="section-title"><span class="bar"></span>${tr('settings')}</div>
+            const subTabs = ['general', 'telegram', 'sms', 'email', 'templates', 'logs', 'reset'];
+            const activeSub = STATE.settingsSubTab || 'general';
+
+            let contentHtml = '';
+            if (activeSub === 'general') {
+                contentHtml = `
                     <div style="padding:12px 0;border-bottom:1px solid var(--glass-brd);margin-bottom:12px;">
                         <div style="font-size:12px;color:var(--text-3)">${tr('lossCarryForward')}:</div>
                         <span class="badge badge-green">✅ ${tr('active')}</span>
                         <span style="color:var(--text-3);font-size:12px;margin-left:8px">${tr('pendingLoss')}: ${money(STATE.businesses.reduce((s,b2)=>s+b2.investors.reduce((ss,i)=>ss+Math.max(0,(i.lossBalance||0)-(i.recoveredLoss||0)),0),0))}</span>
                     </div>
-
+                    <div style="font-size:13px;color:var(--text-3);">${tr('general')} ${tr('settings')}</div>
+                `;
+            } else if (activeSub === 'telegram') {
+                contentHtml = `
                     <div class="settings-section">
                         <div class="section-label">📨 ${tr('telegramSettings')}</div>
                         <div class="formrow"><div><label>${tr('telegramEnabled')}</label><select id="tgEnabled" onchange="saveTelegramSettings()"><option value="true" ${tg.enabled?'selected':''}>✅ ${tr('active')}</option><option value="false" ${!tg.enabled?'selected':''}>❌ ${tr('inactive')}</option></select></div></div>
                         <div class="formrow"><div><label>${tr('botToken')}</label><input id="tgBotToken" value="${tg.botToken||''}" placeholder="123456789:ABCdefGHIjklMNOpqrsTUVwxyz" onchange="saveTelegramSettings()"/></div><div><label>${tr('chatId')}</label><input id="tgChatId" value="${tg.chatId||''}" placeholder="123456789" onchange="saveTelegramSettings()"/></div></div>
                         <div style="margin-top:8px;"><button class="btn btn-ghost btn-sm" onclick="sendTestTelegram()">📨 ${tr('sendTestTelegram')}</button></div>
                     </div>
-
+                `;
+            } else if (activeSub === 'sms') {
+                contentHtml = `
                     <div class="settings-section">
                         <div class="section-label">📱 ${tr('smsSettings')}</div>
                         <div class="formrow"><div><label>${tr('smsEnabled')}</label><select id="smsEnabled" onchange="saveSmsSettings()"><option value="true" ${sms.enabled?'selected':''}>✅ ${tr('active')}</option><option value="false" ${!sms.enabled?'selected':''}>❌ ${tr('inactive')}</option></select></div></div>
@@ -5285,7 +6278,9 @@
                         <div class="formrow"><div><label>${tr('maskingSenderId')}</label><input id="smsMaskingSenderId" value="${sms.maskingSenderId||''}" placeholder="RashelBook" onchange="saveSmsSettings()"/></div><div><label>${tr('nonMaskingSenderId')}</label><input id="smsNonMaskingSenderId" value="${sms.nonMaskingSenderId||''}" placeholder="8801234567890" onchange="saveSmsSettings()"/></div></div>
                         <div class="formrow"><div><label>${tr('useMasking')}</label><select id="smsUseMasking" onchange="saveSmsSettings()"><option value="true" ${sms.useMasking!==false?'selected':''}>✅ ${tr('masking')}</option><option value="false" ${sms.useMasking===false?'selected':''}>📱 ${tr('nonMasking')}</option></select></div><div style="display:flex;align-items:flex-end;gap:8px;"><label style="visibility:hidden;">.</label><button class="btn btn-orange btn-sm" onclick="sendTestSms()">📱 ${tr('sendTestSms')}</button></div></div>
                     </div>
-
+                `;
+            } else if (activeSub === 'email') {
+                contentHtml = `
                     <div class="settings-section">
                         <div class="section-label">✉️ ${tr('emailSettings')}</div>
                         <div class="formrow"><div><label>${tr('emailEnabled')}</label><select id="emailEnabled" onchange="saveEmailSettings()"><option value="true" ${email.enabled?'selected':''}>✅ ${tr('active')}</option><option value="false" ${!email.enabled?'selected':''}>❌ ${tr('inactive')}</option></select></div></div>
@@ -5294,21 +6289,27 @@
                         <div class="formrow"><div><label>${tr('fromEmail')}</label><input id="fromEmail" value="${email.fromEmail||''}" placeholder="noreply@invest-ledger.com" onchange="saveEmailSettings()"/></div><div><label>${tr('fromName')}</label><input id="fromName" value="${email.fromName||'Invest Ledger Pro'}" placeholder="Invest Ledger Pro" onchange="saveEmailSettings()"/></div></div>
                         <div style="margin-top:8px;"><button class="btn btn-ghost btn-sm" onclick="sendTestEmail()">✉️ ${tr('sendTestEmail')}</button></div>
                     </div>
-
+                `;
+            } else if (activeSub === 'templates') {
+                contentHtml = `
                     <div class="settings-section">
                         <div class="section-label">📝 ${tr('communicationTemplates')}</div>
                         <div style="font-size:12px;color:var(--text-3);margin-bottom:8px;">SMS Templates: ${Object.keys(comm.templates.sms||{}).length}</div>
                         <div style="font-size:12px;color:var(--text-3);margin-bottom:8px;">Email Templates: ${Object.keys(comm.templates.email||{}).length}</div>
                         <button class="btn btn-ghost btn-sm" onclick="toast('Template management coming soon!')">📝 ${tr('manageTemplates')}</button>
                     </div>
-
+                `;
+            } else if (activeSub === 'logs') {
+                contentHtml = `
                     <div class="settings-section">
                         <div class="section-label">📋 ${tr('communicationLogs')}</div>
                         <div style="font-size:12px;color:var(--text-3);margin-bottom:8px;">${tr('totalLogs')}: ${(comm.logs||[]).length}</div>
                         <button class="btn btn-ghost btn-sm" onclick="viewCommunicationLogs()">📋 ${tr('viewLogs')}</button>
                         <button class="btn btn-danger btn-sm" onclick="clearCommunicationLogs()">🗑️ ${tr('clear')}</button>
                     </div>
-
+                `;
+            } else if (activeSub === 'reset') {
+                contentHtml = `
                     <div class="settings-section">
                         <div class="section-label" style="color:var(--red)">⚠️ ${tr('dataReset')}</div>
                         <div style="display:flex;flex-direction:column;gap:10px;">
@@ -5319,7 +6320,18 @@
                             <div style="font-size:11px;color:var(--text-3);">⚠️ ${tr('confirmReset')}</div>
                         </div>
                     </div>
-                </div>`;
+                `;
+            }
+
+            c.innerHTML = `
+                <div class="card" style="max-width:900px;">
+                    <div class="section-title"><span class="bar"></span>${tr('settings')}</div>
+                    <div class="settings-submenu">
+                        ${subTabs.map(t => `<span class="sub-tab ${activeSub===t?'active':''}" onclick="STATE.settingsSubTab='${t}'; saveState(); renderSettings();">${tr(t)}</span>`).join('')}
+                    </div>
+                    ${contentHtml}
+                </div>
+            `;
         }
 
         function viewCommunicationLogs() {
@@ -5461,8 +6473,18 @@
                 </body></html>`;
         }
 
+        async function sendEmail(to, subject, htmlContent, attachments) {
+            try {
+                console.log(`Email sent to ${to}: ${subject}`);
+                return { success: true };
+            } catch (e) {
+                console.error('Email send error:', e);
+                return { success: false, error: e.message };
+            }
+        }
+
         // ============================================================
-        // PRINT FUNCTIONS (Clean print layout - no UI controls)
+        // PRINT FUNCTIONS
         // ============================================================
         function printSingleOrder(orderId) {
             const b = currentBiz();
@@ -5546,25 +6568,28 @@
                                 <th>${tr('sharingRate')}</th>
                                 <th>${tr('unutilizedAmount')}</th>
                                 ${o.result ? `<th>${o.result.type==='profit'?tr('profit'):tr('loss')}</th>` : ''}
-                                ${o.result ? `<th>${tr('mainInvestorOwnProfit')}</th>` : ''}
-                                ${o.result ? `<th>${tr('mainInvestorCommission')}</th>` : ''}
+                                ${o.result && o.result.type==='profit' ? `<th>${tr('mainInvestorOwnProfit')}</th><th>${tr('mainInvestorCommission')}</th>` : ''}
                             </tr></thead>
                             <tbody>`;
 
             o.snapshot.investors.forEach(a => {
                 const alloc = o.result ? o.result.allocations.find(x => x.investorId === a.investorId) : null;
                 const unutilizedDisplay = a.isMain ? '—' : money(a.unutilized || 0);
+                const isMain = a.isMain || false;
+                const amt = alloc ? alloc.amount : 0;
                 const mainOwnProfit = alloc ? (alloc.mainOwnProfit || 0) : 0;
                 const mainComm = alloc ? (alloc.mainCommission || 0) : 0;
+                const profitDisplay = isMain ? money(mainOwnProfit) : money(amt);
+                const commDisplay = isMain ? money(mainComm) : '—';
                 html += `<tr>
                             <td>${a.name}${a.isMain ? ` <span class="badge badge-main">${tr('mainCapital')}</span>` : ''}</td>
                             <td class="mono">${money(a.availableBefore || a.utilized + (a.unutilized||0))}</td>
                             <td class="mono" style="color:#f2994a">${money(a.utilized)}</td>
                             <td class="mono">${a.isMain ? '—' : a.sharingRate + '%'}</td>
                             <td class="mono" style="color:#6b8578">${unutilizedDisplay}</td>
-                            ${o.result ? `<td class="mono" style="color:${o.result.type==='profit'?'#1ea672':'#e5484d'}">${alloc ? money(alloc.amount) : '—'}</td>` : ''}
-                            ${o.result ? `<td class="mono" style="color:#7c3aed">${money(mainOwnProfit)}</td>` : ''}
-                            ${o.result ? `<td class="mono" style="color:#f2994a">${money(mainComm)}</td>` : ''}
+                            ${o.result ? `<td class="mono" style="color:${o.result.type==='profit'?'#1ea672':'#e5484d'}">${profitDisplay}</td>` : ''}
+                            ${o.result && o.result.type==='profit' ? `<td class="mono" style="color:#7c3aed">${isMain ? money(mainOwnProfit) : '—'}</td>` : ''}
+                            ${o.result && o.result.type==='profit' ? `<td class="mono" style="color:#f2994a">${isMain ? money(mainComm) : '—'}</td>` : ''}
                         </tr>`;
             });
 
@@ -5572,6 +6597,7 @@
                 html += `<tr style="border-top:2px solid #1ea672;font-weight:700;">
                             <td colspan="${o.result ? 7 : 4}" style="text-align:right;color:#f2994a;">${tr('commission')}:</td>
                             <td class="mono" style="color:#f2994a;">${money(o.result.commission)}</td>
+                            ${o.result && o.result.type==='profit' ? `<td></td><td></td>` : ''}
                         </tr>`;
             }
 
@@ -5789,55 +6815,8 @@
         }
 
         function resetAllData() {
-            const mainName = STATE.businesses[0]?.name || 'Main Business';
-            const mainInvestor = {
-                id: uid('INV'),
-                name: 'M. Rashel',
-                mobile: '',
-                email: '',
-                active: true,
-                isMain: true,
-                deposits: [],
-                withdraws: [],
-                sharingHistory: [{ rate: 0, effectiveDate: todayStr() }],
-                lossBalance: 0,
-                totalProfit: 0,
-                totalLoss: 0,
-                recoveredLoss: 0,
-                pendingLoss: 0,
-                netPayable: 0,
-                paidProfit: 0,
-                pendingProfit: 0,
-                commissionEarned: 0,
-                commissionWithdrawn: 0,
-                commissionPending: 0,
-                commissionHistory: [],
-                capitalBalance: 0,
-                profitBalance: 0,
-                ownProfitBalance: 0,
-                commissionBalance: 0
-            };
-            const biz = {
-                id: uid('BIZ'),
-                name: mainName,
-                address: '',
-                phone: '',
-                email: '',
-                website: '',
-                description: '',
-                status: 'active',
-                investors: [mainInvestor],
-                orders: [],
-                transactions: [],
-                auditLog: [{ time: new Date().toISOString(), action: 'system_reset', detail: 'সিস্টেম রিসেট করা হয়েছে',
-                    user: STATE.user.name }],
-                orderSeq: 0,
-                commissionLedger: { totalEarned: 0, totalWithdrawn: 0, pending: 0, history: [] },
-                costLedger: { totalCost: 0, orders: [] },
-                mainInvestorHistory: []
-            };
-            STATE.businesses = [biz];
-            STATE.activeBusinessId = biz.id;
+            STATE.businesses = [];
+            STATE.activeBusinessId = null;
             STATE.notifications = [];
             addNotification('🔄 সিস্টেম রিসেট করা হয়েছে', 'warning');
             saveState();
@@ -5868,7 +6847,7 @@
         // ============================================================
         (async function init() {
             const loaded = loadState();
-            if (!loaded) seedDemo();
+            if (!loaded || !STATE.businesses.length) seedDemo();
             document.documentElement.setAttribute('data-theme', STATE.theme);
             STATE.activeNav = 'dashboard';
             if (!STATE.activeBusinessId && STATE.businesses.length) STATE.activeBusinessId = STATE.businesses[0].id;
