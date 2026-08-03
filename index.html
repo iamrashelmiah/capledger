@@ -18,6 +18,18 @@
             --orange: #f2994a;
             --orange-2: #d9772e;
             --orange-glow: rgba(242,153,74,0.30);
+            --blue: #4a90d9;
+            --blue-2: #357abd;
+            --blue-glow: rgba(74,144,217,0.30);
+            --purple: #7c3aed;
+            --purple-2: #6d28d9;
+            --purple-glow: rgba(124,58,237,0.30);
+            --pink: #ec4899;
+            --pink-2: #db2777;
+            --pink-glow: rgba(236,72,153,0.30);
+            --teal: #14b8a6;
+            --teal-2: #0d9488;
+            --teal-glow: rgba(20,184,166,0.30);
             --bg-1: #f1f6f2;
             --bg-2: #e9f2ec;
             --bg-3: #eef8f1;
@@ -90,7 +102,11 @@
             gap: 10px;
             padding: 4px 8px 10px;
             flex-shrink: 0;
+            cursor: pointer;
+            border-radius: var(--radius-sm);
+            transition: background .2s;
         }
+        .sidebar .brand:hover { background: var(--glass); }
         .sidebar .brand-mark {
             width: 36px;
             height: 36px;
@@ -259,235 +275,7 @@
         .biz-switch select option { background: #0e2019; color: #eef7f2; }
         html[data-theme="light"] .biz-switch select option { background: #fff; color: #0e2019; }
 
-        /* ===== NOTIFICATION ===== */
-        .notif-wrapper { position: relative; display: inline-block; }
-        .notification-bell {
-            position: relative;
-            cursor: pointer;
-            padding: 8px;
-            border-radius: 50%;
-            transition: all .25s ease;
-            border: 1px solid var(--glass-brd);
-            background: var(--glass);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            z-index: 10;
-        }
-        .notification-bell:hover:not(.open) { transform: scale(1.05); border-color: var(--green); }
-        .notification-bell.open { transform: scale(1); border-color: var(--green); }
-        .notification-bell .badge-count {
-            position: absolute;
-            top: -4px;
-            right: -4px;
-            background: var(--red);
-            color: #fff;
-            font-size: 9px;
-            font-weight: 700;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2px solid var(--bg-1);
-        }
-        .notification-dropdown-fixed {
-            position: fixed;
-            z-index: 9999;
-            width: 420px;
-            max-height: 500px;
-            overflow-y: auto;
-            background: var(--bg-2);
-            border: 1px solid var(--glass-brd);
-            border-radius: var(--radius-card);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            padding: 12px;
-            display: none;
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-        }
-        .notification-dropdown-fixed.open { display: block; }
-        .notification-dropdown-fixed .notif-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid var(--glass-brd);
-            flex-wrap: wrap;
-            gap: 6px;
-        }
-        .notification-dropdown-fixed .notif-header .notif-tabs {
-            display: flex;
-            gap: 5px;
-        }
-        .notification-dropdown-fixed .notif-header .notif-tabs .notif-tab {
-            padding: 4px 12px;
-            border-radius: var(--radius-cap);
-            font-size: 11px;
-            font-weight: 600;
-            cursor: pointer;
-            background: var(--glass);
-            color: var(--text-2);
-            border: 1px solid var(--glass-brd);
-            transition: all .2s;
-        }
-        .notification-dropdown-fixed .notif-header .notif-tabs .notif-tab.active {
-            background: var(--green);
-            color: #fff;
-            border-color: var(--green);
-        }
-        .notification-dropdown-fixed .notif-header .notif-actions {
-            display: flex;
-            gap: 5px;
-        }
-        .notification-dropdown-fixed .notif-header .notif-actions button {
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 11px;
-            color: var(--text-2);
-            padding: 4px 8px;
-            border-radius: var(--radius-cap);
-            transition: all .2s;
-        }
-        .notification-dropdown-fixed .notif-header .notif-actions button:hover { background: var(--glass); }
-        .notification-dropdown-fixed .notif-item {
-            padding: 10px 12px;
-            border-bottom: 1px solid var(--glass-brd);
-            font-size: 12.5px;
-            cursor: pointer;
-            transition: all .2s ease;
-            border-radius: 8px;
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-        }
-        .notification-dropdown-fixed .notif-item:hover { background: var(--glass); }
-        .notification-dropdown-fixed .notif-item:last-child { border-bottom: none; }
-        .notification-dropdown-fixed .notif-item .notif-icon { font-size: 18px; flex-shrink: 0; margin-top: 2px; }
-        .notification-dropdown-fixed .notif-item .notif-content { flex: 1; }
-        .notification-dropdown-fixed .notif-item .notif-content .notif-msg { font-weight: 500; }
-        .notification-dropdown-fixed .notif-item .notif-content .notif-meta {
-            display: flex;
-            gap: 10px;
-            font-size: 10px;
-            color: var(--text-3);
-            margin-top: 4px;
-            flex-wrap: wrap;
-        }
-        .notification-dropdown-fixed .notif-item .notif-content .notif-meta .notif-time { font-family: 'JetBrains Mono', monospace; }
-        .notification-dropdown-fixed .notif-item .notif-content .notif-meta .notif-badge {
-            display: inline-block;
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--green);
-        }
-        .notification-dropdown-fixed .notif-item .notif-actions-item {
-            display: flex;
-            gap: 5px;
-            align-items: center;
-            flex-shrink: 0;
-        }
-        .notification-dropdown-fixed .notif-item .notif-actions-item button {
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 12px;
-            color: var(--text-3);
-            padding: 2px 6px;
-            border-radius: var(--radius-cap);
-            transition: all .2s;
-        }
-        .notification-dropdown-fixed .notif-item .notif-actions-item button:hover { background: var(--glass); color: var(--text-1); }
-        .notification-dropdown-fixed .notif-empty {
-            text-align: center;
-            padding: 30px;
-            color: var(--text-3);
-        }
-        .notification-dropdown-fixed .notif-close-btn {
-            position: sticky;
-            bottom: 0;
-            background: var(--bg-2);
-            padding: 8px;
-            text-align: center;
-            border-top: 1px solid var(--glass-brd);
-            cursor: pointer;
-            color: var(--text-2);
-            font-size: 12px;
-            border-radius: 0 0 var(--radius-card) var(--radius-card);
-            margin: 0 -12px -12px;
-            transition: background .2s;
-        }
-        .notification-dropdown-fixed .notif-close-btn:hover {
-            color: var(--text-1);
-            background: var(--glass);
-        }
-
-        /* ===== TOAST (Bottom-Right) ===== */
-        .toast-container {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            z-index: 99999;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            gap: 10px;
-            pointer-events: none;
-            width: auto;
-            max-width: 380px;
-        }
-        .toast-item {
-            padding: 12px 18px 12px 16px;
-            border-radius: var(--radius-cap);
-            background: var(--bg-2);
-            border: 1px solid var(--glass-brd);
-            color: var(--text-1);
-            font-weight: 500;
-            font-size: 13px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.18);
-            animation: toastSlideInRight 0.4s cubic-bezier(0.34,1.56,0.64,1) forwards;
-            pointer-events: auto;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            width: 100%;
-            max-width: 380px;
-            position: relative;
-        }
-        .toast-item .toast-icon { font-size: 18px; flex-shrink: 0; }
-        .toast-item .toast-close {
-            background: none;
-            border: none;
-            color: var(--text-3);
-            cursor: pointer;
-            font-size: 16px;
-            padding: 0 4px;
-            flex-shrink: 0;
-            transition: color .2s;
-        }
-        .toast-item .toast-close:hover { color: var(--text-1); }
-        .toast-item.success { border-color: rgba(30,166,114,0.55); }
-        .toast-item.error { border-color: rgba(229,72,77,0.55); }
-        .toast-item.warning { border-color: rgba(242,153,74,0.55); }
-        .toast-item.info { border-color: rgba(30,166,114,0.35); }
-        @keyframes toastSlideInRight {
-            0% { opacity: 0; transform: translateX(60px) scale(0.95); }
-            100% { opacity: 1; transform: translateX(0) scale(1); }
-        }
-        @keyframes toastSlideOutRight {
-            0% { opacity: 1; transform: translateX(0) scale(1); }
-            100% { opacity: 0; transform: translateX(60px) scale(0.95); }
-        }
-        .toast-item.removing { animation: toastSlideOutRight 0.3s ease forwards; }
-
-        /* ===== BUTTONS ===== */
+        /* ===== BUTTONS (Enhanced & Colorful) ===== */
         .btn {
             border: none;
             cursor: pointer;
@@ -500,17 +288,41 @@
             align-items: center;
             gap: 6px;
             -webkit-tap-highlight-color: transparent;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
         }
-        .btn:active { transform: scale(.96); }
-        .btn-green { background: linear-gradient(135deg, var(--green), var(--green-2)); color: #052018; box-shadow: 0 10px 24px -10px var(--green-glow); }
-        .btn-red { background: linear-gradient(135deg, var(--red), var(--red-2)); color: #2b0507; box-shadow: 0 10px 24px -10px var(--red-glow); }
-        .btn-orange { background: linear-gradient(135deg, var(--orange), var(--orange-2)); color: #2b1500; box-shadow: 0 10px 24px -10px var(--orange-glow); }
+        .btn:active { transform: scale(.95); }
+        .btn::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent 60%);
+            pointer-events: none;
+        }
+        .btn-green { background: linear-gradient(135deg, var(--green), var(--green-2)); color: #fff; box-shadow: 0 4px 15px var(--green-glow); }
+        .btn-green:hover { box-shadow: 0 6px 25px var(--green-glow); transform: translateY(-2px); }
+        .btn-red { background: linear-gradient(135deg, var(--red), var(--red-2)); color: #fff; box-shadow: 0 4px 15px var(--red-glow); }
+        .btn-red:hover { box-shadow: 0 6px 25px var(--red-glow); transform: translateY(-2px); }
+        .btn-orange { background: linear-gradient(135deg, var(--orange), var(--orange-2)); color: #fff; box-shadow: 0 4px 15px var(--orange-glow); }
+        .btn-orange:hover { box-shadow: 0 6px 25px var(--orange-glow); transform: translateY(-2px); }
+        .btn-blue { background: linear-gradient(135deg, var(--blue), var(--blue-2)); color: #fff; box-shadow: 0 4px 15px var(--blue-glow); }
+        .btn-blue:hover { box-shadow: 0 6px 25px var(--blue-glow); transform: translateY(-2px); }
+        .btn-purple { background: linear-gradient(135deg, var(--purple), var(--purple-2)); color: #fff; box-shadow: 0 4px 15px var(--purple-glow); }
+        .btn-purple:hover { box-shadow: 0 6px 25px var(--purple-glow); transform: translateY(-2px); }
+        .btn-pink { background: linear-gradient(135deg, var(--pink), var(--pink-2)); color: #fff; box-shadow: 0 4px 15px var(--pink-glow); }
+        .btn-pink:hover { box-shadow: 0 6px 25px var(--pink-glow); transform: translateY(-2px); }
+        .btn-teal { background: linear-gradient(135deg, var(--teal), var(--teal-2)); color: #fff; box-shadow: 0 4px 15px var(--teal-glow); }
+        .btn-teal:hover { box-shadow: 0 6px 25px var(--teal-glow); transform: translateY(-2px); }
         .btn-ghost { background: var(--glass); color: var(--text-1); border: 1px solid var(--glass-brd); }
-        .btn-sm { padding: 6px 12px; font-size: 11.5px; }
-        .btn-danger { background: linear-gradient(135deg, #dc3545, #b02a37); color: #fff; box-shadow: 0 10px 24px -10px rgba(220,53,69,0.35); }
-        .btn[disabled] { opacity: .4; cursor: not-allowed; transform: none; }
+        .btn-ghost:hover { background: var(--glass-hi); border-color: var(--text-2); transform: translateY(-2px); }
+        .btn-sm { padding: 6px 14px; font-size: 11.5px; }
+        .btn-xs { padding: 4px 10px; font-size: 10.5px; }
+        .btn-danger { background: linear-gradient(135deg, #dc3545, #b02a37); color: #fff; box-shadow: 0 4px 15px rgba(220,53,69,0.35); }
+        .btn-danger:hover { box-shadow: 0 6px 25px rgba(220,53,69,0.45); transform: translateY(-2px); }
+        .btn[disabled] { opacity: .4; cursor: not-allowed; transform: none !important; box-shadow: none !important; }
 
-        /* ===== CARDS ===== */
+        /* ===== CARDS (Premium) ===== */
         .card {
             background: var(--glass);
             border: 1px solid var(--glass-brd);
@@ -521,7 +333,9 @@
             padding: 20px;
             position: relative;
             overflow: hidden;
+            transition: transform .25s ease, box-shadow .3s ease;
         }
+        .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-soft); }
         .card::before {
             content: "";
             position: absolute;
@@ -539,8 +353,26 @@
         @media(max-width:1100px) { .grid-4 { grid-template-columns: repeat(2,1fr); } .grid-3 { grid-template-columns: repeat(2,1fr); } }
         @media(max-width:640px) { .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; } }
 
-        .stat-card { padding: 16px 18px; }
-        .stat-label {
+        /* Premium Stat Cards */
+        .stat-card {
+            padding: 18px 20px;
+            position: relative;
+            overflow: hidden;
+            background: var(--glass);
+            border: 1px solid var(--glass-brd);
+            border-radius: var(--radius-card);
+            transition: all .3s ease;
+        }
+        .stat-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.10); }
+        .stat-card .stat-bg-icon {
+            position: absolute;
+            right: -5px;
+            bottom: -5px;
+            font-size: 52px;
+            opacity: 0.08;
+            pointer-events: none;
+        }
+        .stat-card .stat-label {
             font-size: 11px;
             color: var(--text-3);
             font-weight: 600;
@@ -549,21 +381,55 @@
             display: flex;
             align-items: center;
             gap: 6px;
+            position: relative;
+            z-index: 1;
         }
-        .stat-icon {
-            width: 26px;
-            height: 26px;
+        .stat-card .stat-icon {
+            width: 28px;
+            height: 28px;
             border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 13px;
+            font-size: 14px;
+            background: rgba(255,255,255,0.06);
         }
-        .stat-value { font-size: 22px; font-weight: 800; font-family: 'JetBrains Mono', monospace; }
-        .stat-value.green { color: var(--green); }
-        .stat-value.red { color: var(--red); }
-        .stat-value.orange { color: var(--orange); }
-        .stat-foot { font-size: 10.5px; color: var(--text-3); margin-top: 3px; }
+        .stat-card .stat-value {
+            font-size: 24px;
+            font-weight: 800;
+            font-family: 'JetBrains Mono', monospace;
+            position: relative;
+            z-index: 1;
+        }
+        .stat-card .stat-value.green { color: var(--green); }
+        .stat-card .stat-value.red { color: var(--red); }
+        .stat-card .stat-value.orange { color: var(--orange); }
+        .stat-card .stat-value.blue { color: var(--blue); }
+        .stat-card .stat-value.purple { color: var(--purple); }
+        .stat-card .stat-value.pink { color: var(--pink); }
+        .stat-card .stat-value.teal { color: var(--teal); }
+        .stat-card .stat-foot {
+            font-size: 10.5px;
+            color: var(--text-3);
+            margin-top: 3px;
+            position: relative;
+            z-index: 1;
+        }
+        .stat-card .stat-progress {
+            margin-top: 8px;
+            height: 4px;
+            border-radius: 4px;
+            background: rgba(0,0,0,0.06);
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+        }
+        .stat-card .stat-progress .bar {
+            height: 100%;
+            border-radius: 4px;
+            background: linear-gradient(90deg, var(--green), var(--teal));
+            transition: width 1s ease;
+        }
 
         .section-title {
             font-size: 15px;
@@ -606,9 +472,10 @@
         .badge-orange { background: rgba(242,153,74,0.15); color: var(--orange); border: 1px solid rgba(242,153,74,0.35); }
         .badge-grey { background: rgba(255,255,255,0.08); color: var(--text-2); border: 1px solid var(--glass-brd); }
         .badge-main { background: rgba(242,153,74,0.15); color: var(--orange); border: 1px solid rgba(242,153,74,0.35); }
-        .badge-paid { background: rgba(30,166,114,0.15); color: var(--green); border: 1px solid rgba(30,166,114,0.35); }
-        .badge-pending { background: rgba(242,153,74,0.15); color: var(--orange); border: 1px solid rgba(242,153,74,0.35); }
-        .badge-archived { background: rgba(255,255,255,0.08); color: var(--text-3); border: 1px solid var(--glass-brd); }
+        .badge-blue { background: rgba(74,144,217,0.15); color: var(--blue); border: 1px solid rgba(74,144,217,0.35); }
+        .badge-purple { background: rgba(124,58,237,0.15); color: var(--purple); border: 1px solid rgba(124,58,237,0.35); }
+        .badge-pink { background: rgba(236,72,153,0.15); color: var(--pink); border: 1px solid rgba(236,72,153,0.35); }
+        .badge-teal { background: rgba(20,184,166,0.15); color: var(--teal); border: 1px solid rgba(20,184,166,0.35); }
 
         /* ===== FORMS ===== */
         .formrow { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px,1fr)); gap: 10px; margin-bottom: 10px; }
@@ -682,7 +549,7 @@
             transition: all .2s;
             -webkit-tap-highlight-color: transparent;
         }
-        .chip.active { background: linear-gradient(135deg, var(--green), var(--green-2)); color: #052018; border-color: transparent; }
+        .chip.active { background: linear-gradient(135deg, var(--green), var(--green-2)); color: #fff; border-color: transparent; }
         .chip:hover:not(.active) { background: var(--glass-hi); }
 
         .tabs { display: flex; gap: 5px; margin-bottom: 14px; flex-wrap: wrap; }
@@ -698,7 +565,7 @@
             transition: all .2s;
             -webkit-tap-highlight-color: transparent;
         }
-        .tab.active { background: linear-gradient(135deg, var(--orange), var(--orange-2)); color: #2b1500; border-color: transparent; }
+        .tab.active { background: linear-gradient(135deg, var(--orange), var(--orange-2)); color: #fff; border-color: transparent; }
         .tab:hover:not(.active) { background: var(--glass-hi); }
 
         /* ===== INVESTOR ROW ===== */
@@ -923,6 +790,7 @@
         .statement-letter .summary-grid .item .value.green { color: var(--green); }
         .statement-letter .summary-grid .item .value.red { color: var(--red); }
         .statement-letter .summary-grid .item .value.orange { color: var(--orange); }
+        .statement-letter .summary-grid .item .value.purple { color: var(--purple); }
         .statement-letter .print-table {
             width: 100%;
             border-collapse: collapse;
@@ -983,6 +851,237 @@
         .toggle-switch input[type="checkbox"]:checked::after { left: 22px; background: #fff; }
         .toggle-label { font-size: 12px; font-weight: 600; color: var(--text-2); }
 
+        /* ===== TOAST (Fixed Bottom-Center) ===== */
+        .toast-container {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 99999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            pointer-events: none;
+            width: auto;
+            max-width: 90%;
+        }
+        .toast-item {
+            padding: 12px 24px;
+            border-radius: var(--radius-cap);
+            background: var(--bg-2);
+            border: 1px solid var(--glass-brd);
+            color: var(--text-1);
+            font-weight: 600;
+            font-size: 13px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2), 0 0 20px rgba(30,166,114,0.08);
+            animation: toastSlideUp 0.4s cubic-bezier(0.34,1.56,0.64,1) forwards;
+            pointer-events: auto;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            min-width: 160px;
+            max-width: 420px;
+            justify-content: center;
+            width: auto;
+            flex-shrink: 0;
+        }
+        .toast-item .toast-icon { font-size: 18px; flex-shrink: 0; }
+        .toast-item .toast-close {
+            background: none;
+            border: none;
+            color: var(--text-3);
+            cursor: pointer;
+            font-size: 16px;
+            padding: 0 4px;
+            flex-shrink: 0;
+            transition: color .2s;
+        }
+        .toast-item .toast-close:hover { color: var(--text-1); }
+        .toast-item.success { border-color: rgba(30,166,114,0.5); }
+        .toast-item.error { border-color: rgba(229,72,77,0.5); }
+        .toast-item.warning { border-color: rgba(242,153,74,0.5); }
+        .toast-item.info { border-color: rgba(74,144,217,0.5); }
+        @keyframes toastSlideUp {
+            0% { opacity: 0; transform: translateY(30px) scale(0.90); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        @keyframes toastSlideDown {
+            0% { opacity: 1; transform: translateY(0) scale(1); }
+            100% { opacity: 0; transform: translateY(30px) scale(0.90); }
+        }
+        .toast-item.removing { animation: toastSlideDown 0.3s ease forwards; }
+
+        /* ===== NOTIFICATION ===== */
+        .notif-wrapper { position: relative; display: inline-block; }
+        .notification-bell {
+            position: relative;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 50%;
+            transition: all .25s ease;
+            border: 1px solid var(--glass-brd);
+            background: var(--glass);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            z-index: 10;
+        }
+        .notification-bell:hover:not(.open) { transform: scale(1.05); border-color: var(--green); }
+        .notification-bell.open { transform: scale(1); border-color: var(--green); }
+        .notification-bell .badge-count {
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            background: var(--red);
+            color: #fff;
+            font-size: 9px;
+            font-weight: 700;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--bg-1);
+        }
+        .notification-dropdown-fixed {
+            position: fixed;
+            z-index: 9999;
+            width: 420px;
+            max-height: 500px;
+            overflow-y: auto;
+            background: var(--bg-2);
+            border: 1px solid var(--glass-brd);
+            border-radius: var(--radius-card);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 12px;
+            display: none;
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        .notification-dropdown-fixed.open { display: block; }
+        .notification-dropdown-fixed .notif-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--glass-brd);
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .notification-dropdown-fixed .notif-header .notif-tabs {
+            display: flex;
+            gap: 5px;
+        }
+        .notification-dropdown-fixed .notif-header .notif-tabs .notif-tab {
+            padding: 4px 12px;
+            border-radius: var(--radius-cap);
+            font-size: 11px;
+            font-weight: 600;
+            cursor: pointer;
+            background: var(--glass);
+            color: var(--text-2);
+            border: 1px solid var(--glass-brd);
+            transition: all .2s;
+        }
+        .notification-dropdown-fixed .notif-header .notif-tabs .notif-tab.active {
+            background: var(--green);
+            color: #fff;
+            border-color: var(--green);
+        }
+        .notification-dropdown-fixed .notif-header .notif-actions {
+            display: flex;
+            gap: 5px;
+        }
+        .notification-dropdown-fixed .notif-header .notif-actions button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-2);
+            padding: 4px 8px;
+            border-radius: var(--radius-cap);
+            transition: all .2s;
+        }
+        .notification-dropdown-fixed .notif-header .notif-actions button:hover { background: var(--glass); }
+        .notification-dropdown-fixed .notif-item {
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--glass-brd);
+            font-size: 12.5px;
+            cursor: pointer;
+            transition: all .2s ease;
+            border-radius: 8px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .notification-dropdown-fixed .notif-item:hover { background: var(--glass); }
+        .notification-dropdown-fixed .notif-item:last-child { border-bottom: none; }
+        .notification-dropdown-fixed .notif-item .notif-icon { font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+        .notification-dropdown-fixed .notif-item .notif-content { flex: 1; }
+        .notification-dropdown-fixed .notif-item .notif-content .notif-msg { font-weight: 500; }
+        .notification-dropdown-fixed .notif-item .notif-content .notif-meta {
+            display: flex;
+            gap: 10px;
+            font-size: 10px;
+            color: var(--text-3);
+            margin-top: 4px;
+            flex-wrap: wrap;
+        }
+        .notification-dropdown-fixed .notif-item .notif-content .notif-meta .notif-time { font-family: 'JetBrains Mono', monospace; }
+        .notification-dropdown-fixed .notif-item .notif-content .notif-meta .notif-badge {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--green);
+        }
+        .notification-dropdown-fixed .notif-item .notif-actions-item {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        .notification-dropdown-fixed .notif-item .notif-actions-item button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 12px;
+            color: var(--text-3);
+            padding: 2px 6px;
+            border-radius: var(--radius-cap);
+            transition: all .2s;
+        }
+        .notification-dropdown-fixed .notif-item .notif-actions-item button:hover { background: var(--glass); color: var(--text-1); }
+        .notification-dropdown-fixed .notif-empty {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-3);
+        }
+        .notification-dropdown-fixed .notif-close-btn {
+            position: sticky;
+            bottom: 0;
+            background: var(--bg-2);
+            padding: 8px;
+            text-align: center;
+            border-top: 1px solid var(--glass-brd);
+            cursor: pointer;
+            color: var(--text-2);
+            font-size: 12px;
+            border-radius: 0 0 var(--radius-card) var(--radius-card);
+            margin: 0 -12px -12px;
+            transition: background .2s;
+        }
+        .notification-dropdown-fixed .notif-close-btn:hover {
+            color: var(--text-1);
+            background: var(--glass);
+        }
+
         /* ===== RESPONSIVE ===== */
         @media(max-width:900px) {
             .sidebar {
@@ -1010,22 +1109,34 @@
             .order-actions .btn { flex: 1; justify-content: center; }
             .investor-row { flex-direction: column; align-items: stretch; gap: 8px; }
             .investor-left { flex-wrap: wrap; }
+            .toast-container { bottom: 16px; max-width: 94%; }
+            .toast-item { max-width: 100%; padding: 10px 18px; font-size: 12px; }
         }
         @media(max-width:700px) {
             .statement-letter .letter-body { padding: 14px 16px; }
             .statement-letter .letter-header { padding: 14px 16px; }
             .statement-letter .letter-header h2 { font-size: 17px; }
-            .toast-container { right: 12px; bottom: 12px; max-width: calc(100% - 24px); }
-            .toast-item { max-width: 100%; }
         }
 
-        /* ===== PRINT ===== */
+        /* ===== PRINT (Clean layout - hide ALL UI controls) ===== */
         @media print {
+            /* Hide everything except the report content */
             .sidebar, .topbar, .btn, .no-print, .sidebar-toggle, .sidebar-overlay,
-            .notification-bell, .toast-container, .biz-switch, .notification-dropdown-fixed { display: none !important; }
-            body { background: #fff !important; color: #000 !important; }
-            .card { box-shadow: none !important; border: 1px solid #ccc !important; backdrop-filter: none !important; background: #fff !important; }
-            .main { padding: 10px !important; }
+            .notification-bell, .toast-container, .biz-switch, .notification-dropdown-fixed,
+            .filter-chips, .tabs, .searchbar, .modal-overlay, .modal,
+            .nav, .side-foot, .toggle-row, .navgroup-label, .navitem,
+            .order-actions, .toggle-link, .split-bar, .page-sub, .topbar,
+            .biz-switch, .notif-wrapper, .page-title, .breadcrumb, .action-bar,
+            .formrow, .filter-bar, .statement-filter, .report-controls,
+            input[type="date"], input[type="text"], select, button:not(.no-print-btn),
+            .filter-chips, .tabs, .tab, .chip, .searchbar, .btn, .modal-actions,
+            .order-actions, .toggle-link, .split-bar, .pagination, .toolbar {
+                display: none !important;
+            }
+            /* Show only the content */
+            body { background: #fff !important; color: #000 !important; margin: 0 !important; padding: 0.5in !important; }
+            .main { padding: 0 !important; max-width: 100% !important; display: block !important; }
+            .card { box-shadow: none !important; border: 1px solid #ddd !important; backdrop-filter: none !important; background: #fff !important; border-radius: 4px !important; }
             .order-detail { display: block !important; max-height: none !important; opacity: 1 !important; }
             .order-detail .inner { border-top: 1px solid #ddd !important; }
             .business-card { border: 1px solid #ddd !important; background: #fff !important; }
@@ -1034,6 +1145,24 @@
             .statement-letter .letter-footer { background: #f8faf9 !important; }
             .statement-letter .summary-grid .item { background: #f8faf9 !important; }
             .statement-letter .print-table th { background: #f4f7f6 !important; color: #3c5a4e !important; }
+            .grid { display: block !important; }
+            .grid .stat-card { display: inline-block; width: 23%; margin: 4px; }
+            .page-title { font-size: 20px !important; display: block !important; }
+            .topbar { display: none !important; }
+            .statement-letter .letter-header .sub { font-size: 12px !important; }
+            #content { display: block !important; width: 100% !important; }
+            .order-card { break-inside: avoid; page-break-inside: avoid; }
+            .statement-letter { break-inside: avoid; page-break-inside: avoid; }
+            .grid .stat-card { break-inside: avoid; page-break-inside: avoid; }
+            /* Ensure print button itself is hidden */
+            .no-print { display: none !important; }
+            /* Hide any filter/search elements */
+            #stmtBody .formrow, #stmtBody .filter-chips, #stmtBody .tabs,
+            #stmtBody input, #stmtBody select, #stmtBody button {
+                display: none !important;
+            }
+            #stmtBody .statement-letter { display: block !important; }
+            #stmtBody .empty { display: none !important; }
         }
 
         .settings-section { margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--glass-brd); }
@@ -1052,13 +1181,11 @@
 <body>
     <div class="app">
 
-        <!-- SIDEBAR OVERLAY (mobile) -->
         <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
         <button class="sidebar-toggle" id="sidebarToggle" onclick="toggleSidebar()" aria-label="Toggle Menu">☰</button>
 
-        <!-- SIDEBAR -->
         <aside class="sidebar" id="sidebar">
-            <div class="brand">
+            <div class="brand" onclick="goHome()">
                 <div class="brand-mark">₮</div>
                 <div>
                     <div class="brand-title" data-t="appTitle">ইনভেস্ট লেজার প্রো</div>
@@ -1080,7 +1207,6 @@
             </div>
         </aside>
 
-        <!-- MAIN -->
         <main class="main">
             <div class="topbar">
                 <div>
@@ -1131,62 +1257,9 @@
                 email: { enabled: false, smtpHost: '', smtpPort: 587, smtpUser: '', smtpPass: '', fromEmail: '',
                     fromName: 'Invest Ledger Pro' },
                 communication: {
-                    templates: {
-                        sms: {
-                            deposit: { subject: '', body: 'Dear {{InvestorName}}, Your deposit of {{Amount}} has been received. Ref: {{ReferenceNumber}}. Balance: {{AvailableBalance}}.' },
-                            withdraw: { subject: '', body: 'Dear {{InvestorName}}, Withdrawal of {{Amount}} processed. Ref: {{ReferenceNumber}}. Balance: {{AvailableBalance}}.' },
-                            order_created: { subject: '', body: 'Dear {{InvestorName}}, Order {{OrderNumber}} created. Utilized: {{UtilizedAmount}}.' },
-                            order_closed_profit: { subject: '', body: 'Dear {{InvestorName}}, Order {{OrderNumber}} closed with profit {{ProfitAmount}}. Commission: {{Commission}}. Balance: {{AvailableBalance}}.' },
-                            order_closed_loss: { subject: '', body: 'Dear {{InvestorName}}, Order {{OrderNumber}} closed with loss {{LossAmount}}. Balance: {{AvailableBalance}}.' },
-                            profit_distribution: { subject: '', body: 'Dear {{InvestorName}}, Profit of {{ProfitAmount}} distributed from Order {{OrderNumber}}.' },
-                            profit_payment: { subject: '', body: 'Dear {{InvestorName}}, Profit payment of {{Amount}} received. Ref: {{ReferenceNumber}}.' },
-                            commission_payment: { subject: '', body: 'Dear {{InvestorName}}, Commission payment of {{Amount}} received.' },
-                            loss_recovery: { subject: '', body: 'Dear {{InvestorName}}, Loss recovery of {{Amount}} from Order {{OrderNumber}}.' },
-                            welcome: { subject: '', body: 'Welcome {{InvestorName}} to {{CompanyName}}.' },
-                            monthly_statement: { subject: '', body: 'Dear {{InvestorName}}, Monthly statement for {{Month}} {{Year}} attached.' },
-                            yearly_statement: { subject: '', body: 'Dear {{InvestorName}}, Yearly statement for {{Year}} attached.' }
-                        },
-                        email: {
-                            deposit: { subject: 'Deposit Confirmation - {{ReferenceNumber}}', body: '<h3>Deposit Confirmation</h3><p>Dear {{InvestorName}},</p><p>Your deposit of {{Amount}} has been received.</p><p>Reference: {{ReferenceNumber}}</p><p>Balance: {{AvailableBalance}}</p><p>Date: {{TransactionDate}}</p>' },
-                            withdraw: { subject: 'Withdrawal Confirmation - {{ReferenceNumber}}', body: '<h3>Withdrawal Confirmation</h3><p>Dear {{InvestorName}},</p><p>Withdrawal of {{Amount}} processed.</p><p>Reference: {{ReferenceNumber}}</p><p>Balance: {{AvailableBalance}}</p><p>Date: {{TransactionDate}}</p>' },
-                            order_created: { subject: 'Order Created - {{OrderNumber}}', body: '<h3>Order Created</h3><p>Dear {{InvestorName}},</p><p>Order {{OrderNumber}} has been created.</p><p>Utilized Amount: {{UtilizedAmount}}</p><p>Date: {{TransactionDate}}</p>' },
-                            order_closed_profit: { subject: 'Order Closed - {{OrderNumber}} (Profit)', body: '<h3>Order Closed (Profit)</h3><p>Dear {{InvestorName}},</p><p>Order {{OrderNumber}} closed with profit.</p><p>Profit Amount: {{ProfitAmount}}</p><p>Commission: {{Commission}}</p><p>Balance: {{AvailableBalance}}</p>' },
-                            order_closed_loss: { subject: 'Order Closed - {{OrderNumber}} (Loss)', body: '<h3>Order Closed (Loss)</h3><p>Dear {{InvestorName}},</p><p>Order {{OrderNumber}} closed with loss.</p><p>Loss Amount: {{LossAmount}}</p><p>Balance: {{AvailableBalance}}</p>' },
-                            profit_distribution: { subject: 'Profit Distribution - {{OrderNumber}}', body: '<h3>Profit Distribution</h3><p>Dear {{InvestorName}},</p><p>Profit of {{ProfitAmount}} has been distributed from Order {{OrderNumber}}.</p>' },
-                            profit_payment: { subject: 'Profit Payment - {{ReferenceNumber}}', body: '<h3>Profit Payment</h3><p>Dear {{InvestorName}},</p><p>Profit payment of {{Amount}} has been processed.</p><p>Reference: {{ReferenceNumber}}</p>' },
-                            commission_payment: { subject: 'Commission Payment', body: '<h3>Commission Payment</h3><p>Dear {{InvestorName}},</p><p>Commission payment of {{Amount}} has been processed.</p>' },
-                            loss_recovery: { subject: 'Loss Recovery - {{OrderNumber}}', body: '<h3>Loss Recovery</h3><p>Dear {{InvestorName}},</p><p>Loss recovery of {{Amount}} from Order {{OrderNumber}}.</p>' },
-                            welcome: { subject: 'Welcome to {{CompanyName}}', body: '<h3>Welcome {{InvestorName}}</h3><p>Welcome to {{CompanyName}}. Your account has been created.</p>' },
-                            monthly_statement: { subject: 'Monthly Statement - {{Month}} {{Year}}', body: '<h3>Monthly Statement</h3><p>Dear {{InvestorName}},</p><p>Please find your monthly statement for {{Month}} {{Year}} attached.</p>' },
-                            yearly_statement: { subject: 'Yearly Statement - {{Year}}', body: '<h3>Yearly Statement</h3><p>Dear {{InvestorName}},</p><p>Please find your yearly statement for {{Year}} attached.</p>' }
-                        }
-                    },
-                    rules: {
-                        deposit: { sms: true, email: true, telegram: true, inapp: true },
-                        withdraw: { sms: true, email: true, telegram: true, inapp: true },
-                        order_created: { sms: false, email: true, telegram: true, inapp: true },
-                        order_closed_profit: { sms: true, email: true, telegram: true, inapp: true },
-                        order_closed_loss: { sms: true, email: true, telegram: true, inapp: true },
-                        profit_distribution: { sms: true, email: true, telegram: true, inapp: true },
-                        profit_payment: { sms: true, email: true, telegram: true, inapp: true },
-                        commission_payment: { sms: true, email: true, telegram: true, inapp: true },
-                        loss_recovery: { sms: true, email: true, telegram: true, inapp: true },
-                        welcome: { sms: true, email: true, telegram: true, inapp: true },
-                        monthly_statement: { sms: false, email: true, telegram: false, inapp: true },
-                        yearly_statement: { sms: false, email: true, telegram: false, inapp: true }
-                    },
-                    globalVars: {
-                        companyName: 'Invest Ledger Pro',
-                        companyEmail: 'support@investledger.com',
-                        companyPhone: '+8801234567890',
-                        supportNumber: '+8801234567890',
-                        website: 'https://investledger.com',
-                        address: 'Dhaka, Bangladesh',
-                        currency: 'BDT',
-                        timeZone: 'Asia/Dhaka',
-                        senderName: 'Invest Ledger',
-                        telegramSupport: 't.me/investledger'
-                    },
+                    templates: { sms: {}, email: {} },
+                    rules: {},
+                    globalVars: {},
                     logs: [],
                     retry: { maxRetries: 3, retryInterval: 60 }
                 }
@@ -1228,7 +1301,16 @@
         function currentBiz() { return STATE.businesses.find(b => b.id === STATE.activeBusinessId) || null; }
 
         // ============================================================
-        // TOAST (Bottom-Right)
+        // GO HOME (Dashboard)
+        // ============================================================
+        function goHome() {
+            STATE.activeNav = 'dashboard';
+            saveState();
+            renderAll();
+        }
+
+        // ============================================================
+        // TOAST (Fixed Bottom-Center, Floating Overlay)
         // ============================================================
         function toast(msg, type = 'success') {
             const container = document.getElementById('toastRoot');
@@ -1278,7 +1360,7 @@
         }
 
         // ============================================================
-        // NOTIFICATIONS (with UI bug fix - dropdown stays open)
+        // NOTIFICATIONS
         // ============================================================
         function toggleNotifications(e) {
             if (e) e.stopPropagation();
@@ -1336,16 +1418,10 @@
                 business_archived: '📦',
                 main_investor_replaced: '🔄',
                 sharing_rate_changed: '📊',
-                commission_rate_changed: '📊',
                 system: '⚙️',
                 warning: '⚠️',
                 error: '❌',
-                info: 'ℹ️',
-                monthly_statement: '📊',
-                yearly_statement: '📊',
-                welcome: '👋',
-                profit_payment: '💵',
-                commission_payment: '💰'
+                info: 'ℹ️'
             };
             return map[type] || '📨';
         }
@@ -1364,8 +1440,6 @@
             if (STATE.notifications.length > 200) STATE.notifications = STATE.notifications.slice(0, 200);
             updateNotifBadge();
             saveState();
-            // Trigger communication
-            triggerCommunication(type, message, businessId, investorId);
         }
 
         function updateNotifBadge() {
@@ -1387,7 +1461,7 @@
 
             if (!items.length) {
                 container.innerHTML = `
-                    <div class="notif-empty">🔕 ${tr('noNotifications')}</div>
+                    <div class="notif-empty">🔕 কোন নোটিফিকেশন নেই</div>
                     <div class="notif-close-btn" onclick="closeNotifications(); event.stopPropagation();">✕ বন্ধ করুন</div>
                 `;
                 return;
@@ -1502,185 +1576,6 @@
         }
 
         // ============================================================
-        // COMMUNICATION ENGINE (Event-Based)
-        // ============================================================
-        function triggerCommunication(eventType, message, businessId, investorId) {
-            const rules = STATE.settings.communication.rules || {};
-            const rule = rules[eventType] || { sms: false, email: false, telegram: false, inapp: true };
-            const b = STATE.businesses.find(x => x.id === businessId) || currentBiz();
-            if (!b) return;
-
-            // Find investor
-            let inv = null;
-            if (investorId) {
-                inv = b.investors.find(i => i.id === investorId);
-            } else {
-                // Try to find investor from message
-                const match = message.match(/👤\s*([^\s]+)/);
-                if (match) {
-                    const name = match[1];
-                    inv = b.investors.find(i => i.name === name);
-                }
-            }
-
-            if (!inv) return;
-
-            // Build template data
-            const data = {
-                InvestorName: inv.name,
-                BusinessName: b.name,
-                CompanyName: STATE.settings.communication.globalVars.companyName || 'Invest Ledger Pro',
-                CompanyEmail: STATE.settings.communication.globalVars.companyEmail || '',
-                CompanyPhone: STATE.settings.communication.globalVars.companyPhone || '',
-                SupportNumber: STATE.settings.communication.globalVars.supportNumber || '',
-                Website: STATE.settings.communication.globalVars.website || '',
-                Address: STATE.settings.communication.globalVars.address || '',
-                Currency: STATE.settings.communication.globalVars.currency || 'BDT',
-                SenderName: STATE.settings.communication.globalVars.senderName || 'Invest Ledger',
-                TelegramSupport: STATE.settings.communication.globalVars.telegramSupport || '',
-                CurrentDate: todayStr(),
-                CurrentTime: new Date().toLocaleTimeString(),
-                TransactionDate: todayStr(),
-                Amount: money(inv.netPayable || 0),
-                AvailableBalance: money(inv.capitalBalance || 0),
-                ReferenceNumber: newRef(),
-                OrderNumber: '',
-                UtilizedAmount: money(0),
-                ProfitAmount: money(0),
-                LossAmount: money(0),
-                Commission: money(0),
-                Month: new Date().toLocaleString('default', { month: 'long' }),
-                Year: new Date().getFullYear().toString()
-            };
-
-            // Extract numbers from message
-            const amtMatch = message.match(/৳([\d,]+)/);
-            if (amtMatch) {
-                const num = parseInt(amtMatch[1].replace(/,/g, ''));
-                if (!isNaN(num)) data.Amount = money(num);
-            }
-            const orderMatch = message.match(/অর্ডার\s*([^\s]+)/i);
-            if (orderMatch) data.OrderNumber = orderMatch[1];
-
-            // Send based on rules
-            if (rule.sms && inv.mobile) {
-                const smsTemplate = STATE.settings.communication.templates.sms[eventType] || { body: message };
-                const smsBody = replacePlaceholders(smsTemplate.body || message, data);
-                sendSMS(inv.mobile, smsBody, b);
-            }
-            if (rule.email && inv.email) {
-                const emailTemplate = STATE.settings.communication.templates.email[eventType] || { subject: eventType,
-                    body: message };
-                const emailSubject = replacePlaceholders(emailTemplate.subject || eventType, data);
-                const emailBody = replacePlaceholders(emailTemplate.body || message, data);
-                sendEmail(inv.email, emailSubject, emailBody, b);
-            }
-            if (rule.telegram) {
-                sendTelegramNotification(message);
-            }
-            // In-app already sent via addNotification
-        }
-
-        function replacePlaceholders(text, data) {
-            let result = text;
-            for (const [key, val] of Object.entries(data)) {
-                result = result.replace(new RegExp('{{' + key + '}}', 'g'), val);
-            }
-            return result;
-        }
-
-        // ============================================================
-        // SMS / EMAIL / TELEGRAM
-        // ============================================================
-        async function sendSMS(phone, message, biz) {
-            const sms = STATE.settings.sms;
-            if (!sms.enabled || !sms.apiKey || !sms.apiBaseUrl) return false;
-            const senderId = sms.useMasking ? sms.maskingSenderId : sms.nonMaskingSenderId;
-            if (!senderId) return false;
-            const payload = {
-                api_key: sms.apiKey,
-                senderid: senderId,
-                type: 'text',
-                scheduledDateTime: '',
-                msg: message,
-                contacts: phone
-            };
-            let attempts = 0;
-            const maxRetries = STATE.settings.communication?.retry?.maxRetries || 3;
-            while (attempts < maxRetries) {
-                try {
-                    const response = await fetch(sms.apiBaseUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-                    const data = await response.json();
-                    if (data.status === 'success' || response.ok) {
-                        logCommunication('SMS', phone, message, 'sent', biz);
-                        return true;
-                    }
-                } catch (e) { console.error('SMS attempt failed:', e); }
-                attempts++;
-                await new Promise(r => setTimeout(r, 1000));
-            }
-            logCommunication('SMS', phone, message, 'failed', biz);
-            return false;
-        }
-
-        async function sendEmail(to, subject, htmlContent, biz) {
-            const email = STATE.settings.email;
-            if (!email.enabled || !email.smtpHost || !email.smtpUser) return false;
-            logCommunication('Email', to, subject, 'sent', biz);
-            // Send PDF statement for order close events
-            if (subject.includes('Order Closed') || subject.includes('Profit') || subject.includes('Loss')) {
-                // Auto-generate PDF attachment (simulated)
-                toast('📧 PDF Statement sent to ' + to);
-                addNotification('📧 PDF Statement sent to ' + to, 'info');
-            }
-            return true;
-        }
-
-        async function sendTelegramNotification(message) {
-            const tg = STATE.settings.telegram;
-            if (!tg.enabled || !tg.botToken || !tg.chatId) return;
-            try {
-                const url = `https://api.telegram.org/bot${tg.botToken}/sendMessage`;
-                await fetch(url, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        chat_id: tg.chatId,
-                        text: `📢 ${message}\n\n${new Date().toLocaleString()}`,
-                        parse_mode: 'HTML'
-                    })
-                });
-                logCommunication('Telegram', tg.chatId, message, 'sent', currentBiz());
-            } catch (e) {
-                console.error('Telegram send failed:', e);
-                logCommunication('Telegram', tg.chatId, message, 'failed', currentBiz());
-            }
-        }
-
-        function logCommunication(type, recipient, content, status, biz) {
-            const log = {
-                id: uid('COMM'),
-                type: type,
-                recipient: recipient,
-                content: content.substring(0, 200),
-                status: status,
-                time: new Date().toISOString(),
-                businessId: biz?.id || STATE.activeBusinessId,
-                orderNumber: null,
-                transactionRef: null
-            };
-            STATE.settings.communication.logs = STATE.settings.communication.logs || [];
-            STATE.settings.communication.logs.unshift(log);
-            if (STATE.settings.communication.logs.length > 500) STATE.settings.communication.logs = STATE.settings
-                .communication.logs.slice(0, 500);
-            saveState();
-        }
-
-        // ============================================================
         // PERSISTENCE
         // ============================================================
         function saveState() {
@@ -1706,65 +1601,6 @@
                         logs: [],
                         retry: { maxRetries: 3, retryInterval: 60 }
                     };
-                    // Ensure default templates exist
-                    const defaultSmsTemplates = {
-                        deposit: { body: 'Dear {{InvestorName}}, Your deposit of {{Amount}} has been received. Ref: {{ReferenceNumber}}. Balance: {{AvailableBalance}}.' },
-                        withdraw: { body: 'Dear {{InvestorName}}, Withdrawal of {{Amount}} processed. Ref: {{ReferenceNumber}}. Balance: {{AvailableBalance}}.' },
-                        order_created: { body: 'Dear {{InvestorName}}, Order {{OrderNumber}} created. Utilized: {{UtilizedAmount}}.' },
-                        order_closed_profit: { body: 'Dear {{InvestorName}}, Order {{OrderNumber}} closed with profit {{ProfitAmount}}. Commission: {{Commission}}. Balance: {{AvailableBalance}}.' },
-                        order_closed_loss: { body: 'Dear {{InvestorName}}, Order {{OrderNumber}} closed with loss {{LossAmount}}. Balance: {{AvailableBalance}}.' },
-                        profit_distribution: { body: 'Dear {{InvestorName}}, Profit of {{ProfitAmount}} distributed from Order {{OrderNumber}}.' },
-                        profit_payment: { body: 'Dear {{InvestorName}}, Profit payment of {{Amount}} received. Ref: {{ReferenceNumber}}.' },
-                        commission_payment: { body: 'Dear {{InvestorName}}, Commission payment of {{Amount}} received.' },
-                        loss_recovery: { body: 'Dear {{InvestorName}}, Loss recovery of {{Amount}} from Order {{OrderNumber}}.' },
-                        welcome: { body: 'Welcome {{InvestorName}} to {{CompanyName}}.' },
-                        monthly_statement: { body: 'Dear {{InvestorName}}, Monthly statement for {{Month}} {{Year}} attached.' },
-                        yearly_statement: { body: 'Dear {{InvestorName}}, Yearly statement for {{Year}} attached.' }
-                    };
-                    const defaultEmailTemplates = {
-                        deposit: { subject: 'Deposit Confirmation - {{ReferenceNumber}}', body: '<h3>Deposit Confirmation</h3><p>Dear {{InvestorName}},</p><p>Your deposit of {{Amount}} has been received.</p><p>Reference: {{ReferenceNumber}}</p><p>Balance: {{AvailableBalance}}</p><p>Date: {{TransactionDate}}</p>' },
-                        withdraw: { subject: 'Withdrawal Confirmation - {{ReferenceNumber}}', body: '<h3>Withdrawal Confirmation</h3><p>Dear {{InvestorName}},</p><p>Withdrawal of {{Amount}} processed.</p><p>Reference: {{ReferenceNumber}}</p><p>Balance: {{AvailableBalance}}</p><p>Date: {{TransactionDate}}</p>' },
-                        order_created: { subject: 'Order Created - {{OrderNumber}}', body: '<h3>Order Created</h3><p>Dear {{InvestorName}},</p><p>Order {{OrderNumber}} has been created.</p><p>Utilized Amount: {{UtilizedAmount}}</p><p>Date: {{TransactionDate}}</p>' },
-                        order_closed_profit: { subject: 'Order Closed - {{OrderNumber}} (Profit)', body: '<h3>Order Closed (Profit)</h3><p>Dear {{InvestorName}},</p><p>Order {{OrderNumber}} closed with profit.</p><p>Profit Amount: {{ProfitAmount}}</p><p>Commission: {{Commission}}</p><p>Balance: {{AvailableBalance}}</p>' },
-                        order_closed_loss: { subject: 'Order Closed - {{OrderNumber}} (Loss)', body: '<h3>Order Closed (Loss)</h3><p>Dear {{InvestorName}},</p><p>Order {{OrderNumber}} closed with loss.</p><p>Loss Amount: {{LossAmount}}</p><p>Balance: {{AvailableBalance}}</p>' },
-                        profit_distribution: { subject: 'Profit Distribution - {{OrderNumber}}', body: '<h3>Profit Distribution</h3><p>Dear {{InvestorName}},</p><p>Profit of {{ProfitAmount}} has been distributed from Order {{OrderNumber}}.</p>' },
-                        profit_payment: { subject: 'Profit Payment - {{ReferenceNumber}}', body: '<h3>Profit Payment</h3><p>Dear {{InvestorName}},</p><p>Profit payment of {{Amount}} has been processed.</p><p>Reference: {{ReferenceNumber}}</p>' },
-                        commission_payment: { subject: 'Commission Payment', body: '<h3>Commission Payment</h3><p>Dear {{InvestorName}},</p><p>Commission payment of {{Amount}} has been processed.</p>' },
-                        loss_recovery: { subject: 'Loss Recovery - {{OrderNumber}}', body: '<h3>Loss Recovery</h3><p>Dear {{InvestorName}},</p><p>Loss recovery of {{Amount}} from Order {{OrderNumber}}.</p>' },
-                        welcome: { subject: 'Welcome to {{CompanyName}}', body: '<h3>Welcome {{InvestorName}}</h3><p>Welcome to {{CompanyName}}. Your account has been created.</p>' },
-                        monthly_statement: { subject: 'Monthly Statement - {{Month}} {{Year}}', body: '<h3>Monthly Statement</h3><p>Dear {{InvestorName}},</p><p>Please find your monthly statement for {{Month}} {{Year}} attached.</p>' },
-                        yearly_statement: { subject: 'Yearly Statement - {{Year}}', body: '<h3>Yearly Statement</h3><p>Dear {{InvestorName}},</p><p>Please find your yearly statement for {{Year}} attached.</p>' }
-                    };
-                    // Merge defaults if missing
-                    for (const key of Object.keys(defaultSmsTemplates)) {
-                        if (!STATE.settings.communication.templates.sms[key]) {
-                            STATE.settings.communication.templates.sms[key] = defaultSmsTemplates[key];
-                        }
-                    }
-                    for (const key of Object.keys(defaultEmailTemplates)) {
-                        if (!STATE.settings.communication.templates.email[key]) {
-                            STATE.settings.communication.templates.email[key] = defaultEmailTemplates[key];
-                        }
-                    }
-                    const defaultRules = {
-                        deposit: { sms: true, email: true, telegram: true, inapp: true },
-                        withdraw: { sms: true, email: true, telegram: true, inapp: true },
-                        order_created: { sms: false, email: true, telegram: true, inapp: true },
-                        order_closed_profit: { sms: true, email: true, telegram: true, inapp: true },
-                        order_closed_loss: { sms: true, email: true, telegram: true, inapp: true },
-                        profit_distribution: { sms: true, email: true, telegram: true, inapp: true },
-                        profit_payment: { sms: true, email: true, telegram: true, inapp: true },
-                        commission_payment: { sms: true, email: true, telegram: true, inapp: true },
-                        loss_recovery: { sms: true, email: true, telegram: true, inapp: true },
-                        welcome: { sms: true, email: true, telegram: true, inapp: true },
-                        monthly_statement: { sms: false, email: true, telegram: false, inapp: true },
-                        yearly_statement: { sms: false, email: true, telegram: false, inapp: true }
-                    };
-                    for (const key of Object.keys(defaultRules)) {
-                        if (!STATE.settings.communication.rules[key]) {
-                            STATE.settings.communication.rules[key] = defaultRules[key];
-                        }
-                    }
                     return true;
                 }
                 return false;
@@ -1784,7 +1620,6 @@
                     locked: false, reversed: false }],
                 withdraws: [],
                 sharingHistory: [{ rate: 0, effectiveDate: todayStr() }],
-                commissionRateHistory: [{ rate: 60, effectiveDate: todayStr() }],
                 lossBalance: 0,
                 totalProfit: 0,
                 totalLoss: 0,
@@ -1798,7 +1633,9 @@
                 commissionPending: 0,
                 commissionHistory: [],
                 capitalBalance: 500000,
-                profitBalance: 0
+                profitBalance: 0,
+                ownProfitBalance: 0,
+                commissionBalance: 0
             };
             const inv2 = {
                 id: 'INV-0002',
@@ -1811,7 +1648,6 @@
                     locked: false, reversed: false }],
                 withdraws: [],
                 sharingHistory: [{ rate: 40, effectiveDate: todayStr() }],
-                commissionRateHistory: [{ rate: 60, effectiveDate: todayStr() }],
                 lossBalance: 0,
                 totalProfit: 0,
                 totalLoss: 0,
@@ -1838,7 +1674,6 @@
                     locked: false, reversed: false }],
                 withdraws: [],
                 sharingHistory: [{ rate: 40, effectiveDate: todayStr() }],
-                commissionRateHistory: [{ rate: 60, effectiveDate: todayStr() }],
                 lossBalance: 0,
                 totalProfit: 0,
                 totalLoss: 0,
@@ -2128,8 +1963,6 @@
             rate: { bn: 'রেট', en: 'Rate' },
             current: { bn: 'বর্তমান', en: 'Current' },
             expired: { bn: 'মেয়াদোত্তীর্ণ', en: 'Expired' },
-            commissionRateHistory: { bn: 'কমিশন রেটের ইতিহাস', en: 'Commission Rate History' },
-            addCommissionRate: { bn: 'কমিশন রেট যোগ', en: 'Add Commission Rate' },
             resetAllConfirm: { bn: 'সব ডেটা রিসেট করতে "RESET ALL" টাইপ করুন', en: 'Type "RESET ALL" to reset all data' },
             resetConfirm: { bn: 'রিসেট করতে "RESET" টাইপ করুন', en: 'Type "RESET" to reset' },
             system: { bn: 'সিস্টেম', en: 'System' },
@@ -2161,7 +1994,7 @@
             replacementDate: { bn: 'পরিবর্তনের তারিখ', en: 'Replacement Date' },
             confirmReplace: { bn: 'আপনি কি মেইন ইনভেস্টর পরিবর্তন করতে চান?', en: 'Are you sure you want to replace the main investor?' },
             replaceSuccess: { bn: 'মেইন ইনভেস্টর পরিবর্তন সফল', en: 'Main investor replaced successfully' },
-            cannotDeleteMain: { bn: 'মেইন ইনভেস্টর ডিলিট করা যাবে না। শুধুমাত্র Replace করা যাবে。', en: 'Main investor cannot be deleted. Only replace is allowed.' },
+            cannotDeleteMain: { bn: 'মেইন ইনভেস্টর ডিলিট করা যাবে না। শুধুমাত্র Replace করা যাবে।', en: 'Main investor cannot be deleted. Only replace is allowed.' },
             mainInvestorReplaced: { bn: 'মেইন ইনভেস্টর পরিবর্তন', en: 'Main Investor Replaced' },
             orderWise: { bn: 'অর্ডার ভিত্তিক', en: 'Order Wise' },
             consolidatedReport: { bn: 'সমন্বিত রিপোর্ট', en: 'Consolidated Report' },
@@ -2204,7 +2037,13 @@
             templatePreview: { bn: 'টেমপ্লেট প্রিভিউ', en: 'Template Preview' },
             testSmsSend: { bn: 'টেস্ট এসএমএস পাঠান', en: 'Send Test SMS' },
             testEmailSend: { bn: 'টেস্ট ইমেইল পাঠান', en: 'Send Test Email' },
-            restoreDefault: { bn: 'ডিফল্ট পুনরুদ্ধার', en: 'Restore Default' }
+            restoreDefault: { bn: 'ডিফল্ট পুনরুদ্ধার', en: 'Restore Default' },
+            toggleActiveBtn: { bn: 'সক্রিয় করুন', en: 'Active' },
+            toggleInactiveBtn: { bn: 'নিষ্ক্রিয় করুন', en: 'Inactive' },
+            mainInvestorOwnProfit: { bn: 'মেইন ইনভেস্টরের নিজস্ব মুনাফা', en: 'Main Investor Own Profit' },
+            mainInvestorCommission: { bn: 'মেইন ইনভেস্টরের কমিশন', en: 'Main Investor Commission' },
+            initialInvestment: { bn: 'প্রাথমিক বিনিয়োগ', en: 'Initial Investment' },
+            totalMainProfit: { bn: 'মোট মেইন ইনভেস্টর প্রাপ্তি', en: 'Total Main Investor Earning' }
         };
 
         function tr(key) { return (T[key] && T[key][STATE.lang]) || key; }
@@ -2356,7 +2195,7 @@
             biz.investors.forEach(inv => {
                 if (!inv.active) return;
                 const avail = investorAvailableBalance(biz, inv, startDate);
-                if (avail > 0) {
+                if (avail > 0 || inv.isMain) {
                     const rate = inv.isMain ? 0 : getInvestorSharingRate(inv, startDate);
                     investors.push({
                         investorId: inv.id,
@@ -2534,8 +2373,20 @@
             saveState();
             renderAll(); }
 
-        function statCard(icon, colorClass, labelKey, value, foot) {
-            return `<div class="card stat-card"><div class="stat-label"><span class="stat-icon" style="background:rgba(255,255,255,0.06)">${icon}</span>${tr(labelKey)}</div><div class="stat-value ${colorClass}">${value}</div>${foot ? `<div class="stat-foot">${foot}</div>` : ''}</div>`;
+        // Enhanced statCard with premium design
+        function statCard(icon, colorClass, labelKey, value, foot, progress = null) {
+            let progressHtml = '';
+            if (progress !== null) {
+                progressHtml =
+                    `<div class="stat-progress"><div class="bar" style="width:${Math.min(100, progress)}%;"></div></div>`;
+            }
+            return `<div class="stat-card">
+                <div class="stat-bg-icon">${icon}</div>
+                <div class="stat-label"><span class="stat-icon" style="background:rgba(255,255,255,0.06)">${icon}</span>${tr(labelKey)}</div>
+                <div class="stat-value ${colorClass}">${value}</div>
+                ${foot ? `<div class="stat-foot">${foot}</div>` : ''}
+                ${progressHtml}
+            </div>`;
         }
 
         // ============================================================
@@ -2561,6 +2412,8 @@
                 totalPending = 0;
             let totalCapital = 0,
                 totalProfitBalance = 0;
+            let mainOwnProfit = 0,
+                mainCommission = 0;
             STATE.businesses.filter(b => b.status !== 'archived').forEach(b => {
                 const t = bizTotals(b);
                 totInv += t.totalInvestment;
@@ -2579,33 +2432,40 @@
                     recoveredLoss += (inv.recoveredLoss || 0);
                     totalCapital += (inv.capitalBalance || 0);
                     totalProfitBalance += (inv.profitBalance || 0);
+                    if (inv.isMain) {
+                        mainOwnProfit += (inv.ownProfitBalance || 0);
+                        mainCommission += (inv.commissionBalance || 0);
+                    }
                     if (!inv.isMain) { totalPaid += (inv.paidProfit || 0);
                         totalPending += ((inv.netPayable || 0) - (inv.paidProfit || 0)); }
                 });
             });
             const capital = totInv + totProfit - totLoss;
+            const utilPercent = totInv > 0 ? (totUtil / totInv) * 100 : 0;
             c.innerHTML = `
                 <div class="grid grid-4">
-                    ${statCard('🏢', '', 'totalBusiness', STATE.businesses.filter(b=>b.status!=='archived').length)}
-                    ${statCard('👥', '', 'totalInvestor', totalInv)}
-                    ${statCard('✅', 'green', 'activeInvestor', activeInv)}
-                    ${statCard('💰', '', 'totalInvestment', money(totInv))}
-                    ${statCard('⚙️', 'orange', 'utilizedInvestment', money(totUtil))}
-                    ${statCard('💤', '', 'lazyMoney', money(Math.max(0,totInv-totUtil)))}
-                    ${statCard('📈', 'green', 'totalProfit', money(totProfit))}
-                    ${statCard('📉', 'red', 'totalLoss', money(totLoss))}
-                    ${statCard('⏳', 'orange', 'pendingLoss', money(pendingLoss))}
-                    ${statCard('♻️', 'green', 'lossRecovery', money(recoveredLoss))}
-                    ${statCard('💵', 'green', 'netPayableProfit', money(netPayable))}
-                    ${statCard('💳', 'green', 'paidProfit', money(totalPaid))}
-                    ${statCard('⏳', 'orange', 'pendingProfit', money(totalPending))}
-                    ${statCard('🟢', 'green', 'runningOrder', running)}
-                    ${statCard('🔒', '', 'closedOrder', closed)}
-                    ${statCard('🚫', 'grey', 'cancelled', cancelled)}
-                    ${statCard('🎖️', 'orange', 'totalCommission', money(totCommission))}
-                    ${statCard('🏦', 'green', 'currentCapital', money(capital))}
-                    ${statCard('💰', 'green', 'capitalBalance', money(totalCapital))}
-                    ${statCard('💵', 'green', 'profitBalance', money(totalProfitBalance))}
+                    ${statCard('🏢', '', 'totalBusiness', STATE.businesses.filter(b=>b.status!=='archived').length, '', null)}
+                    ${statCard('👥', '', 'totalInvestor', totalInv, '', null)}
+                    ${statCard('✅', 'green', 'activeInvestor', activeInv, '', null)}
+                    ${statCard('💰', '', 'totalInvestment', money(totInv), '', utilPercent)}
+                    ${statCard('⚙️', 'orange', 'utilizedInvestment', money(totUtil), '', null)}
+                    ${statCard('💤', '', 'lazyMoney', money(Math.max(0,totInv-totUtil)), '', null)}
+                    ${statCard('📈', 'green', 'totalProfit', money(totProfit), '', null)}
+                    ${statCard('📉', 'red', 'totalLoss', money(totLoss), '', null)}
+                    ${statCard('⏳', 'orange', 'pendingLoss', money(pendingLoss), '', null)}
+                    ${statCard('♻️', 'green', 'lossRecovery', money(recoveredLoss), '', null)}
+                    ${statCard('💵', 'green', 'netPayableProfit', money(netPayable), '', null)}
+                    ${statCard('💳', 'green', 'paidProfit', money(totalPaid), '', null)}
+                    ${statCard('⏳', 'orange', 'pendingProfit', money(totalPending), '', null)}
+                    ${statCard('🟢', 'green', 'runningOrder', running, '', null)}
+                    ${statCard('🔒', '', 'closedOrder', closed, '', null)}
+                    ${statCard('🚫', 'grey', 'cancelled', cancelled, '', null)}
+                    ${statCard('🎖️', 'orange', 'totalCommission', money(totCommission), '', null)}
+                    ${statCard('🏦', 'green', 'currentCapital', money(capital), '', null)}
+                    ${statCard('💰', 'green', 'capitalBalance', money(totalCapital), '', null)}
+                    ${statCard('💵', 'green', 'profitBalance', money(totalProfitBalance), '', null)}
+                    ${statCard('👑', 'purple', 'mainInvestorOwnProfit', money(mainOwnProfit), '', null)}
+                    ${statCard('🎖️', 'orange', 'mainInvestorCommission', money(mainCommission), '', null)}
                 </div>
                 <div style="height:20px"></div>
                 <div class="card">
@@ -2631,26 +2491,37 @@
             const t = bizTotals(b);
             let totalCapital = 0,
                 totalProfitBal = 0;
-            b.investors.forEach(inv => { totalCapital += (inv.capitalBalance || 0);
-                totalProfitBal += (inv.profitBalance || 0); });
+            let mainOwnProfit = 0,
+                mainCommission = 0;
+            b.investors.forEach(inv => {
+                totalCapital += (inv.capitalBalance || 0);
+                totalProfitBal += (inv.profitBalance || 0);
+                if (inv.isMain) {
+                    mainOwnProfit += (inv.ownProfitBalance || 0);
+                    mainCommission += (inv.commissionBalance || 0);
+                }
+            });
+            const utilPercent = t.totalInvestment > 0 ? (t.utilized / t.totalInvestment) * 100 : 0;
             c.innerHTML = `
                 <div class="grid grid-4">
-                    ${statCard('👥', '', 'totalInvestor', t.totalInvestors)}
-                    ${statCard('✅', 'green', 'activeInvestor', t.activeInvestors)}
-                    ${statCard('💰', '', 'totalInvestment', money(t.totalInvestment))}
-                    ${statCard('⚙️', 'orange', 'utilizedInvestment', money(t.utilized))}
-                    ${statCard('💤', '', 'lazyMoney', money(t.lazy))}
-                    ${statCard('📈', 'green', 'totalProfit', money(t.totalProfit))}
-                    ${statCard('📉', 'red', 'totalLoss', money(t.totalLoss))}
-                    ${statCard('⏳', 'orange', 'pendingLoss', money(t.pendingLoss))}
-                    ${statCard('♻️', 'green', 'lossRecovery', money(b.investors.reduce((s,i)=>s+(i.recoveredLoss||0),0)))}
-                    ${statCard('💵', 'green', 'netPayableProfit', money(t.netPayable))}
-                    ${statCard('🟢', 'green', 'runningOrder', t.running)}
-                    ${statCard('🔒', '', 'closedOrder', t.closed)}
-                    ${statCard('🚫', 'grey', 'cancelled', t.cancelled||0)}
-                    ${statCard('🎖️', 'orange', 'totalCommission', money(t.totalCommission))}
-                    ${statCard('💰', 'green', 'capitalBalance', money(totalCapital))}
-                    ${statCard('💵', 'green', 'profitBalance', money(totalProfitBal))}
+                    ${statCard('👥', '', 'totalInvestor', t.totalInvestors, '', null)}
+                    ${statCard('✅', 'green', 'activeInvestor', t.activeInvestors, '', null)}
+                    ${statCard('💰', '', 'totalInvestment', money(t.totalInvestment), '', utilPercent)}
+                    ${statCard('⚙️', 'orange', 'utilizedInvestment', money(t.utilized), '', null)}
+                    ${statCard('💤', '', 'lazyMoney', money(t.lazy), '', null)}
+                    ${statCard('📈', 'green', 'totalProfit', money(t.totalProfit), '', null)}
+                    ${statCard('📉', 'red', 'totalLoss', money(t.totalLoss), '', null)}
+                    ${statCard('⏳', 'orange', 'pendingLoss', money(t.pendingLoss), '', null)}
+                    ${statCard('♻️', 'green', 'lossRecovery', money(b.investors.reduce((s,i)=>s+(i.recoveredLoss||0),0)), '', null)}
+                    ${statCard('💵', 'green', 'netPayableProfit', money(t.netPayable), '', null)}
+                    ${statCard('🟢', 'green', 'runningOrder', t.running, '', null)}
+                    ${statCard('🔒', '', 'closedOrder', t.closed, '', null)}
+                    ${statCard('🚫', 'grey', 'cancelled', t.cancelled||0, '', null)}
+                    ${statCard('🎖️', 'orange', 'totalCommission', money(t.totalCommission), '', null)}
+                    ${statCard('💰', 'green', 'capitalBalance', money(totalCapital), '', null)}
+                    ${statCard('💵', 'green', 'profitBalance', money(totalProfitBal), '', null)}
+                    ${statCard('👑', 'purple', 'mainInvestorOwnProfit', money(mainOwnProfit), '', null)}
+                    ${statCard('🎖️', 'orange', 'mainInvestorCommission', money(mainCommission), '', null)}
                 </div>
                 <div style="height:20px"></div>
                 <div class="card">
@@ -2677,7 +2548,7 @@
         }
 
         // ============================================================
-        // BUSINESS LIST (unchanged)
+        // BUSINESS LIST
         // ============================================================
         function renderBusinessList() {
             const c = document.getElementById('content');
@@ -2718,8 +2589,16 @@
             const t = bizTotals(b);
             let totalCapital = 0,
                 totalProfitBal = 0;
-            b.investors.forEach(inv => { totalCapital += (inv.capitalBalance || 0);
-                totalProfitBal += (inv.profitBalance || 0); });
+            let mainOwnProfit = 0,
+                mainCommission = 0;
+            b.investors.forEach(inv => {
+                totalCapital += (inv.capitalBalance || 0);
+                totalProfitBal += (inv.profitBalance || 0);
+                if (inv.isMain) {
+                    mainOwnProfit += (inv.ownProfitBalance || 0);
+                    mainCommission += (inv.commissionBalance || 0);
+                }
+            });
             return `
                 <div class="business-card">
                     <div class="biz-header">
@@ -2746,6 +2625,8 @@
                         <div class="biz-stat"><div class="num" style="color:var(--text-2)">${t.closed}</div><div class="lbl">${tr('closedOrder')}</div></div>
                         <div class="biz-stat"><div class="num" style="color:var(--green)">${money(totalCapital)}</div><div class="lbl">${tr('capitalBalance')}</div></div>
                         <div class="biz-stat"><div class="num" style="color:var(--green)">${money(totalProfitBal)}</div><div class="lbl">${tr('profitBalance')}</div></div>
+                        <div class="biz-stat"><div class="num" style="color:var(--purple)">${money(mainOwnProfit)}</div><div class="lbl">${tr('mainInvestorOwnProfit')}</div></div>
+                        <div class="biz-stat"><div class="num" style="color:var(--orange)">${money(mainCommission)}</div><div class="lbl">${tr('mainInvestorCommission')}</div></div>
                     </div>
                 </div>
             `;
@@ -2801,7 +2682,6 @@
                 deposits: [],
                 withdraws: [],
                 sharingHistory: [{ rate: 0, effectiveDate: todayStr() }],
-                commissionRateHistory: [{ rate: 60, effectiveDate: todayStr() }],
                 lossBalance: 0,
                 totalProfit: 0,
                 totalLoss: 0,
@@ -2815,7 +2695,9 @@
                 commissionPending: 0,
                 commissionHistory: [],
                 capitalBalance: 0,
-                profitBalance: 0
+                profitBalance: 0,
+                ownProfitBalance: 0,
+                commissionBalance: 0
             };
             const biz = {
                 id,
@@ -2872,7 +2754,7 @@
         function deleteBusiness(bizId) {
             const b = STATE.businesses.find(x => x.id === bizId);
             if (!b) return;
-            if (businessHasHistory(b)) { toast('এই বিজনেসে ইতিহাস রয়েছে, ডিলিট করা যাবে না। শুধুমাত্র Archive করা যাবে。',
+            if (businessHasHistory(b)) { toast('এই বিজনেসে ইতিহাস রয়েছে, ডিলিট করা যাবে না। শুধুমাত্র Archive করা যাবে।',
                 'error'); return; }
             if (!confirm(tr('confirmDeleteBusiness'))) return;
             if (!confirm(tr('confirmReset'))) return;
@@ -2906,7 +2788,7 @@
         }
 
         // ============================================================
-        // REPLACE MAIN INVESTOR (unchanged)
+        // REPLACE MAIN INVESTOR
         // ============================================================
         function openReplaceMainInvestorModal() {
             const b = currentBiz();
@@ -2967,10 +2849,6 @@
             oldMain.isMain = false;
             newMain.isMain = true;
 
-            if (!newMain.commissionRateHistory || !newMain.commissionRateHistory.length) {
-                newMain.commissionRateHistory = [{ rate: 60, effectiveDate: date }];
-            }
-
             logAudit(b, 'main_investor_replaced',
                 `মেইন ইনভেস্টর পরিবর্তন: ${oldMain.name} → ${newMain.name} (${date})`, {
                     oldMain: oldMain.id,
@@ -2987,7 +2865,7 @@
         }
 
         // ============================================================
-        // MAIN INVESTOR REPORT (with filters)
+        // MAIN INVESTOR REPORT
         // ============================================================
         function renderMainInvestorReport() {
             const c = document.getElementById('content');
@@ -3029,6 +2907,8 @@
                 totalLoss = 0,
                 totalRecovered = 0;
             let runningBalance = 0;
+            let mainOwnProfitTotal = 0,
+                mainCommissionTotal = 0;
 
             let orderRows = '';
             closedMainOrders.forEach(o => {
@@ -3038,15 +2918,17 @@
                 const amount = res ? res.amount : 0;
                 const comm = (o.result && o.result.type === 'profit') ? (o.result.commission || 0) : 0;
                 const recovered = res ? (res.recovered || 0) : 0;
-                const netComm = comm;
-                const netPayable = (o.result && o.result.type === 'profit') ? (o.result.netPayable || 0) : 0;
                 const isProfit = o.result && o.result.type === 'profit';
+                const mainOwnProfit = res ? (res.mainOwnProfit || 0) : 0;
+                const mainComm = res ? (res.mainCommission || 0) : 0;
 
                 totalInvestment += utilized;
                 totalCommission += comm;
                 if (isProfit) totalProfit += amount;
                 else totalLoss += amount;
                 totalRecovered += recovered;
+                mainOwnProfitTotal += mainOwnProfit;
+                mainCommissionTotal += mainComm;
 
                 runningBalance += utilized + (isProfit ? amount : -amount);
 
@@ -3059,8 +2941,8 @@
                                 <td class="mono" style="color:${isProfit ? 'var(--green)' : 'var(--red)'}">${money(amount)}</td>
                                 <td class="mono" style="color:var(--orange)">${money(comm)}</td>
                                 <td class="mono" style="color:var(--green)">${money(recovered)}</td>
-                                <td class="mono" style="color:var(--orange)">${money(netComm)}</td>
-                                <td class="mono" style="color:var(--green)">${money(netPayable)}</td>
+                                <td class="mono" style="color:var(--purple)">${money(mainOwnProfit)}</td>
+                                <td class="mono" style="color:var(--orange)">${money(mainComm)}</td>
                                 <td class="mono">${money(runningBalance)}</td>
                             </tr>
                         `;
@@ -3084,6 +2966,8 @@
                     ${statCard('📉', 'red', 'totalLossIncurred', money(totalLoss))}
                     ${statCard('♻️', 'green', 'lossRecovery', money(totalRecovered))}
                     ${statCard('🏦', 'green', 'netCapital', money(totalInvestment + totalProfit - totalLoss))}
+                    ${statCard('👑', 'purple', 'mainInvestorOwnProfit', money(mainOwnProfitTotal))}
+                    ${statCard('🎖️', 'orange', 'mainInvestorCommission', money(mainCommissionTotal))}
                 </div>
 
                 <div class="card">
@@ -3099,8 +2983,8 @@
                                     <th>${tr('amount')}</th>
                                     <th>${tr('commission')}</th>
                                     <th>${tr('lossRecovery')}</th>
-                                    <th>${tr('netCommission')}</th>
-                                    <th>${tr('netPayable')}</th>
+                                    <th>${tr('mainInvestorOwnProfit')}</th>
+                                    <th>${tr('mainInvestorCommission')}</th>
                                     <th>${tr('runningBalance')}</th>
                                 </tr>
                             </thead>
@@ -3153,12 +3037,14 @@
             if (dateTo) orders = orders.filter(o => o.createDate <= dateTo);
             if (orderNo) orders = orders.filter(o => o.orderNumber.toLowerCase().includes(orderNo.toLowerCase()));
 
-            const win = window.open('', '_blank', 'width=1000,height=700');
+            const win = window.open('', '_blank', 'width=1100,height=700');
             let rows = '';
             let totalInv = 0,
                 totalComm = 0,
                 totalProfit = 0,
                 totalLoss = 0;
+            let mainOwnProfitTotal = 0,
+                mainCommissionTotal = 0;
             orders.forEach(o => {
                 const alloc = o.snapshot.investors.find(a => a.investorId === mainInv.id);
                 const res = o.result ? o.result.allocations.find(a => a.investorId === mainInv.id) : null;
@@ -3166,10 +3052,14 @@
                 const amount = res ? res.amount : 0;
                 const comm = (o.result && o.result.type === 'profit') ? (o.result.commission || 0) : 0;
                 const isProfit = o.result && o.result.type === 'profit';
+                const mainOwnProfit = res ? (res.mainOwnProfit || 0) : 0;
+                const mainComm = res ? (res.mainCommission || 0) : 0;
                 totalInv += utilized;
                 totalComm += comm;
                 if (isProfit) totalProfit += amount;
                 else totalLoss += amount;
+                mainOwnProfitTotal += mainOwnProfit;
+                mainCommissionTotal += mainComm;
                 rows += `
                             <tr>
                                 <td class="mono">${o.orderNumber}</td>
@@ -3179,8 +3069,8 @@
                                 <td class="mono" style="color:${isProfit ? '#1ea672' : '#e5484d'}">${money(amount)}</td>
                                 <td class="mono" style="color:#f2994a">${money(comm)}</td>
                                 <td class="mono" style="color:#1ea672">${money(res ? (res.recovered||0) : 0)}</td>
-                                <td class="mono" style="color:#f2994a">${money(comm)}</td>
-                                <td class="mono" style="color:#1ea672">${money((o.result && o.result.type === 'profit') ? (o.result.netPayable||0) : 0)}</td>
+                                <td class="mono" style="color:#7c3aed">${money(mainOwnProfit)}</td>
+                                <td class="mono" style="color:#f2994a">${money(mainComm)}</td>
                             </tr>
                         `;
             });
@@ -3193,15 +3083,16 @@
                     .letter-header { background: linear-gradient(135deg, #1ea672, #0f8a5f); padding: 24px 32px; color: #fff; }
                     .letter-header h1 { font-size: 22px; margin: 0; font-weight: 800; }
                     .letter-header .sub { font-size: 12px; opacity: 0.85; margin-top: 3px; }
-                    .letter-body { padding: 24px 32px; }
+                    .letter-body { padding: 24px 32px; background: #fff; }
                     .letter-footer { padding: 12px 32px; border-top: 2px solid #1ea672; text-align: center; font-size: 10px; color: #6b8578; background: #f8faf9; }
-                    .summary-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; margin: 12px 0 18px; }
+                    .summary-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 10px; margin: 12px 0 18px; }
                     .summary-grid .item { background: #f8faf9; border-radius: 8px; padding: 10px 14px; text-align: center; border: 1px solid #e9ecef; }
                     .summary-grid .item .label { font-size: 8px; color: #6b8578; text-transform: uppercase; letter-spacing: .4px; }
-                    .summary-grid .item .value { font-size: 15px; font-weight: 800; font-family: 'JetBrains Mono', monospace; margin-top: 2px; }
+                    .summary-grid .item .value { font-size: 14px; font-weight: 800; font-family: 'JetBrains Mono', monospace; margin-top: 2px; }
                     .summary-grid .item .value.green { color: #1ea672; }
                     .summary-grid .item .value.red { color: #e5484d; }
                     .summary-grid .item .value.orange { color: #f2994a; }
+                    .summary-grid .item .value.purple { color: #7c3aed; }
                     .print-table { width: 100%; border-collapse: collapse; font-size: 11px; margin-top: 10px; }
                     .print-table th { background: #f4f7f6; color: #3c5a4e; padding: 8px 12px; text-align: left; font-weight: 700; text-transform: uppercase; font-size: 9px; letter-spacing: .4px; border-bottom: 2px solid #1ea672; }
                     .print-table td { padding: 7px 12px; border-bottom: 1px solid #e9ecef; }
@@ -3223,12 +3114,14 @@
                             <div class="item"><div class="label">${tr('totalCommission')}</div><div class="value orange">${money(totalComm)}</div></div>
                             <div class="item"><div class="label">${tr('totalProfit')}</div><div class="value green">${money(totalProfit)}</div></div>
                             <div class="item"><div class="label">${tr('totalLoss')}</div><div class="value red">${money(totalLoss)}</div></div>
+                            <div class="item"><div class="label">${tr('mainInvestorOwnProfit')}</div><div class="value purple">${money(mainOwnProfitTotal)}</div></div>
+                            <div class="item"><div class="label">${tr('mainInvestorCommission')}</div><div class="value orange">${money(mainCommissionTotal)}</div></div>
                         </div>
                         <table class="print-table">
                             <thead><tr>
                                 <th>${tr('orderNumber')}</th><th>${tr('createDate')}</th><th>${tr('utilizedInvestment')}</th>
                                 <th>${tr('resultType')}</th><th>${tr('amount')}</th><th>${tr('commission')}</th>
-                                <th>${tr('lossRecovery')}</th><th>${tr('netCommission')}</th><th>${tr('netPayable')}</th>
+                                <th>${tr('lossRecovery')}</th><th>${tr('mainInvestorOwnProfit')}</th><th>${tr('mainInvestorCommission')}</th>
                             </tr></thead>
                             <tbody>${rows || `<tr><td colspan="9"><div style="padding:20px;text-align:center;color:#6b8578;">${tr('noOrders')}</div></td></tr>`}</tbody>
                         </table>
@@ -3267,7 +3160,7 @@
         }
 
         // ============================================================
-        // COMMISSION LEDGER (unchanged)
+        // COMMISSION LEDGER
         // ============================================================
         function renderCommissionLedger() {
             const c = document.getElementById('content');
@@ -3285,8 +3178,7 @@
                         totalEarned: totalEarned,
                         withdrawn: withdrawn,
                         pending: Math.max(0, totalEarned - withdrawn),
-                        history: b.commissionLedger?.history || [],
-                        rateHistory: mainInv.commissionRateHistory || [{ rate: 60, effectiveDate: todayStr() }]
+                        history: b.commissionLedger?.history || []
                     });
                 }
             });
@@ -3301,54 +3193,14 @@
             html +=
                 `<div class="grid grid-4" style="margin-bottom:16px;">${statCard('🎖️','orange','totalCommissionEarned',money(totalEarned))}${statCard('💳','green','totalWithdrawn',money(totalWithdrawn))}${statCard('⏳','orange','pendingCommission',money(totalPending))}</div>`;
             html +=
-                `<div class="card"><div class="section-title"><span class="bar"></span>${tr('perBusiness')}</div><div class="table-wrap"><table><thead><tr><th>${tr('business')}</th><th>${tr('totalCommissionEarned')}</th><th>${tr('totalWithdrawn')}</th><th>${tr('pendingCommission')}</th><th>${tr('action')}</th></tr></thead><tbody>${allCommissionData.length ? allCommissionData.map(d => `<tr><td style="font-weight:700;cursor:pointer" onclick="selectBusiness('${d.businessId}'); goTo('bizdash')">${d.businessName}</td><td class="mono" style="color:var(--orange)">${money(d.totalEarned)}</td><td class="mono" style="color:var(--green)">${money(d.withdrawn)}</td><td class="mono" style="color:var(--orange)">${money(d.pending)}</td><td><button class="btn btn-ghost btn-sm" onclick="withdrawCommission('${d.businessId}')">💰 ${tr('withdraw')}</button></td></tr>`).join('') : `<tr><td colspan="5"><div class="empty">${tr('noBiz')}</div></td></tr>`}</tbody></table></div>`;
+                `<div class="card"><div class="section-title"><span class="bar"></span>${tr('perBusiness')}</div><div class="table-wrap"><table><thead><tr><th>${tr('business')}</th><th>${tr('totalCommissionEarned')}</th><th>${tr('totalWithdrawn')}</th><th>${tr('pendingCommission')}</th><th>${tr('action')}</th></tr></thead><tbody>${allCommissionData.length ? allCommissionData.map(d => `<tr><td style="font-weight:700;cursor:pointer" onclick="selectBusiness('${d.businessId}'); goTo('bizdash')">${d.businessName}</td><td class="mono" style="color:var(--orange)">${money(d.totalEarned)}</td><td class="mono" style="color:var(--green)">${money(d.withdrawn)}</td><td class="mono" style="color:var(--orange)">${money(d.pending)}</td><td><button class="btn btn-orange btn-sm" onclick="withdrawCommission('${d.businessId}')">💰 ${tr('withdraw')}</button></td></tr>`).join('') : `<tr><td colspan="5"><div class="empty">${tr('noBiz')}</div></td></tr>`}</tbody></table></div>`;
             allCommissionData.forEach(d => {
-                if (d.rateHistory && d.rateHistory.length) {
-                    html +=
-                        `<div class="card" style="margin-top:14px;"><div class="section-title"><span class="bar" style="background:var(--orange)"></span>${d.businessName} — ${tr('commissionRateHistory')}</div><div class="table-wrap"><table style="font-size:11px;"><thead><tr><th>${tr('effectiveDate')}</th><th>${tr('rate')}</th><th>${tr('status')}</th></tr></thead><tbody>${d.rateHistory.map((r,idx)=>{const isCurrent = idx === d.rateHistory.length-1; return `<tr><td>${r.effectiveDate}</td><td>${r.rate}%</td><td><span class="badge ${isCurrent?'badge-green':'badge-grey'}">${isCurrent?tr('current'):tr('expired')}</span></td></tr>`;}).join('')}</tbody></table></div><div style="margin-top:8px;"><button class="btn btn-ghost btn-sm" onclick="addCommissionRate('${d.businessId}')">➕ ${tr('addCommissionRate')}</button></div></div>`;
-                }
                 if (d.history && d.history.length) {
                     html +=
                         `<div class="card" style="margin-top:14px;"><div class="section-title"><span class="bar" style="background:var(--orange)"></span>${d.businessName} — ${tr('commissionHistory')}</div><div class="table-wrap"><table style="font-size:11px;"><thead><tr><th>${tr('date')}</th><th>${tr('type')}</th><th>${tr('amount')}</th><th>${tr('note')}</th></tr></thead><tbody>${d.history.map(h => `<tr><td>${h.date}</td><td><span class="badge ${h.type==='earned'?'badge-green':'badge-orange'}">${h.type==='earned'?tr('earned'):tr('withdrawn')}</span></td><td class="mono" style="color:${h.type==='earned'?'var(--green)':'var(--orange)'}">${money(h.amount)}</td><td>${h.note||''}</td></tr>`).join('')}</tbody></table></div></div>`;
                 }
             });
             c.innerHTML = html;
-        }
-
-        function addCommissionRate(bizId) {
-            const b = STATE.businesses.find(x => x.id === bizId);
-            if (!b) return;
-            document.getElementById('modalRoot').innerHTML = `
-                <div class="modal-overlay" onclick="if(event.target===this) closeModal()">
-                    <div class="modal">
-                        <div class="modal-title">➕ ${tr('addCommissionRate')}</div>
-                        <label>${tr('rate')} (%)</label><input id="newCommissionRate" type="number" min="0" max="100" step="0.5" value="60"/>
-                        <div style="height:10px;"></div>
-                        <label>${tr('effectiveDate')} <span style="color:var(--red)">*</span></label>
-                        <input id="newCommissionRateDate" type="date" value="${todayStr()}"/>
-                        <div class="modal-actions"><button class="btn btn-ghost" onclick="closeModal()">${tr('cancel')}</button><button class="btn btn-green" onclick="confirmAddCommissionRate('${bizId}')">${tr('save')}</button></div>
-                    </div>
-                </div>`;
-        }
-
-        function confirmAddCommissionRate(bizId) {
-            const b = STATE.businesses.find(x => x.id === bizId);
-            if (!b) return;
-            const mainInv = b.investors.find(i => i.isMain);
-            if (!mainInv) return;
-            const rate = parseFloat(document.getElementById('newCommissionRate').value);
-            const date = document.getElementById('newCommissionRateDate').value;
-            if (!rate || rate < 0) { toast(tr('fillRequired')); return; }
-            if (!date) { toast(tr('fillRequired')); return; }
-            if (mainInv.commissionRateHistory.some(r => r.effectiveDate === date)) { toast('এই তারিখে ইতিমধ্যে একটি Rate রয়েছে');
-                return; }
-            mainInv.commissionRateHistory.push({ rate: rate, effectiveDate: date });
-            logAudit(b, 'commission_rate_added', `কমিশন রেট যোগ: ${rate}% (${date})`, { rate, date });
-            addNotification(`🎖️ কমিশন রেট: ${rate}% (${date})`, 'info', null, b.id);
-            saveState();
-            closeModal();
-            toast(tr('saved'));
-            renderCommissionLedger();
         }
 
         function withdrawCommission(bizId) {
@@ -3389,6 +3241,7 @@
                 mainInv.commissionHistory = mainInv.commissionHistory || [];
                 mainInv.commissionHistory.push({ date: todayStr(), type: 'withdrawn', amount: amount, note: note ||
                         'কমিশন উত্তোলন' });
+                mainInv.commissionBalance = Math.max(0, (mainInv.commissionBalance || 0) - amount);
             }
             logAudit(b, 'commission_withdrawn', `কমিশন উত্তোলন: ${money(amount)}`, { amount, note });
             addNotification(`💰 কমিশন উত্তোলন: ${money(amount)}`, 'info', null, b.id);
@@ -3399,7 +3252,7 @@
         }
 
         // ============================================================
-        // COST LEDGER (unchanged)
+        // COST LEDGER
         // ============================================================
         function renderCostLedger() {
             const c = document.getElementById('content');
@@ -3445,7 +3298,7 @@
         }
 
         // ============================================================
-        // ORDER CREATION (unchanged)
+        // ORDER CREATION
         // ============================================================
         function openCreateOrderModal() {
             const b = currentBiz();
@@ -3522,6 +3375,33 @@
                     return;
                 }
             }
+
+            // ===== ENSURE MAIN INVESTOR IS ALWAYS IN SNAPSHOT =====
+            const mainInv = b.investors.find(i => i.isMain);
+            if (mainInv) {
+                const existing = result.allocations.find(a => a.investorId === mainInv.id);
+                if (!existing) {
+                    const mainAlloc = {
+                        investorId: mainInv.id,
+                        name: mainInv.name,
+                        isMain: true,
+                        available: 0,
+                        allocated: 0,
+                        unutilized: 0,
+                        sharingRate: 0,
+                        previousLoss: mainInv.lossBalance || 0,
+                        recoveredLoss: mainInv.recoveredLoss || 0,
+                        pendingLoss: Math.max(0, (mainInv.lossBalance || 0) - (mainInv.recoveredLoss || 0)),
+                        sharingRateAtDate: 0,
+                        totalDeposit: investorTotalDeposit(mainInv, startDate),
+                        totalWithdraw: investorTotalWithdraw(mainInv, startDate),
+                        capitalBalance: mainInv.capitalBalance || 0,
+                        profitBalance: mainInv.profitBalance || 0
+                    };
+                    result.allocations.push(mainAlloc);
+                }
+            }
+
             b.orderSeq = (b.orderSeq || 0) + 1;
             const orderNumber = 'ORD-' + String(b.orderSeq).padStart(4, '0');
             const snapshotInvestors = result.allocations.map(a => ({
@@ -3591,7 +3471,7 @@
         }
 
         // ============================================================
-        // ORDERS PAGE (unchanged)
+        // ORDERS PAGE
         // ============================================================
         function renderOrders() {
             const c = document.getElementById('content');
@@ -3725,7 +3605,7 @@
         }
 
         // ============================================================
-        // VIEW SNAPSHOT (unchanged)
+        // VIEW SNAPSHOT
         // ============================================================
         function viewSnapshot(orderId) {
             const b = currentBiz();
@@ -3749,7 +3629,7 @@
         }
 
         // ============================================================
-        // SHOW CALCULATION (unchanged)
+        // SHOW CALCULATION
         // ============================================================
         function showCalculation(orderId) {
             const b = currentBiz();
@@ -3767,7 +3647,9 @@
                     recovered: a.recovered || 0,
                     profitShare: a.profitShare || 0,
                     amount: a.amount,
-                    netPayable: a.isMain ? 0 : (a.netPayable || 0)
+                    netPayable: a.isMain ? 0 : (a.netPayable || 0),
+                    mainOwnProfit: a.mainOwnProfit || 0,
+                    mainCommission: a.mainCommission || 0
                 };
             });
             document.getElementById('modalRoot').innerHTML = `
@@ -3783,7 +3665,7 @@
                             <div style="font-weight:700;color:var(--text-3);font-size:11px;">${tr('profitShare')}</div>
                             <div style="font-weight:700;color:var(--text-3);font-size:11px;">${tr('netAmount')}</div>
                             ${calcDetails.map(a => `<div>${a.name}${a.isMain ? ' ⭐' : ''}</div><div class="mono">${money(a.utilized)}</div><div class="mono">${money(a.totalShare)}</div><div class="mono green">${money(a.recovered)}</div><div class="mono green">${money(a.profitShare)}</div><div class="mono" style="color:${o.result.type==='profit'?'var(--green)':'var(--red)'}">${money(a.amount)}</div>`).join('')}
-                            ${o.result.type === 'profit' ? `<div style="font-weight:700;border-top:1px solid var(--glass-brd);padding-top:6px;">${tr('commission')}</div><div style="border-top:1px solid var(--glass-brd);padding-top:6px;"></div><div style="border-top:1px solid var(--glass-brd);padding-top:6px;"></div><div style="border-top:1px solid var(--glass-brd);padding-top:6px;"></div><div style="border-top:1px solid var(--glass-brd);padding-top:6px;"></div><div class="mono orange" style="border-top:1px solid var(--glass-brd);padding-top:6px;font-weight:700;">${money(o.result.commission)}</div>` : ''}
+                            ${o.result.type === 'profit' && o.result.commission > 0 ? `<div style="font-weight:700;border-top:1px solid var(--glass-brd);padding-top:6px;">${tr('commission')}</div><div style="border-top:1px solid var(--glass-brd);padding-top:6px;"></div><div style="border-top:1px solid var(--glass-brd);padding-top:6px;"></div><div style="border-top:1px solid var(--glass-brd);padding-top:6px;"></div><div style="border-top:1px solid var(--glass-brd);padding-top:6px;"></div><div class="mono orange" style="border-top:1px solid var(--glass-brd);padding-top:6px;font-weight:700;">${money(o.result.commission)}</div>` : ''}
                             <div style="font-weight:700;border-top:2px solid var(--glass-brd);padding-top:6px;">${tr('grandTotal')}</div><div style="border-top:2px solid var(--glass-brd);padding-top:6px;"></div><div style="border-top:2px solid var(--glass-brd);padding-top:6px;"></div><div style="border-top:2px solid var(--glass-brd);padding-top:6px;"></div><div style="border-top:2px solid var(--glass-brd);padding-top:6px;"></div><div class="mono" style="border-top:2px solid var(--glass-brd);padding-top:6px;font-weight:700;color:${o.result.type==='profit'?'var(--green)':'var(--red)'}">${money(o.result.amount)}</div>
                         </div>
                         <div class="modal-actions"><button class="btn btn-ghost" onclick="closeModal()">${tr('cancel')}</button></div>
@@ -3792,7 +3674,7 @@
         }
 
         // ============================================================
-        // CLOSE ORDER (with audit and no double count)
+        // CLOSE ORDER (Enhanced with Main Investor Logic + Auto-fill Result Amount)
         // ============================================================
         function openCloseOrder(orderId) {
             const b = currentBiz();
@@ -3803,20 +3685,54 @@
                     <div class="modal">
                         <div class="modal-title" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px"><span>${tr('closeOrder')} — ${o.orderNumber}</span><label class="toggle-switch"><span class="toggle-label">${tr('showFullCalculation')}</span><input type="checkbox" checked onchange="_showFullCalc=this.checked; previewClose('${o.id}')" /></label></div>
                         <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:12px;">
-                            <div><label>${tr('closeDateLabel')}</label><input id="cResultDate" type="date" value="${todayStr()}" /></div>
-                            <div><label>${tr('grossProfit')}</label><input id="cGrossProfit" type="number" min="0" step="1" value="0" oninput="previewClose('${o.id}')" /></div>
-                            <div><label>${tr('orderCost')}</label><input id="cOrderCost" type="number" min="0" step="1" value="0" oninput="previewClose('${o.id}')" /></div>
+                            <div><label>${tr('closeDateLabel')}</label><input id="cResultDate" type="date" value="${todayStr()}" onchange="autoFillResult()" /></div>
+                            <div><label>${tr('grossProfit')}</label><input id="cGrossProfit" type="number" min="0" step="1" value="0" oninput="autoFillResult(); previewClose('${o.id}')" /></div>
+                            <div><label>${tr('orderCost')}</label><input id="cOrderCost" type="number" min="0" step="1" value="0" oninput="autoFillResult(); previewClose('${o.id}')" /></div>
                         </div>
                         <div style="margin-bottom:10px;font-size:13px;color:var(--text-2);"><strong>${tr('netProfit')}:</strong> <span id="netProfitDisplay" style="font-weight:700;color:var(--green)">৳0</span></div>
                         <div class="section-title"><span class="bar"></span>${tr('previewDistribution')}</div>
-                        <label>${tr('resultType')}</label><select id="cResultType" onchange="document.getElementById('previewBox').innerHTML=''; previewClose('${o.id}')"><option value="profit">${tr('profit')}</option><option value="loss">${tr('loss')}</option></select>
-                        <div style="height:10px"></div><label>${tr('resultAmount')}</label><input id="cResultAmount" type="number" min="0" step="1" oninput="previewClose('${o.id}')" />
+                        <label>${tr('resultType')}</label>
+                        <select id="cResultType" onchange="autoFillResult(); document.getElementById('previewBox').innerHTML=''; previewClose('${o.id}')">
+                            <option value="profit">${tr('profit')}</option>
+                            <option value="loss">${tr('loss')}</option>
+                        </select>
+                        <div style="height:10px"></div>
+                        <label>${tr('resultAmount')}</label>
+                        <input id="cResultAmount" type="number" min="0" step="1" oninput="previewClose('${o.id}')" />
                         <div class="modal-actions" style="justify-content:flex-start"><button class="btn btn-orange btn-sm" onclick="previewClose('${o.id}')">${tr('previewDistribution')}</button></div>
                         <div id="previewBox"></div>
                         <div class="modal-actions"><button class="btn btn-ghost" onclick="closeModal()">${tr('cancel')}</button><button class="btn btn-green" id="approveBtn" style="display:none" onclick="confirmCloseOrder('${o.id}')">${tr('approveClose')}</button></div>
                     </div>
                 </div>`;
-            setTimeout(() => previewClose(orderId), 100);
+            // Auto-fill after modal loads
+            setTimeout(() => {
+                autoFillResult();
+                previewClose(orderId);
+            }, 200);
+        }
+
+        function autoFillResult() {
+            const gross = parseFloat(document.getElementById('cGrossProfit').value) || 0;
+            const cost = parseFloat(document.getElementById('cOrderCost').value) || 0;
+            const netVal = gross - cost;
+            document.getElementById('netProfitDisplay').textContent = money(netVal);
+            document.getElementById('netProfitDisplay').style.color = netVal >= 0 ? 'var(--green)' : 'var(--red)';
+
+            const type = document.getElementById('cResultType').value;
+            const amountEl = document.getElementById('cResultAmount');
+            // Auto-fill with net profit absolute value
+            if (type === 'profit' && netVal > 0) {
+                amountEl.value = netVal;
+            } else if (type === 'loss' && netVal < 0) {
+                amountEl.value = Math.abs(netVal);
+            } else if (netVal === 0) {
+                amountEl.value = 0;
+            }
+            // Trigger preview
+            if (typeof previewClose === 'function') {
+                const orderId = document.querySelector('.modal')?.dataset?.orderId || '';
+                if (orderId) previewClose(orderId);
+            }
         }
 
         function previewClose(orderId) {
@@ -3832,6 +3748,7 @@
 
             const type = document.getElementById('cResultType').value;
             const amountEl = document.getElementById('cResultAmount');
+            // Auto-fill if empty or 0
             if (!amountEl.value || parseFloat(amountEl.value) === 0) {
                 if (type === 'profit' && netProfitVal > 0) amountEl.value = netProfitVal;
                 else if (type === 'loss' && netProfitVal < 0) amountEl.value = Math.abs(netProfitVal);
@@ -3840,30 +3757,32 @@
             if (!amount || amount <= 0) { document.getElementById('previewBox').innerHTML =
                     `<div style="padding:16px;color:var(--text-3);">${tr('fillRequired')}</div>`; return; }
 
-            const dist = computeDistribution(o, type, amount);
+            const dist = computeDistributionEnhanced(o, type, amount);
             const showFull = _showFullCalc;
             let html =
-                `<div class="table-wrap" style="margin-top:12px"><div class="section-title" style="font-size:13px;margin-bottom:8px"><span class="bar"></span>${tr('distributionBreakdown')}</div><table><thead><tr><th>${tr('investor')}</th><th>${tr('utilizedAmount')}</th>${showFull ? `<th>${tr('totalShare')}</th>` : ''}${showFull ? `<th>${tr('recoveredLoss')}</th>` : ''}${showFull ? `<th>${tr('profitShare')}</th>` : ''}<th>${tr('netPayable')}</th></tr></thead><tbody>`;
+                `<div class="table-wrap" style="margin-top:12px"><div class="section-title" style="font-size:13px;margin-bottom:8px"><span class="bar"></span>${tr('distributionBreakdown')}</div><table><thead><tr><th>${tr('investor')}</th><th>${tr('utilizedAmount')}</th>${showFull ? `<th>${tr('totalShare')}</th>` : ''}${showFull ? `<th>${tr('recoveredLoss')}</th>` : ''}${showFull ? `<th>${tr('profitShare')}</th>` : ''}<th>${tr('netPayable')}</th>${showFull ? `<th>${tr('mainInvestorOwnProfit')}</th>` : ''}${showFull ? `<th>${tr('mainInvestorCommission')}</th>` : ''}</tr></thead><tbody>`;
             dist.allocations.forEach(a => {
                 const isMain = a.isMain || false;
                 const totalShare = a.totalShare || 0;
                 const netDisplay = isMain ? '—' : money(a.amount);
+                const mainOwnProfit = a.mainOwnProfit || 0;
+                const mainComm = a.mainCommission || 0;
                 const label = isMain ? tr('commission') : '';
                 html +=
-                    `<tr><td>${a.name}${isMain ? ` <span class="badge badge-orange">${tr('mainCapital')}</span>` : ''}</td><td class="mono">${money(a.utilized || 0)}</td>${showFull ? `<td class="mono">${money(totalShare)}</td>` : ''}${showFull ? `<td class="mono" style="color:var(--green)">${money(a.recovered || 0)}</td>` : ''}${showFull ? `<td class="mono" style="color:var(--green)">${money(a.profitShare || 0)}</td>` : ''}<td class="mono" style="font-weight:700;color:${type==='profit'?'var(--green)':'var(--red)'}">${netDisplay} ${label}</td></tr>`;
+                    `<tr><td>${a.name}${isMain ? ` <span class="badge badge-orange">${tr('mainCapital')}</span>` : ''}</td><td class="mono">${money(a.utilized || 0)}</td>${showFull ? `<td class="mono">${money(totalShare)}</td>` : ''}${showFull ? `<td class="mono" style="color:var(--green)">${money(a.recovered || 0)}</td>` : ''}${showFull ? `<td class="mono" style="color:var(--green)">${money(a.profitShare || 0)}</td>` : ''}<td class="mono" style="font-weight:700;color:${type==='profit'?'var(--green)':'var(--red)'}">${netDisplay} ${label}</td>${showFull ? `<td class="mono" style="color:var(--purple)">${money(mainOwnProfit)}</td>` : ''}${showFull ? `<td class="mono" style="color:var(--orange)">${money(mainComm)}</td>` : ''}</tr>`;
             });
             if (type === 'profit' && dist.commission > 0) {}
             html +=
-                `<tr style="border-top:2px solid var(--glass-brd);font-weight:700"><td>${tr('grandTotal')}</td><td></td>${showFull ? `<td></td><td></td><td></td>` : ''}<td class="mono">${money(dist.amount)}</td></tr>`;
+                `<tr style="border-top:2px solid var(--glass-brd);font-weight:700"><td>${tr('grandTotal')}</td><td></td>${showFull ? `<td></td><td></td><td></td>` : ''}<td class="mono">${money(dist.amount)}</td>${showFull ? `<td></td><td></td>` : ''}</tr>`;
             if (type === 'profit') { html +=
-                    `<tr><td colspan="${showFull ? 6 : 3}" style="font-size:12px;color:var(--text-3)">${tr('netPayableProfit')}: ${money(dist.netPayable)}</td></tr>`; }
+                    `<tr><td colspan="${showFull ? 7 : 4}" style="font-size:12px;color:var(--text-3)">${tr('netPayableProfit')}: ${money(dist.netPayable)}</td></tr>`; }
             html += `</tbody></table></div>`;
             document.getElementById('previewBox').innerHTML = html;
             document.getElementById('approveBtn').style.display = 'inline-flex';
             _pendingDist = { ...dist, grossProfit: gross, orderCost: cost, netProfit: netProfitVal };
         }
 
-        function computeDistribution(o, type, amount) {
+        function computeDistributionEnhanced(o, type, amount) {
             const investors = o.snapshot.investors;
             const totalUtilized = o.snapshot.totalUtilized || 1;
             let allocations = [];
@@ -3873,66 +3792,103 @@
                     return { ...a, rawShare: share };
                 });
 
-                const actualProfits = rawShares.map(a => {
-                    if (a.isMain) return { ...a, actualProfit: 0 };
-                    const rate = a.sharingRate || 0;
-                    const actual = a.rawShare * (rate / 100);
-                    return { ...a, actualProfit: actual };
-                });
+                const main = rawShares.find(a => a.isMain);
+                const nonMain = rawShares.filter(a => !a.isMain);
 
+                let mainOwnProfit = 0;
+                let mainCommission = 0;
                 let totalRecovered = 0;
-                const afterRecovery = actualProfits.map(a => {
-                    if (a.isMain) return { ...a, recovered: 0, remainingProfit: 0 };
+
+                const nonMainResults = nonMain.map(a => {
+                    const rate = a.sharingRate || 0;
+                    const actualProfit = a.rawShare * (rate / 100);
                     const pendingLoss = a.pendingLoss || 0;
-                    const recovered = Math.min(pendingLoss, a.actualProfit);
+                    const recovered = Math.min(pendingLoss, actualProfit);
                     totalRecovered += recovered;
-                    return { ...a, recovered: recovered, remainingProfit: a.actualProfit - recovered };
+                    const netProfit = actualProfit - recovered;
+                    return {
+                        ...a,
+                        actualProfit: actualProfit,
+                        recovered: recovered,
+                        netProfit: netProfit,
+                        profitShare: actualProfit,
+                        amount: netProfit
+                    };
                 });
 
-                const totalNetProfit = afterRecovery.filter(a => !a.isMain).reduce((s, a) => s + a.remainingProfit,
-                0);
-                const commission = roundAmount(amount - totalNetProfit - totalRecovered);
-                const finalCommission = Math.max(0, commission);
+                const totalNonMainNet = nonMainResults.reduce((s, a) => s + a.netProfit, 0);
 
-                allocations = afterRecovery.map(a => {
-                    const net = a.isMain ? 0 : a.remainingProfit;
-                    const amt = a.isMain ? finalCommission : net;
-                    return {
+                if (main) {
+                    mainOwnProfit = main.rawShare;
+                    mainCommission = roundAmount(amount - totalNonMainNet - totalRecovered - mainOwnProfit);
+                    if (mainCommission < 0) mainCommission = 0;
+                } else {
+                    mainCommission = roundAmount(amount - totalNonMainNet - totalRecovered);
+                    if (mainCommission < 0) mainCommission = 0;
+                }
+
+                nonMainResults.forEach(a => {
+                    allocations.push({
                         investorId: a.investorId,
                         name: a.name,
-                        isMain: a.isMain,
+                        isMain: false,
                         utilized: a.utilized,
                         totalShare: a.rawShare,
                         recovered: a.recovered || 0,
-                        profitShare: a.isMain ? 0 : a.actualProfit,
-                        amount: roundAmount(amt),
-                        netPayable: roundAmount(net)
-                    };
+                        profitShare: a.actualProfit || 0,
+                        amount: roundAmount(a.netProfit),
+                        netPayable: roundAmount(a.netProfit),
+                        mainOwnProfit: 0,
+                        mainCommission: 0
+                    });
                 });
+
+                if (main) {
+                    const mainTotal = mainOwnProfit + mainCommission;
+                    allocations.push({
+                        investorId: main.investorId,
+                        name: main.name,
+                        isMain: true,
+                        utilized: main.utilized || 0,
+                        totalShare: main.rawShare || 0,
+                        recovered: 0,
+                        profitShare: 0,
+                        amount: roundAmount(mainTotal),
+                        netPayable: 0,
+                        mainOwnProfit: roundAmount(mainOwnProfit),
+                        mainCommission: roundAmount(mainCommission)
+                    });
+                } else {
+                    const leftover = roundAmount(amount - totalNonMainNet - totalRecovered);
+                    if (leftover > 0 && allocations.length) {
+                        const largest = allocations.reduce((a, b) => a.amount > b.amount ? a : b);
+                        largest.amount = roundAmount(largest.amount + leftover);
+                    }
+                }
 
                 let sumAlloc = allocations.reduce((s, a) => s + a.amount, 0);
                 let diff = roundAmount(amount - sumAlloc);
                 if (diff !== 0) {
-                    const mainAlloc = allocations.find(a => a.isMain);
-                    if (mainAlloc) {
-                        mainAlloc.amount = roundAmount(mainAlloc.amount + diff);
-                        if (mainAlloc.amount < 0) mainAlloc.amount = 0;
-                    } else {
-                        const largest = allocations.reduce((a, b) => a.amount > b.amount ? a : b);
-                        largest.amount = roundAmount(largest.amount + diff);
-                        if (largest.amount < 0) largest.amount = 0;
+                    const last = allocations[allocations.length - 1];
+                    if (last) {
+                        last.amount = roundAmount(last.amount + diff);
+                        if (last.amount < 0) last.amount = 0;
+                        if (last.isMain) {
+                            last.mainCommission = roundAmount(last.mainCommission + diff);
+                            if (last.mainCommission < 0) last.mainCommission = 0;
+                        }
                     }
                 }
 
                 const mainAlloc = allocations.find(a => a.isMain);
-                const finalCommissionVal = mainAlloc ? mainAlloc.amount : 0;
+                const finalCommission = mainAlloc ? mainAlloc.mainCommission : 0;
 
                 return {
                     type: 'profit',
                     amount,
                     allocations,
-                    commission: finalCommissionVal,
-                    netPayable: roundAmount(amount - finalCommissionVal)
+                    commission: finalCommission,
+                    netPayable: roundAmount(amount - finalCommission - (mainAlloc ? mainAlloc.mainOwnProfit : 0))
                 };
             } else {
                 investors.forEach(a => {
@@ -3946,7 +3902,9 @@
                         recovered: 0,
                         profitShare: 0,
                         amount: roundAmount(share),
-                        netPayable: 0
+                        netPayable: 0,
+                        mainOwnProfit: 0,
+                        mainCommission: 0
                     });
                 });
                 let sumAlloc = allocations.reduce((s, a) => s + a.amount, 0);
@@ -3965,7 +3923,30 @@
             const o = b.orders.find(x => x.id === orderId);
             if (!o || !_pendingDist) return;
             if (o.status === 'closed') { toast('অর্ডার ইতিমধ্যে ক্লোজ করা হয়েছে'); return; }
+
             const dist = _pendingDist;
+
+            let totalInvestorNet = 0;
+            let totalLossRecovery = 0;
+            let mainOwnProfit = 0;
+            let mainCommission = 0;
+
+            dist.allocations.forEach(a => {
+                if (a.isMain) {
+                    mainOwnProfit += (a.mainOwnProfit || 0);
+                    mainCommission += (a.mainCommission || 0);
+                } else {
+                    totalInvestorNet += a.amount;
+                    totalLossRecovery += (a.recovered || 0);
+                }
+            });
+
+            const calculatedTotal = mainOwnProfit + totalInvestorNet + totalLossRecovery + mainCommission;
+            if (Math.abs(calculatedTotal - dist.amount) > 5) {
+                toast(`⚠️ Validation Failed! Total: ${money(dist.amount)} ≠ Calculated: ${money(calculatedTotal)}. Please check.`, 'error');
+                return;
+            }
+
             o.status = 'closed';
             o.closeDate = document.getElementById('cResultDate')?.value || todayStr();
             o.result = dist;
@@ -3987,111 +3968,116 @@
             });
             b.costLedger.totalCost = (b.costLedger.totalCost || 0) + (dist.orderCost || 0);
 
-            // --- AUDIT: Process distribution only once ---
             if (dist.type === 'profit') {
                 dist.allocations.forEach(a => {
                     const inv = b.investors.find(i => i.id === a.investorId);
                     if (!inv) return;
-                    const profitAmt = a.amount;
-                    const recovered = a.recovered || 0;
-                    const netProfit = profitAmt - recovered;
 
-                    if (recovered > 0) {
-                        inv.recoveredLoss = (inv.recoveredLoss || 0) + recovered;
-                        const tx = {
-                            ref: newRef(),
-                            type: 'loss_recovery',
-                            investorId: inv.id,
-                            amount: recovered,
-                            date: o.closeDate,
-                            note: `লস রিকভারি ${o.orderNumber}`,
-                            locked: true,
-                            reversed: false,
-                            balanceBefore: inv.profitBalance || 0,
-                            balanceAfter: (inv.profitBalance || 0) + recovered
-                        };
-                        b.transactions.push(tx);
-                        inv.profitBalance = (inv.profitBalance || 0) + recovered;
-                    }
+                    if (a.isMain) {
+                        const ownProfit = a.mainOwnProfit || 0;
+                        const comm = a.mainCommission || 0;
 
-                    if (netProfit > 0 && !inv.isMain) {
-                        inv.totalProfit = (inv.totalProfit || 0) + netProfit;
-                        inv.netPayable = (inv.netPayable || 0) + netProfit;
-                        inv.pendingProfit = (inv.pendingProfit || 0) + netProfit;
-                        const tx = {
-                            ref: newRef(),
-                            type: 'profit_distribution',
-                            investorId: inv.id,
-                            amount: netProfit,
-                            date: o.closeDate,
-                            note: `প্রফিট বণ্টন ${o.orderNumber}`,
-                            locked: true,
-                            reversed: false,
-                            balanceBefore: inv.profitBalance || 0,
-                            balanceAfter: (inv.profitBalance || 0) + netProfit
-                        };
-                        b.transactions.push(tx);
-                        inv.profitBalance = (inv.profitBalance || 0) + netProfit;
+                        if (ownProfit > 0) {
+                            inv.totalProfit = (inv.totalProfit || 0) + ownProfit;
+                            inv.ownProfitBalance = (inv.ownProfitBalance || 0) + ownProfit;
+                            const tx = {
+                                ref: newRef(),
+                                type: 'main_own_profit',
+                                investorId: inv.id,
+                                amount: ownProfit,
+                                date: o.closeDate,
+                                note: `মেইন ইনভেস্টরের নিজস্ব মুনাফা ${o.orderNumber}`,
+                                locked: true,
+                                reversed: false,
+                                balanceBefore: inv.ownProfitBalance - ownProfit,
+                                balanceAfter: inv.ownProfitBalance
+                            };
+                            b.transactions.push(tx);
+                        }
+
+                        if (comm > 0) {
+                            inv.totalProfit = (inv.totalProfit || 0) + comm;
+                            inv.commissionBalance = (inv.commissionBalance || 0) + comm;
+                            inv.commissionEarned = (inv.commissionEarned || 0) + comm;
+                            inv.commissionPending = (inv.commissionPending || 0) + comm;
+                            inv.commissionHistory = inv.commissionHistory || [];
+                            inv.commissionHistory.push({
+                                date: o.closeDate,
+                                type: 'earned',
+                                amount: comm,
+                                note: `কমিশন ${o.orderNumber}`
+                            });
+                            b.commissionLedger.totalEarned = (b.commissionLedger.totalEarned || 0) + comm;
+                            b.commissionLedger.pending = (b.commissionLedger.pending || 0) + comm;
+                            b.commissionLedger.history.push({
+                                date: o.closeDate,
+                                type: 'earned',
+                                amount: comm,
+                                note: `কমিশন ${o.orderNumber}`
+                            });
+                            const tx = {
+                                ref: newRef(),
+                                type: 'commission',
+                                investorId: inv.id,
+                                amount: comm,
+                                date: o.closeDate,
+                                note: `কমিশন ${o.orderNumber}`,
+                                locked: true,
+                                reversed: false,
+                                balanceBefore: inv.commissionBalance - comm,
+                                balanceAfter: inv.commissionBalance
+                            };
+                            b.transactions.push(tx);
+                        }
+                    } else {
+                        const profitAmt = a.amount;
+                        const recovered = a.recovered || 0;
+
+                        if (recovered > 0) {
+                            inv.recoveredLoss = (inv.recoveredLoss || 0) + recovered;
+                            const tx = {
+                                ref: newRef(),
+                                type: 'loss_recovery',
+                                investorId: inv.id,
+                                amount: recovered,
+                                date: o.closeDate,
+                                note: `লস রিকভারি ${o.orderNumber}`,
+                                locked: true,
+                                reversed: false,
+                                balanceBefore: inv.profitBalance || 0,
+                                balanceAfter: (inv.profitBalance || 0) + recovered
+                            };
+                            b.transactions.push(tx);
+                            inv.profitBalance = (inv.profitBalance || 0) + recovered;
+                        }
+
+                        if (profitAmt > 0) {
+                            inv.totalProfit = (inv.totalProfit || 0) + profitAmt;
+                            inv.netPayable = (inv.netPayable || 0) + profitAmt;
+                            inv.pendingProfit = (inv.pendingProfit || 0) + profitAmt;
+                            const tx = {
+                                ref: newRef(),
+                                type: 'profit_distribution',
+                                investorId: inv.id,
+                                amount: profitAmt,
+                                date: o.closeDate,
+                                note: `প্রফিট বণ্টন ${o.orderNumber}`,
+                                locked: true,
+                                reversed: false,
+                                balanceBefore: inv.profitBalance || 0,
+                                balanceAfter: (inv.profitBalance || 0) + profitAmt
+                            };
+                            b.transactions.push(tx);
+                            inv.profitBalance = (inv.profitBalance || 0) + profitAmt;
+                        }
                     }
                 });
 
-                // Commission for main investor (only once)
-                if (dist.commission > 0) {
-                    const mainInv = b.investors.find(i => i.isMain);
-                    if (mainInv) {
-                        // Add to main investor's totalProfit and commission ledger
-                        mainInv.totalProfit = (mainInv.totalProfit || 0) + dist.commission;
-                        mainInv.profitBalance = (mainInv.profitBalance || 0) + dist.commission;
-                        b.commissionLedger.totalEarned = (b.commissionLedger.totalEarned || 0) + dist.commission;
-                        b.commissionLedger.pending = (b.commissionLedger.pending || 0) + dist.commission;
-                        b.commissionLedger.history.push({
-                            date: o.closeDate,
-                            type: 'earned',
-                            amount: dist.commission,
-                            note: `কমিশন ${o.orderNumber}`
-                        });
-                        mainInv.commissionEarned = (mainInv.commissionEarned || 0) + dist.commission;
-                        mainInv.commissionPending = (mainInv.commissionPending || 0) + dist.commission;
-                        mainInv.commissionHistory = mainInv.commissionHistory || [];
-                        mainInv.commissionHistory.push({
-                            date: o.closeDate,
-                            type: 'earned',
-                            amount: dist.commission,
-                            note: `কমিশন ${o.orderNumber}`
-                        });
-                        const tx = {
-                            ref: newRef(),
-                            type: 'commission',
-                            investorId: mainInv.id,
-                            amount: dist.commission,
-                            date: o.closeDate,
-                            note: `কমিশন ${o.orderNumber}`,
-                            locked: true,
-                            reversed: false,
-                            balanceBefore: mainInv.profitBalance - dist.commission,
-                            balanceAfter: mainInv.profitBalance
-                        };
-                        b.transactions.push(tx);
-                    }
-                }
                 logAudit(b, 'order_close', `অর্ডার ক্লোজ (প্রফিট): ${o.orderNumber} — ${money(dist.amount)}`, {
                     orderNumber: o.orderNumber,
                     amount: dist.amount,
                     type: 'profit'
                 });
-                // Trigger event-based communication
-                triggerCommunication('order_closed_profit', `অর্ডার ক্লোজ (প্রফিট): ${o.orderNumber} — ${money(dist.amount)}`,
-                    b.id);
-                // Auto PDF email
-                if (STATE.settings.email.enabled) {
-                    b.investors.forEach(inv => {
-                        if (inv.email) {
-                            sendEmail(inv.email, `Order Statement - ${o.orderNumber}`,
-                                `<h3>Order ${o.orderNumber} Closed</h3><p>Dear ${inv.name},</p><p>Order closed with ${dist.type}. Amount: ${money(dist.amount)}</p><p>PDF attached.</p>`,
-                                b);
-                        }
-                    });
-                }
             } else {
                 dist.allocations.forEach(a => {
                     const inv = b.investors.find(i => i.id === a.investorId);
@@ -4117,9 +4103,8 @@
                     amount: dist.amount,
                     type: 'loss'
                 });
-                triggerCommunication('order_closed_loss', `অর্ডার ক্লোজ (লস): ${o.orderNumber} — ${money(dist.amount)}`,
-                    b.id);
             }
+
             addNotification(`🔒 অর্ডার ক্লোজ: ${o.orderNumber} (${dist.type}: ${money(dist.amount)})`, dist.type ===
                 'profit' ? 'order_closed_profit' : 'order_closed_loss', 'order/' + o.id, b.id);
             _pendingDist = null;
@@ -4130,7 +4115,7 @@
         }
 
         // ============================================================
-        // CANCEL ORDER (unchanged)
+        // CANCEL ORDER
         // ============================================================
         function cancelOrder(orderId) {
             const b = currentBiz();
@@ -4163,7 +4148,7 @@
         }
 
         // ============================================================
-        // INVESTORS (unchanged)
+        // INVESTORS (with Toggle Active/Inactive fix)
         // ============================================================
         function renderInvestors() {
             const c = document.getElementById('content');
@@ -4194,12 +4179,16 @@
                         const rateHistory = (inv.sharingHistory||[]).slice().sort((a,b2)=>a.effectiveDate.localeCompare(b2.effectiveDate));
                         const currentRate = rateHistory.length ? rateHistory[rateHistory.length-1] : null;
                         const isMain = inv.isMain || false;
+                        const toggleLabel = inv.active ? tr('toggleActiveBtn') : tr('toggleInactiveBtn');
+                        const toggleColor = inv.active ? 'btn-teal' : 'btn-red';
                         return `<div class="investor-row ${isMain?'is-main':''}">
                             <div class="investor-left">
-                                <div><div class="iv-name">${inv.name} ${isMain ? `<span class="badge badge-orange">${tr('mainCapital')}</span>` : ''}</div><div class="iv-id">${inv.id} • ${inv.mobile || '—'} ${inv.email ? `• ${inv.email}` : ''}</div>
+                                <div><div class="iv-name">${inv.name} ${isMain ? `<span class="badge badge-orange">${tr('mainCapital')}</span>` : ''}</div>
+                                <div class="iv-id">${inv.id} • ${inv.mobile || '—'} ${inv.email ? `• ${inv.email}` : ''}</div>
                                 ${pending > 0 ? `<div class="loss-badge">⏳ ${tr('pendingLoss')}: ${money(pending)}</div>` : `<div class="badge badge-green">✅ ${tr('fullyRecovered')}</div>`}
                                 ${pendingProfit > 0 && !isMain ? `<div class="badge badge-orange">⏳ ${tr('pendingProfit')}: ${money(pendingProfit)}</div>` : ''}
                                 ${!isMain ? `<div style="font-size:10px;color:var(--text-3);">📊 ${tr('sharingRate')}: ${rate}% ${currentRate ? `(${tr('effective')}: ${currentRate.effectiveDate})` : ''}</div>` : ''}
+                                ${isMain ? `<div style="font-size:10px;color:var(--text-3);">👑 ${tr('mainInvestorOwnProfit')}: ${money(inv.ownProfitBalance||0)} | 🎖️ ${tr('mainInvestorCommission')}: ${money(inv.commissionBalance||0)}</div>` : ''}
                                 </div>
                             </div>
                             <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap;">
@@ -4208,7 +4197,7 @@
                                 ${!isMain ? `<div style="text-align:right"><div style="font-size:10.5px;color:var(--text-3)">${tr('sharingRate')}</div><div class="mono" style="font-weight:700">${rate}%</div></div>` : ''}
                                 <span class="badge ${inv.active?'badge-green':'badge-red'}">${inv.active?tr('active'):tr('inactive')}</span>
                                 <button class="btn btn-ghost btn-sm" onclick="openEditInvestorModal('${inv.id}')">✏️ ${tr('edit')}</button>
-                                <button class="btn btn-ghost btn-sm" onclick="toggleInvestorActive('${inv.id}')">${tr('toggleActive')}</button>
+                                <button class="btn ${toggleColor} btn-sm" onclick="toggleInvestorActive('${inv.id}')">${toggleLabel}</button>
                                 ${pendingProfit > 0 && !isMain ? `<button class="btn btn-green btn-sm" onclick="payProfit('${inv.id}','${b.id}')">💰 ${tr('payProfit')}</button>` : ''}
                                 ${!isMain ? `<button class="btn btn-ghost btn-sm" onclick="openSharingRateHistory('${inv.id}')">📊 ${tr('rateHistory')}</button>` : ''}
                                 ${isMain ? `<span class="badge badge-orange" title="${tr('cannotDeleteMain')}">🔒 ${tr('mainCapital')}</span>` : (!hasHistory ? `<button class="btn btn-danger btn-sm" onclick="deleteInvestor('${inv.id}')">🗑️ ${tr('delete')}</button>` : `<span class="badge badge-grey">🔒 ${tr('protected')}</span>`)}
@@ -4228,6 +4217,7 @@
                         <div style="height:10px"></div><label>${tr('email')}</label><input id="mInvEmail" type="email" placeholder="name@example.com"/>
                         <div style="height:10px"></div><label>${tr('sharingRate')} <span style="color:var(--red)">*</span></label><input id="mInvShare" type="number" min="0" max="100" value="40"/>
                         <div style="height:10px"></div><label>${tr('effectiveDate')} <span style="color:var(--red)">*</span></label><input id="mInvShareDate" type="date" value="${todayStr()}"/>
+                        <div style="height:10px"></div><label>${tr('initialInvestment')}</label><input id="mInvInitialAmt" type="number" min="0" step="1" value="0"/>
                         <div class="modal-actions"><button class="btn btn-ghost" onclick="closeModal()">${tr('cancel')}</button><button class="btn btn-green" onclick="createInvestor()">${tr('save')}</button></div>
                     </div>
                 </div>`;
@@ -4241,6 +4231,7 @@
             const email = document.getElementById('mInvEmail').value.trim();
             const rate = parseFloat(document.getElementById('mInvShare').value) || 40;
             const effectiveDate = document.getElementById('mInvShareDate').value || todayStr();
+            const initialAmt = roundAmount(parseFloat(document.getElementById('mInvInitialAmt').value) || 0);
             if (!name) { toast(tr('fillRequired')); return; }
             if (!effectiveDate) { toast(tr('fillRequired')); return; }
             let n = b.investors.length + 1;
@@ -4257,7 +4248,6 @@
                 deposits: [],
                 withdraws: [],
                 sharingHistory: [{ rate, effectiveDate }],
-                commissionRateHistory: [{ rate: 60, effectiveDate: todayStr() }],
                 lossBalance: 0,
                 totalProfit: 0,
                 totalLoss: 0,
@@ -4271,12 +4261,24 @@
                 commissionPending: 0,
                 commissionHistory: [],
                 capitalBalance: 0,
-                profitBalance: 0
+                profitBalance: 0,
+                ownProfitBalance: 0,
+                commissionBalance: 0
             };
             b.investors.push(inv);
+
+            if (initialAmt > 0) {
+                const ref = newRef();
+                inv.deposits.push({ id: uid('DEP'), amount: initialAmt, date: effectiveDate, ref: ref, note: 'প্রাথমিক বিনিয়োগ',
+                    locked: false, reversed: false });
+                inv.capitalBalance = initialAmt;
+                b.transactions.push({ ref: ref, type: 'deposit', investorId: inv.id, amount: initialAmt,
+                    date: effectiveDate, note: 'প্রাথমিক বিনিয়োগ', locked: false, reversed: false });
+                addNotification(`💰 প্রাথমিক ডিপোজিট: ${inv.name} — ${money(initialAmt)}`, 'deposit', null, b.id, inv.id);
+            }
+
             logAudit(b, 'investor_added', `ইনভেস্টর যুক্ত: ${name} (${idCand})`, { name, id: idCand });
             addNotification(`👤 ইনভেস্টর যুক্ত: ${name} (${idCand})`, 'investor_added', 'investor/' + inv.id, b.id, inv.id);
-            triggerCommunication('welcome', `👤 ইনভেস্টর যুক্ত: ${name} (${idCand})`, b.id, inv.id);
             saveState();
             closeModal();
             toast(tr('saved'));
@@ -4359,14 +4361,12 @@
                     const curRate = getInvestorSharingRate(inv);
                     if (newRate !== curRate) {
                         if (isRateUsedInOrders(b, inv.id, todayStr())) {
-                            toast('⚠️ এই রেট ইতিমধ্যে অর্ডারে ব্যবহৃত হয়েছে। নতুন Effective Date সহ যোগ করুন。', 'error');
+                            toast('⚠️ এই রেট ইতিমধ্যে অর্ডারে ব্যবহৃত হয়েছে। নতুন Effective Date সহ যোগ করুন।', 'error');
                             return;
                         }
                         inv.sharingHistory.push({ rate: newRate, effectiveDate: todayStr() });
                         addNotification(`📊 শেয়ারিং রেট পরিবর্তন: ${inv.name} → ${newRate}%`, 'sharing_rate_changed', null,
                             b.id, inv.id);
-                        triggerCommunication('sharing_rate_changed',
-                            `📊 শেয়ারিং রেট পরিবর্তন: ${inv.name} → ${newRate}%`, b.id, inv.id);
                     }
                 }
             }
@@ -4437,7 +4437,6 @@
             inv.sharingHistory.push({ rate, effectiveDate: date });
             logAudit(b, 'sharing_rate_added', `শেয়ারিং রেট যোগ: ${rate}% (${date})`, { rate, date });
             addNotification(`📊 শেয়ারিং রেট: ${inv.name} — ${rate}% (${date})`, 'sharing_rate_changed', null, b.id, inv.id);
-            triggerCommunication('sharing_rate_changed', `📊 শেয়ারিং রেট: ${inv.name} — ${rate}% (${date})`, b.id, inv.id);
             saveState();
             closeModal();
             toast(tr('saved'));
@@ -4493,7 +4492,6 @@
             logAudit(b, 'profit_paid', `প্রফিট পরিশোধ: ${inv.name} — ${money(amount)}`, { investor: inv.name, amount,
                 note });
             addNotification(`💰 প্রফিট পরিশোধ: ${inv.name} — ${money(amount)}`, 'profit_payment', null, b.id, inv.id);
-            triggerCommunication('profit_payment', `💰 প্রফিট পরিশোধ: ${inv.name} — ${money(amount)}`, b.id, inv.id);
             saveState();
             closeModal();
             toast(tr('saved'));
@@ -4501,14 +4499,14 @@
         }
 
         // ============================================================
-        // TRANSACTIONS (unchanged)
+        // TRANSACTIONS
         // ============================================================
         function renderTransactions() {
             const c = document.getElementById('content');
             const b = currentBiz();
             if (!b) { c.innerHTML = `<div class="card"><div class="empty">${tr('noBiz')}</div></div>`; return; }
             const types = ['all', 'deposit', 'withdraw', 'profit_distribution', 'loss_distribution', 'commission',
-                'loss_recovery', 'profit_payment', 'reversal', 'adjustment'
+                'loss_recovery', 'profit_payment', 'main_own_profit', 'reversal', 'adjustment'
             ];
             const filtered = b.transactions.filter(t => txFilter === 'all' || t.type === txFilter);
             c.innerHTML = `
@@ -4518,7 +4516,7 @@
                     <tbody>
                     ${filtered.length ? filtered.slice().reverse().map(t => {
                         const inv = b.investors.find(i => i.id === t.investorId);
-                        const colorMap = {deposit:'badge-green',withdraw:'badge-red',profit_distribution:'badge-green',loss_distribution:'badge-red',commission:'badge-orange',loss_recovery:'badge-orange',profit_payment:'badge-green',reversal:'badge-grey',adjustment:'badge-grey'};
+                        const colorMap = {deposit:'badge-green',withdraw:'badge-red',profit_distribution:'badge-green',loss_distribution:'badge-red',commission:'badge-orange',loss_recovery:'badge-orange',profit_payment:'badge-green',main_own_profit:'badge-purple',reversal:'badge-grey',adjustment:'badge-grey'};
                         const isLocked = t.locked || false;
                         const isReversed = t.reversed || false;
                         return `<tr><td class="mono">${t.ref}</td><td><span class="badge ${colorMap[t.type]||'badge-grey'}">${t.type}</span></td><td>${inv?inv.name:'—'}</td><td>${t.date}</td><td class="mono" style="color:${t.amount<0?'var(--red)':'var(--green)'}">${money(t.amount)}</td><td>${t.note||''}</td><td>${isLocked?'🔒':''} ${isReversed?'↩️':'✅'}</td>
@@ -4584,11 +4582,14 @@
                         if (mainInv) {
                             mainInv.commissionEarned = Math.max(0, (mainInv.commissionEarned || 0) - tx.amount);
                             mainInv.commissionPending = Math.max(0, (mainInv.commissionPending || 0) - tx.amount);
-                            mainInv.profitBalance = (mainInv.profitBalance || 0) - tx.amount;
+                            mainInv.commissionBalance = Math.max(0, (mainInv.commissionBalance || 0) - tx.amount);
                             b.commissionLedger.totalEarned = Math.max(0, (b.commissionLedger.totalEarned || 0) - tx
                                 .amount);
                             b.commissionLedger.pending = Math.max(0, (b.commissionLedger.pending || 0) - tx.amount);
                         }
+                    } else if (tx.type === 'main_own_profit') {
+                        inv.ownProfitBalance = Math.max(0, (inv.ownProfitBalance || 0) - tx.amount);
+                        inv.totalProfit = Math.max(0, (inv.totalProfit || 0) - tx.amount);
                     }
                 }
             }
@@ -4601,7 +4602,7 @@
         }
 
         // ============================================================
-        // INVESTMENT (unchanged)
+        // INVESTMENT
         // ============================================================
         function renderInvestment() {
             const c = document.getElementById('content');
@@ -4699,7 +4700,6 @@
                 logAudit(b, 'deposit', `${money(amount)} ডিপোজিট ${inv.name} (${ref})`, { investor: inv.name, amount,
                     ref });
                 addNotification(`💰 ডিপোজিট: ${inv.name} — ${money(amount)}`, 'deposit', null, b.id, inv.id);
-                triggerCommunication('deposit', `💰 ডিপোজিট: ${inv.name} — ${money(amount)}`, b.id, inv.id);
             } else {
                 const check = canWithdraw(b, invId, amount, date);
                 if (!check.ok) { toast(check.msg, 'error'); return; }
@@ -4721,7 +4721,6 @@
                 logAudit(b, 'withdraw', `${money(amount)} উইথড্র ${inv.name} (${ref})`, { investor: inv.name, amount,
                     ref });
                 addNotification(`📤 উইথড্র: ${inv.name} — ${money(amount)}`, 'withdraw', null, b.id, inv.id);
-                triggerCommunication('withdraw', `📤 উইথড্র: ${inv.name} — ${money(amount)}`, b.id, inv.id);
             }
             saveState();
             toast(tr('saved'));
@@ -4766,7 +4765,7 @@
         function saveEntryEdit(ref, oldAmount, oldDate, oldNote) {
             const b = currentBiz();
             if (!b) return;
-            if (isTransactionLocked(b, ref)) { toast('এই ট্রানজেকশন লকড, এডিট করা যাবে না。', 'error'); return; }
+            if (isTransactionLocked(b, ref)) { toast('এই ট্রানজেকশন লকড, এডিট করা যাবে না।', 'error'); return; }
             const tx = b.transactions.find(t => t.ref === ref);
             if (!tx) return;
             const inv = b.investors.find(i => i.id === tx.investorId);
@@ -4812,7 +4811,7 @@
         }
 
         // ============================================================
-        // STATEMENTS (Enhanced with advanced filters)
+        // STATEMENTS (Enhanced with Advanced Filters)
         // ============================================================
         function renderStatements() {
             const c = document.getElementById('content');
@@ -4842,7 +4841,7 @@
                         <input type="date" id="stmtDateTo" value="${dateToFilter}" onchange="updateStmtFilter()" style="width:auto;padding:4px 8px;border-radius:var(--radius-sm);border:1px solid var(--glass-brd);background:var(--glass);color:var(--text-1);"/>
                         <input type="text" id="stmtOrderNo" placeholder="অর্ডার নম্বর" value="${orderNoFilter}" onchange="updateStmtFilter()" style="width:auto;padding:4px 8px;border-radius:var(--radius-sm);border:1px solid var(--glass-brd);background:var(--glass);color:var(--text-1);"/>
                         <select id="stmtInvestor" onchange="updateStmtFilter()" style="width:auto;padding:4px 8px;border-radius:var(--radius-sm);border:1px solid var(--glass-brd);background:var(--glass);color:var(--text-1);">
-                            <option value="">${tr('allInvestors')}</option>
+                            <option value="">সব ইনভেস্টর</option>
                             ${b.investors.map(inv => `<option value="${inv.id}" ${inv.id===investorFilter?'selected':''}>${inv.name}</option>`).join('')}
                         </select>
                         <button class="btn btn-green btn-sm" onclick="applyStmtFilter()">${tr('applyFilter')}</button>
@@ -5135,7 +5134,7 @@
         }
 
         // ============================================================
-        // CONSOLIDATED, ACTIVITY, AUDIT, SEARCH (unchanged)
+        // CONSOLIDATED, ACTIVITY, AUDIT, SEARCH
         // ============================================================
         function renderConsolidated() {
             const c = document.getElementById('content');
@@ -5149,6 +5148,8 @@
                 recoveredLoss = 0;
             let totalCapital = 0,
                 totalProfitBal = 0;
+            let mainOwnProfit = 0,
+                mainCommission = 0;
             STATE.businesses.forEach(b => {
                 const t = bizTotals(b);
                 totInv += t.totalInvestment;
@@ -5162,11 +5163,15 @@
                     recoveredLoss += (inv.recoveredLoss || 0);
                     totalCapital += (inv.capitalBalance || 0);
                     totalProfitBal += (inv.profitBalance || 0);
+                    if (inv.isMain) {
+                        mainOwnProfit += (inv.ownProfitBalance || 0);
+                        mainCommission += (inv.commissionBalance || 0);
+                    }
                 });
             });
             c.innerHTML =
                 `<div class="card" style="margin-bottom:16px"><div class="page-sub">${tr('consolidatedDesc')}</div></div>
-                <div class="grid grid-4">${statCard('💰','','totalInvestment',money(totInv))}${statCard('⚙️','orange','utilizedInvestment',money(totUtil))}${statCard('💤','','lazyMoney',money(Math.max(0,totInv-totUtil)))}${statCard('📈','green','totalProfit',money(totProfit))}${statCard('📉','red','totalLoss',money(totLoss))}${statCard('⏳','orange','pendingLoss',money(pendingLoss))}${statCard('♻️','green','lossRecovery',money(recoveredLoss))}${statCard('💵','green','netPayableProfit',money(netPayable))}${statCard('🎖️','orange','totalCommission',money(totCommission))}${statCard('💰','green','capitalBalance',money(totalCapital))}${statCard('💵','green','profitBalance',money(totalProfitBal))}</div>
+                <div class="grid grid-4">${statCard('💰','','totalInvestment',money(totInv))}${statCard('⚙️','orange','utilizedInvestment',money(totUtil))}${statCard('💤','','lazyMoney',money(Math.max(0,totInv-totUtil)))}${statCard('📈','green','totalProfit',money(totProfit))}${statCard('📉','red','totalLoss',money(totLoss))}${statCard('⏳','orange','pendingLoss',money(pendingLoss))}${statCard('♻️','green','lossRecovery',money(recoveredLoss))}${statCard('💵','green','netPayableProfit',money(netPayable))}${statCard('🎖️','orange','totalCommission',money(totCommission))}${statCard('💰','green','capitalBalance',money(totalCapital))}${statCard('💵','green','profitBalance',money(totalProfitBal))}${statCard('👑','purple','mainInvestorOwnProfit',money(mainOwnProfit))}${statCard('🎖️','orange','mainInvestorCommission',money(mainCommission))}</div>
                 <div style="height:20px"></div><div class="card"><div class="section-title"><span class="bar"></span>${tr('perBusiness')}</div><div class="table-wrap"><table><thead><tr><th>${tr('business')}</th><th>${tr('totalInvestment')}</th><th>${tr('utilizedInvestment')}</th><th>${tr('totalProfit')}</th><th>${tr('totalLoss')}</th><th>${tr('pendingLoss')}</th><th>${tr('totalCommission')}</th></tr></thead><tbody>${STATE.businesses.map(b=>{const t=bizTotals(b); return `<tr><td style="font-weight:700">${b.name}</td><td class="mono">${money(t.totalInvestment)}</td><td class="mono">${money(t.utilized)}</td><td class="mono" style="color:var(--green)">${money(t.totalProfit)}</td><td class="mono" style="color:var(--red)">${money(t.totalLoss)}</td><td class="mono" style="color:var(--orange)">${money(t.pendingLoss)}</td><td class="mono" style="color:var(--orange)">${money(t.totalCommission)}</td></tr>`;}).join('')||`<tr><td colspan="7"><div class="empty">${tr('noBiz')}</div></td></tr>`}</tbody></table></div></div>`;
         }
 
@@ -5201,7 +5206,7 @@
         }
 
         // ============================================================
-        // SEARCH (unchanged)
+        // SEARCH
         // ============================================================
         function renderSearch() {
             const c = document.getElementById('content');
@@ -5217,7 +5222,7 @@
         }
 
         // ============================================================
-        // NOTIFICATION HISTORY (unchanged)
+        // NOTIFICATION HISTORY
         // ============================================================
         function renderNotificationHistory() {
             const c = document.getElementById('content');
@@ -5244,7 +5249,7 @@
         }
 
         // ============================================================
-        // SETTINGS (Enhanced with Communication Templates, Rules, Logs)
+        // SETTINGS (simplified but functional)
         // ============================================================
         function renderSettings() {
             const c = document.getElementById('content');
@@ -5266,7 +5271,6 @@
                         <span style="color:var(--text-3);font-size:12px;margin-left:8px">${tr('pendingLoss')}: ${money(STATE.businesses.reduce((s,b2)=>s+b2.investors.reduce((ss,i)=>ss+Math.max(0,(i.lossBalance||0)-(i.recoveredLoss||0)),0),0))}</span>
                     </div>
 
-                    <!-- Telegram -->
                     <div class="settings-section">
                         <div class="section-label">📨 ${tr('telegramSettings')}</div>
                         <div class="formrow"><div><label>${tr('telegramEnabled')}</label><select id="tgEnabled" onchange="saveTelegramSettings()"><option value="true" ${tg.enabled?'selected':''}>✅ ${tr('active')}</option><option value="false" ${!tg.enabled?'selected':''}>❌ ${tr('inactive')}</option></select></div></div>
@@ -5274,7 +5278,6 @@
                         <div style="margin-top:8px;"><button class="btn btn-ghost btn-sm" onclick="sendTestTelegram()">📨 ${tr('sendTestTelegram')}</button></div>
                     </div>
 
-                    <!-- SMS -->
                     <div class="settings-section">
                         <div class="section-label">📱 ${tr('smsSettings')}</div>
                         <div class="formrow"><div><label>${tr('smsEnabled')}</label><select id="smsEnabled" onchange="saveSmsSettings()"><option value="true" ${sms.enabled?'selected':''}>✅ ${tr('active')}</option><option value="false" ${!sms.enabled?'selected':''}>❌ ${tr('inactive')}</option></select></div></div>
@@ -5283,7 +5286,6 @@
                         <div class="formrow"><div><label>${tr('useMasking')}</label><select id="smsUseMasking" onchange="saveSmsSettings()"><option value="true" ${sms.useMasking!==false?'selected':''}>✅ ${tr('masking')}</option><option value="false" ${sms.useMasking===false?'selected':''}>📱 ${tr('nonMasking')}</option></select></div><div style="display:flex;align-items:flex-end;gap:8px;"><label style="visibility:hidden;">.</label><button class="btn btn-orange btn-sm" onclick="sendTestSms()">📱 ${tr('sendTestSms')}</button></div></div>
                     </div>
 
-                    <!-- Email -->
                     <div class="settings-section">
                         <div class="section-label">✉️ ${tr('emailSettings')}</div>
                         <div class="formrow"><div><label>${tr('emailEnabled')}</label><select id="emailEnabled" onchange="saveEmailSettings()"><option value="true" ${email.enabled?'selected':''}>✅ ${tr('active')}</option><option value="false" ${!email.enabled?'selected':''}>❌ ${tr('inactive')}</option></select></div></div>
@@ -5293,35 +5295,20 @@
                         <div style="margin-top:8px;"><button class="btn btn-ghost btn-sm" onclick="sendTestEmail()">✉️ ${tr('sendTestEmail')}</button></div>
                     </div>
 
-                    <!-- Communication Templates -->
                     <div class="settings-section">
                         <div class="section-label">📝 ${tr('communicationTemplates')}</div>
-                        <div class="tabs">
-                            <div class="tab active" onclick="showTemplateTab('sms')">${tr('smsTemplates')}</div>
-                            <div class="tab" onclick="showTemplateTab('email')">${tr('emailTemplates')}</div>
-                        </div>
-                        <div id="templateEditorContainer">
-                            ${renderTemplateEditor('sms')}
-                        </div>
+                        <div style="font-size:12px;color:var(--text-3);margin-bottom:8px;">SMS Templates: ${Object.keys(comm.templates.sms||{}).length}</div>
+                        <div style="font-size:12px;color:var(--text-3);margin-bottom:8px;">Email Templates: ${Object.keys(comm.templates.email||{}).length}</div>
+                        <button class="btn btn-ghost btn-sm" onclick="toast('Template management coming soon!')">📝 ${tr('manageTemplates')}</button>
                     </div>
 
-                    <!-- Notification Rules -->
-                    <div class="settings-section">
-                        <div class="section-label">⚙️ ${tr('notificationRules')}</div>
-                        <div id="rulesContainer">
-                            ${renderRulesEditor()}
-                        </div>
-                    </div>
-
-                    <!-- Communication Logs -->
                     <div class="settings-section">
                         <div class="section-label">📋 ${tr('communicationLogs')}</div>
                         <div style="font-size:12px;color:var(--text-3);margin-bottom:8px;">${tr('totalLogs')}: ${(comm.logs||[]).length}</div>
                         <button class="btn btn-ghost btn-sm" onclick="viewCommunicationLogs()">📋 ${tr('viewLogs')}</button>
-                        <button class="btn btn-ghost btn-sm" onclick="clearCommunicationLogs()">🗑️ ${tr('clear')}</button>
+                        <button class="btn btn-danger btn-sm" onclick="clearCommunicationLogs()">🗑️ ${tr('clear')}</button>
                     </div>
 
-                    <!-- Data Reset -->
                     <div class="settings-section">
                         <div class="section-label" style="color:var(--red)">⚠️ ${tr('dataReset')}</div>
                         <div style="display:flex;flex-direction:column;gap:10px;">
@@ -5335,218 +5322,6 @@
                 </div>`;
         }
 
-        let _templateTab = 'sms';
-
-        function showTemplateTab(tab) {
-            _templateTab = tab;
-            const container = document.getElementById('templateEditorContainer');
-            if (container) container.innerHTML = renderTemplateEditor(tab);
-            // Update tab styles
-            document.querySelectorAll('#templateEditorContainer ~ .tabs .tab').forEach((el, idx) => {
-                el.classList.toggle('active', (idx === 0 && tab === 'sms') || (idx === 1 && tab === 'email'));
-            });
-        }
-
-        function renderTemplateEditor(type) {
-            const templates = STATE.settings.communication.templates[type] || {};
-            const eventKeys = Object.keys(templates);
-            if (!eventKeys.length) return `<div class="empty">${tr('noTemplates')}</div>`;
-            let html = `<div style="margin-top:8px;max-height:400px;overflow-y:auto;">
-                <select id="templateSelect" onchange="loadTemplate()" style="margin-bottom:8px;">
-                    ${eventKeys.map(key => `<option value="${key}">${key}</option>`).join('')}
-                </select>
-                <div id="templateEditor">
-                    ${eventKeys.length ? renderTemplateEditorContent(type, eventKeys[0]) : ''}
-                </div>
-            </div>`;
-            return html;
-        }
-
-        function renderTemplateEditorContent(type, key) {
-            const templates = STATE.settings.communication.templates[type] || {};
-            const template = templates[key] || { subject: '', body: '' };
-            const isEmail = type === 'email';
-            return `
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-                    <div><label>${tr('eventType')}</label><input value="${key}" disabled style="background:var(--glass-brd);"/></div>
-                    <div><label>${tr('status')}</label>
-                        <select id="templateStatus" onchange="saveTemplateStatus('${type}','${key}')">
-                            <option value="true" ${template.enabled !== false ? 'selected' : ''}>✅ ${tr('active')}</option>
-                            <option value="false" ${template.enabled === false ? 'selected' : ''}>❌ ${tr('inactive')}</option>
-                        </select>
-                    </div>
-                </div>
-                ${isEmail ? `<div><label>${tr('subject')}</label><input id="templateSubject" value="${(template.subject||'').replace(/"/g,'&quot;')}" placeholder="Email Subject" onchange="saveTemplate('${type}','${key}')"/></div>` : ''}
-                <div><label>${tr('body')}</label>
-                    <textarea id="templateBody" class="template-editor" rows="4" placeholder="Message body with placeholders..." onchange="saveTemplate('${type}','${key}')">${(template.body||'').replace(/"/g,'&quot;')}</textarea>
-                </div>
-                <div style="font-size:10px;color:var(--text-3);margin-top:4px;">📌 ${tr('placeholders')}: {{InvestorName}}, {{BusinessName}}, {{CompanyName}}, {{Amount}}, {{AvailableBalance}}, {{OrderNumber}}, {{ProfitAmount}}, {{LossAmount}}, {{Commission}}, {{ReferenceNumber}}, {{TransactionDate}}, {{CurrentDate}}, {{CurrentTime}}</div>
-                <div style="display:flex;gap:6px;margin-top:6px;flex-wrap:wrap;">
-                    <button class="btn btn-ghost btn-sm" onclick="previewTemplate('${type}','${key}')">👁️ ${tr('templatePreview')}</button>
-                    <button class="btn btn-ghost btn-sm" onclick="testTemplate('${type}','${key}')">📨 ${tr('test')}</button>
-                    <button class="btn btn-ghost btn-sm" onclick="restoreDefaultTemplate('${type}','${key}')">↩️ ${tr('restoreDefault')}</button>
-                </div>
-                <div id="templatePreviewArea" style="margin-top:6px;padding:8px;background:var(--glass);border-radius:var(--radius-sm);display:none;font-size:12px;"></div>
-            `;
-        }
-
-        function loadTemplate() {
-            const select = document.getElementById('templateSelect');
-            const type = _templateTab;
-            if (!select) return;
-            const key = select.value;
-            const container = document.getElementById('templateEditor');
-            if (container) container.innerHTML = renderTemplateEditorContent(type, key);
-        }
-
-        function saveTemplate(type, key) {
-            const subject = document.getElementById('templateSubject')?.value || '';
-            const body = document.getElementById('templateBody').value;
-            if (!body) { toast(tr('fillRequired'), 'error'); return; }
-            if (!STATE.settings.communication.templates[type]) STATE.settings.communication.templates[type] = {};
-            STATE.settings.communication.templates[type][key] = {
-                subject: subject,
-                body: body,
-                enabled: STATE.settings.communication.templates[type][key]?.enabled !== false
-            };
-            saveState();
-            toast(tr('saved'));
-        }
-
-        function saveTemplateStatus(type, key) {
-            const status = document.getElementById('templateStatus').value === 'true';
-            if (!STATE.settings.communication.templates[type]) STATE.settings.communication.templates[type] = {};
-            if (!STATE.settings.communication.templates[type][key]) STATE.settings.communication.templates[type][key] = { body: '' };
-            STATE.settings.communication.templates[type][key].enabled = status;
-            saveState();
-            toast(tr('saved'));
-        }
-
-        function previewTemplate(type, key) {
-            const templates = STATE.settings.communication.templates[type] || {};
-            const template = templates[key] || { body: 'No template' };
-            const data = {
-                InvestorName: 'Demo Investor',
-                BusinessName: 'Demo Business',
-                CompanyName: 'Invest Ledger Pro',
-                Amount: '৳10,000',
-                AvailableBalance: '৳50,000',
-                OrderNumber: 'ORD-0001',
-                ProfitAmount: '৳5,000',
-                LossAmount: '৳2,000',
-                Commission: '৳1,000',
-                ReferenceNumber: 'TRX-1001',
-                TransactionDate: todayStr(),
-                CurrentDate: todayStr(),
-                CurrentTime: new Date().toLocaleTimeString()
-            };
-            const preview = replacePlaceholders(template.body, data);
-            const area = document.getElementById('templatePreviewArea');
-            if (area) {
-                area.style.display = 'block';
-                area.innerHTML = `<strong>${tr('templatePreview')}</strong><hr/><pre style="white-space:pre-wrap;font-family:inherit;font-size:12px;">${preview}</pre>`;
-            }
-        }
-
-        function testTemplate(type, key) {
-            const templates = STATE.settings.communication.templates[type] || {};
-            const template = templates[key] || { body: 'Test message' };
-            const data = {
-                InvestorName: 'Test User',
-                BusinessName: 'Test Business',
-                CompanyName: 'Invest Ledger Pro',
-                Amount: '৳1,000',
-                AvailableBalance: '৳10,000',
-                OrderNumber: 'ORD-TEST',
-                ProfitAmount: '৳500',
-                LossAmount: '৳200',
-                Commission: '৳100',
-                ReferenceNumber: 'TRX-TEST',
-                TransactionDate: todayStr(),
-                CurrentDate: todayStr(),
-                CurrentTime: new Date().toLocaleTimeString()
-            };
-            const content = replacePlaceholders(template.body, data);
-            if (type === 'sms') {
-                const phone = prompt('SMS পাঠানোর জন্য ফোন নম্বর দিন:', '01700000000');
-                if (phone) sendSMS(phone, content, currentBiz());
-            } else {
-                const email = prompt('Email পাঠানোর জন্য ইমেইল ঠিকানা দিন:', 'test@example.com');
-                if (email) sendEmail(email, template.subject || key, content, currentBiz());
-            }
-            toast('টেস্ট পাঠানো হয়েছে');
-        }
-
-        function restoreDefaultTemplate(type, key) {
-            if (!confirm('ডিফল্ট টেমপ্লেট পুনরুদ্ধার করবেন?')) return;
-            const defaults = {
-                sms: {
-                    deposit: { body: 'Dear {{InvestorName}}, Your deposit of {{Amount}} has been received. Ref: {{ReferenceNumber}}. Balance: {{AvailableBalance}}.' },
-                    withdraw: { body: 'Dear {{InvestorName}}, Withdrawal of {{Amount}} processed. Ref: {{ReferenceNumber}}. Balance: {{AvailableBalance}}.' },
-                    order_created: { body: 'Dear {{InvestorName}}, Order {{OrderNumber}} created. Utilized: {{UtilizedAmount}}.' },
-                    order_closed_profit: { body: 'Dear {{InvestorName}}, Order {{OrderNumber}} closed with profit {{ProfitAmount}}. Commission: {{Commission}}. Balance: {{AvailableBalance}}.' },
-                    order_closed_loss: { body: 'Dear {{InvestorName}}, Order {{OrderNumber}} closed with loss {{LossAmount}}. Balance: {{AvailableBalance}}.' },
-                    profit_distribution: { body: 'Dear {{InvestorName}}, Profit of {{ProfitAmount}} distributed from Order {{OrderNumber}}.' },
-                    profit_payment: { body: 'Dear {{InvestorName}}, Profit payment of {{Amount}} received. Ref: {{ReferenceNumber}}.' },
-                    commission_payment: { body: 'Dear {{InvestorName}}, Commission payment of {{Amount}} received.' },
-                    loss_recovery: { body: 'Dear {{InvestorName}}, Loss recovery of {{Amount}} from Order {{OrderNumber}}.' },
-                    welcome: { body: 'Welcome {{InvestorName}} to {{CompanyName}}.' },
-                    monthly_statement: { body: 'Dear {{InvestorName}}, Monthly statement for {{Month}} {{Year}} attached.' },
-                    yearly_statement: { body: 'Dear {{InvestorName}}, Yearly statement for {{Year}} attached.' }
-                },
-                email: {
-                    deposit: { subject: 'Deposit Confirmation - {{ReferenceNumber}}', body: '<h3>Deposit Confirmation</h3><p>Dear {{InvestorName}},</p><p>Your deposit of {{Amount}} has been received.</p><p>Reference: {{ReferenceNumber}}</p><p>Balance: {{AvailableBalance}}</p><p>Date: {{TransactionDate}}</p>' },
-                    withdraw: { subject: 'Withdrawal Confirmation - {{ReferenceNumber}}', body: '<h3>Withdrawal Confirmation</h3><p>Dear {{InvestorName}},</p><p>Withdrawal of {{Amount}} processed.</p><p>Reference: {{ReferenceNumber}}</p><p>Balance: {{AvailableBalance}}</p><p>Date: {{TransactionDate}}</p>' },
-                    order_created: { subject: 'Order Created - {{OrderNumber}}', body: '<h3>Order Created</h3><p>Dear {{InvestorName}},</p><p>Order {{OrderNumber}} has been created.</p><p>Utilized Amount: {{UtilizedAmount}}</p><p>Date: {{TransactionDate}}</p>' },
-                    order_closed_profit: { subject: 'Order Closed - {{OrderNumber}} (Profit)', body: '<h3>Order Closed (Profit)</h3><p>Dear {{InvestorName}},</p><p>Order {{OrderNumber}} closed with profit.</p><p>Profit Amount: {{ProfitAmount}}</p><p>Commission: {{Commission}}</p><p>Balance: {{AvailableBalance}}</p>' },
-                    order_closed_loss: { subject: 'Order Closed - {{OrderNumber}} (Loss)', body: '<h3>Order Closed (Loss)</h3><p>Dear {{InvestorName}},</p><p>Order {{OrderNumber}} closed with loss.</p><p>Loss Amount: {{LossAmount}}</p><p>Balance: {{AvailableBalance}}</p>' },
-                    profit_distribution: { subject: 'Profit Distribution - {{OrderNumber}}', body: '<h3>Profit Distribution</h3><p>Dear {{InvestorName}},</p><p>Profit of {{ProfitAmount}} has been distributed from Order {{OrderNumber}}.</p>' },
-                    profit_payment: { subject: 'Profit Payment - {{ReferenceNumber}}', body: '<h3>Profit Payment</h3><p>Dear {{InvestorName}},</p><p>Profit payment of {{Amount}} has been processed.</p><p>Reference: {{ReferenceNumber}}</p>' },
-                    commission_payment: { subject: 'Commission Payment', body: '<h3>Commission Payment</h3><p>Dear {{InvestorName}},</p><p>Commission payment of {{Amount}} has been processed.</p>' },
-                    loss_recovery: { subject: 'Loss Recovery - {{OrderNumber}}', body: '<h3>Loss Recovery</h3><p>Dear {{InvestorName}},</p><p>Loss recovery of {{Amount}} from Order {{OrderNumber}}.</p>' },
-                    welcome: { subject: 'Welcome to {{CompanyName}}', body: '<h3>Welcome {{InvestorName}}</h3><p>Welcome to {{CompanyName}}. Your account has been created.</p>' },
-                    monthly_statement: { subject: 'Monthly Statement - {{Month}} {{Year}}', body: '<h3>Monthly Statement</h3><p>Dear {{InvestorName}},</p><p>Please find your monthly statement for {{Month}} {{Year}} attached.</p>' },
-                    yearly_statement: { subject: 'Yearly Statement - {{Year}}', body: '<h3>Yearly Statement</h3><p>Dear {{InvestorName}},</p><p>Please find your yearly statement for {{Year}} attached.</p>' }
-                }
-            };
-            if (defaults[type] && defaults[type][key]) {
-                STATE.settings.communication.templates[type][key] = defaults[type][key];
-                saveState();
-                loadTemplate();
-                toast('ডিফল্ট পুনরুদ্ধার করা হয়েছে');
-            }
-        }
-
-        function renderRulesEditor() {
-            const rules = STATE.settings.communication.rules || {};
-            const events = Object.keys(rules);
-            if (!events.length) return `<div class="empty">${tr('noRules')}</div>`;
-            let html =
-                `<div style="max-height:300px;overflow-y:auto;"><table style="font-size:11px;"><thead><tr><th>${tr('eventType')}</th><th>${tr('smsEnabled')}</th><th>${tr('emailEnabled')}</th><th>${tr('telegramEnabled')}</th><th>${tr('inappEnabled')}</th></tr></thead><tbody>`;
-            for (const ev of events) {
-                const r = rules[ev] || { sms: false, email: false, telegram: false, inapp: true };
-                html += `
-                    <tr>
-                        <td>${ev}</td>
-                        <td><input type="checkbox" ${r.sms?'checked':''} onchange="updateRule('${ev}','sms',this.checked)" /></td>
-                        <td><input type="checkbox" ${r.email?'checked':''} onchange="updateRule('${ev}','email',this.checked)" /></td>
-                        <td><input type="checkbox" ${r.telegram?'checked':''} onchange="updateRule('${ev}','telegram',this.checked)" /></td>
-                        <td><input type="checkbox" ${r.inapp!==false?'checked':''} onchange="updateRule('${ev}','inapp',this.checked)" /></td>
-                    </tr>
-                `;
-            }
-            html += `</tbody></table></div>`;
-            return html;
-        }
-
-        function updateRule(event, channel, value) {
-            if (!STATE.settings.communication.rules[event]) STATE.settings.communication.rules[event] = { sms: false,
-                email: false, telegram: false, inapp: true };
-            STATE.settings.communication.rules[event][channel] = value;
-            saveState();
-            toast(tr('saved'));
-        }
-
         function viewCommunicationLogs() {
             const logs = STATE.settings.communication.logs || [];
             if (!logs.length) { toast('কোনো লগ নেই'); return; }
@@ -5556,31 +5331,15 @@
                         <div class="modal-title">📋 ${tr('communicationLogs')}</div>
                         <div class="table-wrap">
                             <table style="font-size:11px;">
-                                <thead><tr><th>${tr('date')}</th><th>${tr('type')}</th><th>${tr('recipient')}</th><th>${tr('content')}</th><th>${tr('status')}</th><th>${tr('action')}</th></tr></thead>
+                                <thead><tr><th>${tr('date')}</th><th>${tr('type')}</th><th>${tr('recipient')}</th><th>${tr('content')}</th><th>${tr('status')}</th></tr></thead>
                                 <tbody>
-                                    ${logs.slice(0,50).map(log => `<tr><td class="mono">${new Date(log.time).toLocaleString()}</td><td>${log.type}</td><td>${log.recipient}</td><td>${log.content.substring(0,50)}...</td><td><span class="badge ${log.status==='sent'?'badge-green':log.status==='failed'?'badge-red':'badge-orange'}">${log.status}</span></td><td>${log.status==='failed'?`<button class="btn btn-ghost btn-sm" onclick="resendLog('${log.id}')">↩️ ${tr('resend')}</button>`:''}</td></tr>`).join('')}
+                                    ${logs.slice(0,50).map(log => `<tr><td class="mono">${new Date(log.time).toLocaleString()}</td><td>${log.type}</td><td>${log.recipient}</td><td>${log.content.substring(0,50)}...</td><td><span class="badge ${log.status==='sent'?'badge-green':log.status==='failed'?'badge-red':'badge-orange'}">${log.status}</span></td></tr>`).join('')}
                                 </tbody>
                             </table>
                         </div>
                         <div class="modal-actions"><button class="btn btn-ghost" onclick="closeModal()">${tr('cancel')}</button></div>
                     </div>
                 </div>`;
-        }
-
-        function resendLog(logId) {
-            const logs = STATE.settings.communication.logs || [];
-            const log = logs.find(l => l.id === logId);
-            if (!log) return;
-            // Attempt to resend
-            if (log.type === 'SMS') {
-                sendSMS(log.recipient, log.content, currentBiz());
-            } else if (log.type === 'Email') {
-                sendEmail(log.recipient, 'Resend: ' + log.content.substring(0, 50), log.content, currentBiz());
-            } else if (log.type === 'Telegram') {
-                sendTelegramNotification(log.content);
-            }
-            toast('পুনরায় পাঠানো হয়েছে');
-            viewCommunicationLogs();
         }
 
         function clearCommunicationLogs() {
@@ -5590,9 +5349,6 @@
             toast('লগ মুছে ফেলা হয়েছে');
         }
 
-        // ============================================================
-        // SETTINGS SAVE FUNCTIONS
-        // ============================================================
         function saveTelegramSettings() {
             STATE.settings.telegram = { enabled: document.getElementById('tgEnabled').value === 'true',
                 botToken: document.getElementById('tgBotToken').value.trim(), chatId: document.getElementById(
@@ -5706,7 +5462,7 @@
         }
 
         // ============================================================
-        // PRINT FUNCTIONS (unchanged)
+        // PRINT FUNCTIONS (Clean print layout - no UI controls)
         // ============================================================
         function printSingleOrder(orderId) {
             const b = currentBiz();
@@ -5735,6 +5491,7 @@
                     .summary-grid .item .value.green { color: #1ea672; }
                     .summary-grid .item .value.red { color: #e5484d; }
                     .summary-grid .item .value.orange { color: #f2994a; }
+                    .summary-grid .item .value.purple { color: #7c3aed; }
                     .print-table { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 10px; }
                     .print-table th { background: #f4f7f6; color: #3c5a4e; padding: 10px 14px; text-align: left; font-weight: 700; text-transform: uppercase; font-size: 10px; letter-spacing: .5px; border-bottom: 2px solid #1ea672; }
                     .print-table td { padding: 9px 14px; border-bottom: 1px solid #e9ecef; }
@@ -5744,6 +5501,7 @@
                     .badge-red { background: #f8d7da; color: #721c24; }
                     .badge-orange { background: #fff3cd; color: #856404; }
                     .badge-main { background: #fff3cd; color: #856404; }
+                    .badge-purple { background: #ede9fe; color: #7c3aed; }
                     .mono { font-family: 'JetBrains Mono', monospace; }
                     @media print { body { background: #fff !important; padding: 0.5in !important; } .print-container { box-shadow: none !important; border: 1px solid #ddd !important; border-radius: 0 !important; } }
                 </style>
@@ -5788,12 +5546,16 @@
                                 <th>${tr('sharingRate')}</th>
                                 <th>${tr('unutilizedAmount')}</th>
                                 ${o.result ? `<th>${o.result.type==='profit'?tr('profit'):tr('loss')}</th>` : ''}
+                                ${o.result ? `<th>${tr('mainInvestorOwnProfit')}</th>` : ''}
+                                ${o.result ? `<th>${tr('mainInvestorCommission')}</th>` : ''}
                             </tr></thead>
                             <tbody>`;
 
             o.snapshot.investors.forEach(a => {
                 const alloc = o.result ? o.result.allocations.find(x => x.investorId === a.investorId) : null;
                 const unutilizedDisplay = a.isMain ? '—' : money(a.unutilized || 0);
+                const mainOwnProfit = alloc ? (alloc.mainOwnProfit || 0) : 0;
+                const mainComm = alloc ? (alloc.mainCommission || 0) : 0;
                 html += `<tr>
                             <td>${a.name}${a.isMain ? ` <span class="badge badge-main">${tr('mainCapital')}</span>` : ''}</td>
                             <td class="mono">${money(a.availableBefore || a.utilized + (a.unutilized||0))}</td>
@@ -5801,12 +5563,14 @@
                             <td class="mono">${a.isMain ? '—' : a.sharingRate + '%'}</td>
                             <td class="mono" style="color:#6b8578">${unutilizedDisplay}</td>
                             ${o.result ? `<td class="mono" style="color:${o.result.type==='profit'?'#1ea672':'#e5484d'}">${alloc ? money(alloc.amount) : '—'}</td>` : ''}
+                            ${o.result ? `<td class="mono" style="color:#7c3aed">${money(mainOwnProfit)}</td>` : ''}
+                            ${o.result ? `<td class="mono" style="color:#f2994a">${money(mainComm)}</td>` : ''}
                         </tr>`;
             });
 
             if (o.result && o.result.type === 'profit' && o.result.commission > 0) {
                 html += `<tr style="border-top:2px solid #1ea672;font-weight:700;">
-                            <td colspan="${o.result ? 5 : 4}" style="text-align:right;color:#f2994a;">${tr('commission')}:</td>
+                            <td colspan="${o.result ? 7 : 4}" style="text-align:right;color:#f2994a;">${tr('commission')}:</td>
                             <td class="mono" style="color:#f2994a;">${money(o.result.commission)}</td>
                         </tr>`;
             }
@@ -5852,6 +5616,7 @@
                     .summary-grid .item .value.green { color: #1ea672; }
                     .summary-grid .item .value.red { color: #e5484d; }
                     .summary-grid .item .value.orange { color: #f2994a; }
+                    .summary-grid .item .value.purple { color: #7c3aed; }
                     .print-table { width: 100%; border-collapse: collapse; font-size: 11px; margin-top: 8px; }
                     .print-table th { background: #f4f7f6; color: #3c5a4e; padding: 8px 12px; text-align: left; font-weight: 700; text-transform: uppercase; font-size: 9px; letter-spacing: .5px; border-bottom: 2px solid #1ea672; }
                     .print-table td { padding: 7px 12px; border-bottom: 1px solid #e9ecef; }
@@ -5860,6 +5625,7 @@
                     .badge-red { background: #f8d7da; color: #721c24; }
                     .badge-orange { background: #fff3cd; color: #856404; }
                     .badge-main { background: #fff3cd; color: #856404; }
+                    .badge-purple { background: #ede9fe; color: #7c3aed; }
                     .mono { font-family: 'JetBrains Mono', monospace; }
                     .order-block { margin-bottom: 16px; border: 1px solid #e9ecef; border-radius: 10px; overflow: hidden; background: #fff; }
                     .letter-footer .brand { font-weight: 700; color: #1ea672; }
@@ -5940,7 +5706,7 @@
         }
 
         // ============================================================
-        // RESET MODALS (unchanged)
+        // RESET MODALS
         // ============================================================
         function openBusinessResetModal() {
             const b = currentBiz();
@@ -6000,13 +5766,14 @@
             mainInv.paidProfit = 0;
             mainInv.pendingProfit = 0;
             mainInv.sharingHistory = [{ rate: 0, effectiveDate: todayStr() }];
-            mainInv.commissionRateHistory = [{ rate: 60, effectiveDate: todayStr() }];
             mainInv.commissionEarned = 0;
             mainInv.commissionWithdrawn = 0;
             mainInv.commissionPending = 0;
             mainInv.commissionHistory = [];
             mainInv.capitalBalance = 0;
             mainInv.profitBalance = 0;
+            mainInv.ownProfitBalance = 0;
+            mainInv.commissionBalance = 0;
             b.orders = [];
             b.transactions = [];
             b.orderSeq = 0;
@@ -6033,7 +5800,6 @@
                 deposits: [],
                 withdraws: [],
                 sharingHistory: [{ rate: 0, effectiveDate: todayStr() }],
-                commissionRateHistory: [{ rate: 60, effectiveDate: todayStr() }],
                 lossBalance: 0,
                 totalProfit: 0,
                 totalLoss: 0,
@@ -6047,7 +5813,9 @@
                 commissionPending: 0,
                 commissionHistory: [],
                 capitalBalance: 0,
-                profitBalance: 0
+                profitBalance: 0,
+                ownProfitBalance: 0,
+                commissionBalance: 0
             };
             const biz = {
                 id: uid('BIZ'),
@@ -6102,6 +5870,7 @@
             const loaded = loadState();
             if (!loaded) seedDemo();
             document.documentElement.setAttribute('data-theme', STATE.theme);
+            STATE.activeNav = 'dashboard';
             if (!STATE.activeBusinessId && STATE.businesses.length) STATE.activeBusinessId = STATE.businesses[0].id;
             renderAll();
             toast('সিস্টেম লোড হয়েছে ✅', 'success');
